@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — CryptoMind AI | Actualités IA, Crypto & Investissement</title>
+    <meta name="description" content="Découvrez nos analyses et actualités sur l'intelligence artificielle, les crypto-monnaies et l'investissement technologique.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.cryptomind-ai.com/blog/">
+    <meta property="og:title" content="Blog — CryptoMind AI">
+    <meta property="og:description" content="Analyses et actualités sur l'IA, les crypto-monnaies et l'investissement.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0E1A;
+            color: #E2E8F0;
+            line-height: 1.6;
+        }
+        a { color: inherit; text-decoration: none; }
+        .nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(10,14,26,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 16px 0;
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo { font-size: 20px; font-weight: 700; color: #fff; }
+        .nav-logo span { color: #00D4FF; }
+        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links a { color: #94A3B8; font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: #fff; }
+        .blog-header {
+            max-width: 1100px; margin: 0 auto;
+            padding: 140px 24px 40px;
+        }
+        .blog-header h1 {
+            font-size: 48px; font-weight: 800; color: #fff;
+            margin-bottom: 16px; letter-spacing: -1px;
+        }
+        .blog-header p { font-size: 18px; color: #64748B; max-width: 600px; margin-bottom: 32px; }
+        .blog-header-cta {
+            display: inline-block;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #00D4FF, #7B61FF);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 15px;
+        }
+        .blog-header-cta:hover { opacity: 0.9; }
+        .blog-grid {
+            max-width: 1100px; margin: 0 auto;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .blog-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            border-color: rgba(0,212,255,0.2);
+            background: rgba(0,212,255,0.03);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,212,255,0.08);
+        }
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .blog-card:hover .card-image img { transform: scale(1.05); }
+        .card-image-placeholder {
+            background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,97,255,0.08));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-image-placeholder span {
+            font-size: 48px;
+            color: rgba(0,212,255,0.2);
+        }
+        .card-body { padding: 24px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+        .card-category {
+            font-size: 12px; font-weight: 600;
+            color: #00D4FF; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 12px;
+        }
+        .blog-card h2 {
+            font-size: 20px; font-weight: 700; color: #fff;
+            line-height: 1.3; margin-bottom: 12px;
+        }
+        .blog-card p {
+            font-size: 15px; color: #64748B;
+            line-height: 1.6; flex: 1; margin-bottom: 16px;
+        }
+        .card-meta {
+            font-size: 13px; color: #475569;
+            display: flex; justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .blog-footer {
+            max-width: 1100px; margin: 0 auto;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            text-align: center;
+            color: #475569;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .blog-header h1 { font-size: 32px; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="https://www.cryptomind-ai.com" class="nav-logo">◆ CryptoMind<span>AI</span></a>
+            <ul class="nav-links">
+                <li><a href="https://www.cryptomind-ai.com">Accueil</a></li>
+                <li><a href="https://www.cryptomind-ai.com/blog/" style="color:#fff">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <h1>Blog</h1>
+        <p>Analyses, tendances et décryptages sur l'intelligence artificielle, les crypto-monnaies et l'investissement technologique.</p>
+        <a href="https://www.cryptomind-ai.com#signup" class="blog-header-cta">Découvrir CryptoMind AI →</a>
+    </header>
+
+    <div class="blog-grid">
+        
+        <a href="articles/xrp-whale-coinbase-120-millions-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/xrp-whale-coinbase-120-millions-2026.png" alt="120 millions $ de XRP transférés vers Coinbase : que prépare ce whale ?" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">crypto monnaies</div>
+                <h2>120 millions $ de XRP transférés vers Coinbase : que prépare ce whale ?</h2>
+                <p>Un portefeuille whale vient de déplacer près de 120 millions de dollars de XRP vers Coinbase, alors que le token a déjà perdu 60% depuis son pic de 2025. Ce mouvement, détecté par les outils d'analyse on-chain, alimente les craintes d'une vente massive imminente.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>11 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/agents-ia-malveillants-vol-crypto-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/agents-ia-malveillants-vol-crypto-2026.png" alt="Agents IA malveillants : la nouvelle menace qui plane sur vos cryptos" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">crypto monnaies</div>
+                <h2>Agents IA malveillants : la nouvelle menace qui plane sur vos cryptos</h2>
+                <p>Des chercheurs en sécurité alertent sur un nouveau vecteur de menace : les agents IA routeurs malveillants capables de détourner silencieusement des transactions crypto. Alors que des milliards de dollars sont gérés par des systèmes autonomes, cette vulnérabilité pourrait devenir le plus grand risque de l'écosystème DeFi.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>12 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/apple-lunettes-connectees-ar-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/apple-lunettes-connectees-ar-2026.png" alt="Apple teste 4 designs de lunettes AR : le pari post-Vision Pro" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">investissement technologique</div>
+                <h2>Apple teste 4 designs de lunettes AR : le pari post-Vision Pro</h2>
+                <p>Apple testerait quatre designs différents pour de futures lunettes connectées AR, marquant un virage stratégique après les difficultés du Vision Pro. Un repositionnement qui pourrait redéfinir le marché des wearables et l'accès à l'intelligence artificielle au quotidien.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>11 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/strategy-bitcoin-800k-btc-achat-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/strategy-bitcoin-800k-btc-achat-2026.png" alt="Strategy frôle les 800 000 BTC : 1 milliard de dollars d'achat en une semaine" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">crypto monnaies</div>
+                <h2>Strategy frôle les 800 000 BTC : 1 milliard de dollars d'achat en une semaine</h2>
+                <p>Strategy vient d'acquérir 13 927 Bitcoin pour 1 milliard de dollars, portant ses réserves à près de 800 000 BTC — environ 4% de tous les Bitcoin en circulation. En parallèle, Bitmine détient 4,87% de tout l'Ethereum et génère 212 millions en staking. L'accumulation institutionnelle atteint des niveaux historiques.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>12 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/zuckerberg-clone-ia-meta-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/zuckerberg-clone-ia-meta-2026.png" alt="Zuckerberg crée un clone IA pour le remplacer en réunion chez Meta" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">intelligence artificielle</div>
+                <h2>Zuckerberg crée un clone IA pour le remplacer en réunion chez Meta</h2>
+                <p>Mark Zuckerberg développerait un clone IA de lui-même pour interagir avec les employés de Meta, donner du feedback et participer à des réunions. Une initiative qui pose la question : les dirigeants d'entreprise seront-ils les prochains à être augmentés — voire remplacés — par l'intelligence artificielle ?</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>11 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/anthropic-mythos-banques-administration-trump-ia-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/anthropic-mythos-banques-administration-trump-ia-2026.png" alt="Anthropic Mythos : l'administration Trump pousse les banques vers l'IA" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">ia et finance</div>
+                <h2>Anthropic Mythos : l'administration Trump pousse les banques vers l'IA</h2>
+                <p>L'administration Trump encouragerait les banques américaines à tester Mythos, le dernier modèle d'Anthropic, alors même que le Département de la Défense a classé l'entreprise comme risque pour la chaîne d'approvisionnement. Une contradiction qui révèle les tensions au cœur de la politique IA américaine.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>14 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/gpu-orbite-kepler-communications-calcul-spatial-ia-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/gpu-orbite-kepler-communications-calcul-spatial-ia-2026.png" alt="40 GPU en orbite terrestre : Kepler Communications lance le calcul spatial" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">intelligence artificielle</div>
+                <h2>40 GPU en orbite terrestre : Kepler Communications lance le calcul spatial</h2>
+                <p>Kepler Communications opère désormais 40 GPU en orbite terrestre, ouvrant la voie au calcul IA dans l'espace. Avec Sophia Space comme premier client, cette infrastructure orbitale pourrait transformer le traitement de données satellite et l'intelligence artificielle embarquée.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>12 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/elon-musk-intel-terafab-chipmaking-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/elon-musk-intel-terafab-chipmaking-2026.png" alt="Elon Musk s'associe à Intel pour Terafab : le méga-projet chipmaking" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">investissement technologique</div>
+                <h2>Elon Musk s'associe à Intel pour Terafab : le méga-projet chipmaking</h2>
+                <p>Elon Musk a choisi Intel comme partenaire pour son méga-projet Terafab de fabrication de puces, alors que le géant des semiconducteurs enregistre un rally historique de 100 milliards de dollars en bourse. Une alliance qui pourrait redessiner l'industrie mondiale des puces.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>12 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/petrole-100-dollars-hormuz-impact-crypto-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/petrole-100-dollars-hormuz-impact-crypto-2026.png" alt="Pétrole à 100$ : le blocus du détroit d'Hormuz secoue les marchés crypto" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">investissement technologique</div>
+                <h2>Pétrole à 100$ : le blocus du détroit d'Hormuz secoue les marchés crypto</h2>
+                <p>Le pétrole brut a franchi la barre des 100 dollars le baril suite au blocus du détroit d'Hormuz, provoquant un recul immédiat de Bitcoin et Ethereum. Cette crise géopolitique majeure redéfinit les corrélations entre marchés traditionnels et cryptomonnaies.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>12 min de lecture</span>
+                </div>
+            </div>
+        </a>
+
+        <a href="articles/hack-polkadot-hyperbridge-exploit-dot-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/hack-polkadot-hyperbridge-exploit-dot-2026.png" alt="Hack Polkadot : 1 milliard de DOT mintés via Hyperbridge, -7% en minutes" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">crypto monnaies</div>
+                <h2>Hack Polkadot : 1 milliard de DOT mintés via Hyperbridge, -7% en minutes</h2>
+                <p>Un hacker a exploité une faille sur le bridge Hyperbridge pour minter 1 milliard de tokens DOT sur Ethereum, provoquant une chute de 7% du cours en quelques minutes. Retour sur l'une des attaques les plus significatives de 2026 et ses implications pour la sécurité cross-chain.</p>
+                <div class="card-meta">
+                    <time>13 avril 2026</time>
+                    <span>12 min de lecture</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <footer class="blog-footer">
+        <p>© 2026 CryptoMind AI. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

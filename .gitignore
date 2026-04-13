@@ -1,0 +1,8 @@
+node_modules/
+.browser-data/
+.claude/
+seo-engine/.env
+seo-engine/node_modules/
+seo-engine/data/seen-articles.json
+my-video/node_modules/
+my-video/.browser-data/
