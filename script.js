@@ -639,15 +639,30 @@ document.addEventListener('DOMContentLoaded', () => {
             source: window.location.hostname
         };
 
-        // 1. Send to Google Sheets
+        // 1. Send to Google Sheets via hidden iframe form (bypasses CORS)
         try {
-            const params = new URLSearchParams();
-            Object.entries(leadData).forEach(([k, v]) => params.append(k, v));
-            await fetch(GOOGLE_SHEET_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                body: params
+            let iframe = document.getElementById('gsheet-iframe');
+            if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.id = 'gsheet-iframe';
+                iframe.name = 'gsheet-iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+            }
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = GOOGLE_SHEET_URL;
+            form.target = 'gsheet-iframe';
+            Object.entries(leadData).forEach(([k, v]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = k;
+                input.value = v;
+                form.appendChild(input);
             });
+            document.body.appendChild(form);
+            form.submit();
+            form.remove();
         } catch (err) {
             console.error('Google Sheets error:', err);
         }
