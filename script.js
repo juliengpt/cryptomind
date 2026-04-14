@@ -654,18 +654,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') successModal.classList.remove('active');
     });
 
-    // --- Live price simulation ---
+    // --- Live BTC price from CoinGecko API ---
     const priceEl = document.querySelector('.price-value');
     if (priceEl) {
-        let price = 94827.43;
-        setInterval(() => {
-            const change = (Math.random() - 0.45) * 50;
-            price = Math.max(90000, price + change);
-            priceEl.textContent = '$' + price.toLocaleString('en-US', {
-                minimumFractionDigits: 2,
-                maximumFractionDigits: 2
-            });
-        }, 3000);
+        async function fetchBtcPrice() {
+            try {
+                const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+                const data = await res.json();
+                if (data.bitcoin && data.bitcoin.usd) {
+                    priceEl.textContent = '$' + data.bitcoin.usd.toLocaleString('en-US', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+                }
+            } catch (e) {
+                // Silently keep last displayed price on error
+            }
+        }
+        fetchBtcPrice();
+        setInterval(fetchBtcPrice, 30000); // Refresh every 30s
     }
 
     // --- Sticky CTA bar ---
