@@ -140,6 +140,86 @@ const ARTICLE_IMAGES = {
       { q: 'data center server computing', pick: 1 },
     ],
   },
+  'visa-stripe-tempo-blockchain-paiements-2026': {
+    hero: { q: 'credit card payment terminal contactless', pick: 0 },
+    inline: [
+      { q: 'blockchain network digital nodes', pick: 0 },
+      { q: 'mobile payment smartphone fintech', pick: 0 },
+      { q: 'bank building financial district', pick: 0 },
+    ],
+  },
+  'amazon-rachete-globalstar-satellites-90-dollars-2026': {
+    hero: { q: 'satellite dish communication space', pick: 0 },
+    inline: [
+      { q: 'amazon warehouse logistics', pick: 0 },
+      { q: 'satellite orbiting earth space', pick: 0 },
+      { q: 'internet connectivity rural area', pick: 0 },
+    ],
+  },
+  'deutsche-borse-investit-200m-kraken-crypto-2026': {
+    hero: { q: 'stock exchange trading floor europe', pick: 0 },
+    inline: [
+      { q: 'cryptocurrency exchange platform screen', pick: 0 },
+      { q: 'european union flags brussels', pick: 0 },
+      { q: 'business handshake deal partnership', pick: 0 },
+    ],
+  },
+  'fausse-app-ledger-apple-store-vol-crypto-2026': {
+    hero: { q: 'smartphone phishing scam alert', pick: 0 },
+    inline: [
+      { q: 'apple store app download', pick: 0 },
+      { q: 'hardware wallet crypto ledger', pick: 0 },
+      { q: 'cybersecurity lock protection digital', pick: 0 },
+    ],
+  },
+  'bitcoin-75k-shorts-liquidation-200m-2026': {
+    hero: { q: 'bitcoin cryptocurrency trading chart green', pick: 0 },
+    inline: [
+      { q: 'trading screen charts candlestick', pick: 0 },
+      { q: 'bull statue wall street finance', pick: 0 },
+      { q: 'bitcoin gold coin pile', pick: 0 },
+    ],
+  },
+  'alibaba-robot-humanoide-ia-chine-2026': {
+    hero: { q: 'humanoid robot futuristic white', pick: 0 },
+    inline: [
+      { q: 'factory automation robot arm', pick: 0 },
+      { q: 'china technology city skyline', pick: 0 },
+      { q: 'artificial intelligence circuit board', pick: 0 },
+    ],
+  },
+  'ethereum-rebond-trendline-historique-bull-market-2026': {
+    hero: { q: 'ethereum cryptocurrency coin digital', pick: 0 },
+    inline: [
+      { q: 'stock chart uptrend green bullish', pick: 0 },
+      { q: 'decentralized finance DeFi blockchain', pick: 0 },
+      { q: 'crypto trader computer multiple screens', pick: 0 },
+    ],
+  },
+  'onecoin-victimes-40-millions-arnaque-crypto-2026': {
+    hero: { q: 'justice courthouse law gavel', pick: 0 },
+    inline: [
+      { q: 'fraud scam money crime', pick: 0 },
+      { q: 'courtroom trial justice legal', pick: 0 },
+      { q: 'people protest demonstration crowd', pick: 0 },
+    ],
+  },
+  'hacks-web3-482m-q1-2026-phishing-securite': {
+    hero: { q: 'hacker hooded computer cyber attack', pick: 0 },
+    inline: [
+      { q: 'phishing email scam warning', pick: 0 },
+      { q: 'blockchain security shield protection', pick: 0 },
+      { q: 'server room data center security', pick: 1 },
+    ],
+  },
+  'macron-ue-reseaux-sociaux-mineurs-regulation-2026': {
+    hero: { q: 'social media apps smartphone screen', pick: 0 },
+    inline: [
+      { q: 'european parliament building brussels', pick: 0 },
+      { q: 'teenager smartphone social media', pick: 0 },
+      { q: 'data privacy regulation GDPR', pick: 0 },
+    ],
+  },
 };
 
 async function main() {
