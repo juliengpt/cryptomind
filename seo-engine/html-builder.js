@@ -176,14 +176,21 @@ function buildArticleHTML(article) {
             padding: 16px 0;
         }
         .nav-inner {
-            max-width: 900px; margin: 0 auto; padding: 0 24px;
+            max-width: 1100px; margin: 0 auto; padding: 0 24px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .nav-logo { font-size: 20px; font-weight: 700; color: #fff; }
+        .nav-logo { font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; }
         .nav-logo span { color: #00D4FF; }
-        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
         .nav-links a { color: #94A3B8; font-size: 14px; font-weight: 500; }
         .nav-links a:hover { color: #fff; text-decoration: none; }
+        .nav-cta { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+        .nav-cta:hover { opacity: 0.9; }
+        @media (max-width: 768px) {
+            .nav-links { gap: 12px; }
+            .nav-links .hide-mobile { display: none; }
+            .nav-cta { padding: 6px 14px; font-size: 13px; }
+        }
 
         /* Hero image */
         .article-hero {
@@ -606,6 +613,9 @@ function buildArticleHTML(article) {
             <ul class="nav-links">
                 <li><a href="${config.siteUrl}">Accueil</a></li>
                 <li><a href="${config.siteUrl}/blog/">Blog</a></li>
+                <li class="hide-mobile"><a href="${config.siteUrl}#performance">Performance</a></li>
+                <li class="hide-mobile"><a href="${config.siteUrl}#pricing">Tarifs</a></li>
+                <li><a href="${config.siteUrl}#signup" class="nav-cta">Commencer</a></li>
             </ul>
         </div>
     </nav>
@@ -892,11 +902,18 @@ function buildBlogIndex(articles) {
             max-width: 1100px; margin: 0 auto; padding: 0 24px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .nav-logo { font-size: 20px; font-weight: 700; color: #fff; }
+        .nav-logo { font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; }
         .nav-logo span { color: #00D4FF; }
-        .nav-links { display: flex; gap: 24px; list-style: none; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
         .nav-links a { color: #94A3B8; font-size: 14px; font-weight: 500; }
         .nav-links a:hover { color: #fff; }
+        .nav-cta { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+        .nav-cta:hover { opacity: 0.9; }
+        @media (max-width: 768px) {
+            .nav-links { gap: 12px; }
+            .nav-links .hide-mobile { display: none; }
+            .nav-cta { padding: 6px 14px; font-size: 13px; }
+        }
         .blog-header {
             max-width: 1100px; margin: 0 auto;
             padding: 140px 24px 40px;
@@ -1001,6 +1018,9 @@ function buildBlogIndex(articles) {
             <ul class="nav-links">
                 <li><a href="${config.siteUrl}">Accueil</a></li>
                 <li><a href="${config.siteUrl}/blog/" style="color:#fff">Blog</a></li>
+                <li class="hide-mobile"><a href="${config.siteUrl}#performance">Performance</a></li>
+                <li class="hide-mobile"><a href="${config.siteUrl}#pricing">Tarifs</a></li>
+                <li><a href="${config.siteUrl}#signup" class="nav-cta">Commencer</a></li>
             </ul>
         </div>
     </nav>

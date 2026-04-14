@@ -39,6 +39,9 @@
         .nav-links { display: flex; gap: 24px; list-style: none; }
         .nav-links a { color: #94A3B8; font-size: 14px; font-weight: 500; }
         .nav-links a:hover { color: #fff; }
+        .nav-cta { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; display: inline-block; }
+        .nav-cta:hover { opacity: 0.9; }
+        @media (max-width: 768px) { .nav-links { gap: 12px; } .nav-links .hide-mobile { display: none; } .nav-cta { padding: 6px 14px; font-size: 13px; } }
         .blog-header {
             max-width: 1100px; margin: 0 auto;
             padding: 140px 24px 40px;
@@ -140,9 +143,12 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="https://crypto-mind.net" class="nav-logo">◆ CryptoMind<span>AI</span></a>
-            <ul class="nav-links">
+            <ul class="nav-links" style="align-items:center">
                 <li><a href="https://crypto-mind.net">Accueil</a></li>
                 <li><a href="https://crypto-mind.net/blog/" style="color:#fff">Blog</a></li>
+                <li class="hide-mobile"><a href="https://crypto-mind.net#performance">Performance</a></li>
+                <li class="hide-mobile"><a href="https://crypto-mind.net#pricing">Tarifs</a></li>
+                <li><a href="https://crypto-mind.net#signup" class="nav-cta">Commencer</a></li>
             </ul>
         </div>
     </nav>
