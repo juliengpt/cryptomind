@@ -623,23 +623,53 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!data.firstName || !data.lastName || !data.email || !data.experience) return;
         if (!document.getElementById('terms').checked) return;
 
-        // Send lead to LeadFlow Dashboard
-        const WEBHOOK_URL = 'http://localhost:4800/api/webhook/f70349ce-7cd4-4ad2-a543-17f64dcc730b';
+        // ====== CONFIGURATION — Fill these 3 values ======
+        const GOOGLE_SHEET_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        const TELEGRAM_BOT_TOKEN = 'PASTE_YOUR_BOT_TOKEN_HERE';
+        const TELEGRAM_CHAT_ID = 'PASTE_YOUR_CHAT_ID_HERE';
+        // ===================================================
+
+        const leadData = {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone || '',
+            experience: data.experience,
+            date: new Date().toLocaleString('fr-FR'),
+            source: window.location.hostname
+        };
+
+        // 1. Send to Google Sheets
         try {
-            await fetch(WEBHOOK_URL, {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(leadData)
+            });
+        } catch (err) {
+            console.error('Google Sheets error:', err);
+        }
+
+        // 2. Send to Telegram
+        try {
+            const msg = `🔔 *Nouveau Lead CryptoMind AI*\n\n` +
+                `👤 *Nom :* ${leadData.firstName} ${leadData.lastName}\n` +
+                `📧 *Email :* ${leadData.email}\n` +
+                `📱 *Tél :* ${leadData.phone}\n` +
+                `📊 *Niveau :* ${leadData.experience}\n` +
+                `📅 *Date :* ${leadData.date}`;
+            await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    first_name: data.firstName,
-                    last_name: data.lastName,
-                    email: data.email,
-                    phone: data.phone || '',
-                    source: 'cryptomind-ai',
-                    experience: data.experience
+                    chat_id: TELEGRAM_CHAT_ID,
+                    text: msg,
+                    parse_mode: 'Markdown'
                 })
             });
         } catch (err) {
-            console.error('LeadFlow webhook error:', err);
+            console.error('Telegram error:', err);
         }
 
         successModal.classList.add('active');
