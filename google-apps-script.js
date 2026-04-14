@@ -42,7 +42,29 @@ function doPost(e) {
 }
 
 function doGet(e) {
-  return ContentService
-    .createTextOutput('Lead webhook is active.')
-    .setMimeType(ContentService.MimeType.TEXT);
+  try {
+    var data = e.parameter;
+    if (data.email) {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      sheet.appendRow([
+        data.date || new Date().toLocaleString('fr-FR'),
+        data.firstName || '',
+        data.lastName || '',
+        data.email || '',
+        data.phone || '',
+        data.experience || '',
+        data.source || ''
+      ]);
+      return ContentService
+        .createTextOutput(JSON.stringify({ status: 'ok' }))
+        .setMimeType(ContentService.MimeType.JSON);
+    }
+    return ContentService
+      .createTextOutput('Lead webhook is active.')
+      .setMimeType(ContentService.MimeType.TEXT);
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ status: 'error', message: error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
 }
