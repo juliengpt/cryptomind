@@ -2,31 +2,31 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./config');
 
-// CTA variants for variety
+// CTA variants — all focused on the AI trading agent
 const CTA_VARIANTS = [
   {
     icon: '◆',
-    title: "L'IA analyse ces tendances en temps réel",
-    text: 'Découvrez comment CryptoMind AI transforme les données en décisions intelligentes.',
-    btn: 'Essayer gratuitement →',
+    title: "L'agent IA qui trade pour vous, 24h/24",
+    text: "Notre IA analyse, décide et exécute vos trades crypto en temps réel. Sans émotions, sans stress.",
+    btn: "Activer l'agent IA →",
   },
   {
     icon: '⚡',
-    title: 'Ne subissez plus le marché. Anticipez-le.',
-    text: "Plus de 8 000 investisseurs utilisent déjà l'IA pour prendre de meilleures décisions.",
-    btn: 'Créer mon compte →',
+    title: 'Pendant que vous lisez, notre IA trade',
+    text: "+127% de rendement moyen en 2025. L'agent IA travaille pendant que vous vivez votre vie.",
+    btn: "Lancer l'agent →",
   },
   {
-    icon: '🎯',
-    title: 'Cette analyse vous parle ?',
-    text: 'Recevez ce type de décryptage chaque jour directement dans votre boîte mail.',
-    btn: "S'inscrire gratuitement →",
+    icon: '◆',
+    title: 'Un trader IA autonome à votre service',
+    text: "Stratégies algorithmiques avancées exécutées automatiquement. +8 000 utilisateurs nous font confiance.",
+    btn: "Essayer l'agent IA →",
   },
   {
-    icon: '🔒',
-    title: 'Accédez aux analyses premium',
-    text: 'Nos membres reçoivent des signaux IA exclusifs avant tout le monde.',
-    btn: 'Débloquer l\'accès →',
+    icon: '🚀',
+    title: "L'IA qui ne dort jamais — et qui gagne",
+    text: "Analyse multi-actifs, gestion du risque, exécution instantanée. Tout est automatisé par l'agent IA.",
+    btn: "Tester gratuitement →",
   },
 ];
 
@@ -51,13 +51,13 @@ function injectMidCTA(content, category) {
 </div>\n${match}`;
     }
 
-    // After 4th H2: newsletter CTA
+    // After 4th H2: AI agent CTA band
     if (h2Count === 5) {
       return `<div class="cta-newsletter">
     <div class="cta-newsletter-inner">
-        <strong>Recevez nos analyses chaque jour</strong>
-        <span>Rejoignez +8 000 lecteurs qui reçoivent nos décryptages IA & crypto.</span>
-        <a href="${config.siteUrl}#signup" class="cta-btn-sm">S'inscrire gratuitement</a>
+        <strong>L'agent IA qui trade pour vous</strong>
+        <span>Rejoignez +8 000 investisseurs qui laissent notre IA exécuter leurs trades 24h/24.</span>
+        <a href="${config.siteUrl}#signup" class="cta-btn-sm">Activer l'agent</a>
     </div>
 </div>\n${match}`;
     }
@@ -656,10 +656,10 @@ function buildArticleHTML(article) {
         }
 
         <div class="article-cta">
-            <h3>Prenez de meilleures décisions avec l'IA</h3>
-            <p>Rejoignez les investisseurs qui utilisent CryptoMind AI pour analyser les marchés en temps réel et agir au bon moment.</p>
-            <a href="${config.siteUrl}#signup" class="cta-btn">Démarrer gratuitement</a>
-            <div class="cta-subtext">Inscription gratuite · Aucune carte requise · Accès immédiat</div>
+            <h3>L'agent IA qui trade pour vous</h3>
+            <p>Pendant que vous lisez nos analyses, notre agent IA analyse les marchés crypto 24h/24 et exécute les trades à votre place. <strong>+127% de rendement moyen en 2025</strong>. Rejoignez +8 000 investisseurs.</p>
+            <a href="${config.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
+            <div class="cta-subtext">À partir de 250 € · Garantie satisfait ou remboursé 30 jours</div>
         </div>
     </article>
 
@@ -682,11 +682,11 @@ function buildArticleHTML(article) {
     <div class="modal-overlay" id="scrollModal">
         <div class="modal">
             <button class="modal-close" id="modalClose">&times;</button>
-            <div class="modal-icon">🚀</div>
-            <h3>Cet article vous intéresse ?</h3>
-            <p>Recevez chaque jour des analyses comme celle-ci, propulsées par l'intelligence artificielle.<br>Gratuit. Sans spam. Désinscription en 1 clic.</p>
-            <a href="${config.siteUrl}#signup" class="cta-btn">Recevoir les analyses gratuitement</a>
-            <div class="modal-subtext">Aucune carte bancaire requise</div>
+            <div class="modal-icon">◆</div>
+            <h3>L'agent IA qui trade pour vous</h3>
+            <p>Notre agent IA <strong>analyse, décide et exécute</strong> vos trades crypto en temps réel, 24h/24. Sans émotions, sans stress, sans intervention humaine. <strong>+127% de rendement moyen en 2025</strong>.</p>
+            <a href="${config.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
+            <div class="modal-subtext">À partir de 250 € · Garantie 30 jours satisfait ou remboursé</div>
             <div class="modal-social">
                 <div class="modal-avatars">
                     <div class="modal-avatar">A</div>
