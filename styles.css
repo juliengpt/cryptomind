@@ -1336,7 +1336,30 @@ img { max-width: 100%; }
 .form-subtitle {
     color: var(--text-dim);
     font-size: 0.88rem;
-    margin-bottom: 28px;
+    margin-bottom: 16px;
+}
+
+.form-min-invest {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.15));
+    border: 1px solid rgba(99,102,241,0.4);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 22px;
+    color: var(--text-light);
+    font-size: 0.92rem;
+}
+
+.form-min-invest svg {
+    flex-shrink: 0;
+    color: #818cf8;
+}
+
+.form-min-invest strong {
+    color: #a5b4fc;
+    font-size: 1.05rem;
 }
 
 .form-group {
