@@ -176,7 +176,7 @@ const translations = {
         'signup.opt_inter': 'Intermediate — A few trades',
         'signup.opt_adv': 'Advanced — Regular trader',
         'signup.opt_expert': 'Expert — Professional trader',
-        'signup.terms': 'I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>',
+        'signup.terms': 'I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>',
         'signup.submit': 'Create My Account <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
         'signup.disclaimer': 'Sign up in just a few minutes',
         // Placeholders
@@ -399,7 +399,7 @@ const translations = {
         'signup.opt_inter': 'Intermédiaire — Quelques trades',
         'signup.opt_adv': 'Avancé — Trader régulier',
         'signup.opt_expert': 'Expert — Trader professionnel',
-        'signup.terms': 'J\'accepte les <a href="#">Conditions d\'Utilisation</a> et la <a href="#">Politique de Confidentialité</a>',
+        'signup.terms': 'J\'accepte les <a href="terms.html" target="_blank">Conditions d\'Utilisation</a> et la <a href="privacy.html" target="_blank">Politique de Confidentialité</a>',
         'signup.submit': 'Créer Mon Compte <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>',
         'signup.disclaimer': 'Inscription en quelques minutes seulement',
         'signup.ph_first': 'Votre prénom',
