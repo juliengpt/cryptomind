@@ -19,7 +19,7 @@
 function doPost(e) {
   try {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var data = JSON.parse(e.postData.contents);
+    var data = e.parameter;
 
     sheet.appendRow([
       data.date || new Date().toLocaleString('fr-FR'),

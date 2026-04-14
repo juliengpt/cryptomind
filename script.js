@@ -641,11 +641,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 1. Send to Google Sheets
         try {
+            const params = new URLSearchParams();
+            Object.entries(leadData).forEach(([k, v]) => params.append(k, v));
             await fetch(GOOGLE_SHEET_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(leadData)
+                body: params
             });
         } catch (err) {
             console.error('Google Sheets error:', err);
