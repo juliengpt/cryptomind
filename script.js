@@ -624,7 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!document.getElementById('terms').checked) return;
 
         // ====== CONFIGURATION — Fill these 3 values ======
-        const GOOGLE_SHEET_URL = 'PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbxFSjheiMjGA9tYY5vA9M7j8r-yhb1BYl42BI4Epqk3v4cE_8ud-J8BENVl2DWiwN95Ug/exec';
         const TELEGRAM_BOT_TOKEN = 'PASTE_YOUR_BOT_TOKEN_HERE';
         const TELEGRAM_CHAT_ID = 'PASTE_YOUR_CHAT_ID_HERE';
         // ===================================================
