@@ -6,7 +6,7 @@ module.exports = {
   anthropicApiKey: process.env.ANTHROPIC_API_KEY,
 
   // Site
-  siteUrl: process.env.SITE_URL || 'https://www.cryptomind-ai.com',
+  siteUrl: process.env.SITE_URL || 'https://crypto-mind.net',
   siteName: process.env.SITE_NAME || 'CryptoMind AI',
 
   // Paths
