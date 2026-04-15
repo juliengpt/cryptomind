@@ -8,9 +8,17 @@ function mergeCfg(siteConfig = {}) {
   const siteUrl = siteConfig.siteUrl
     || (siteConfig.domain ? `https://${siteConfig.domain.replace(/^https?:\/\//, '').replace(/\/$/, '')}` : null)
     || config.siteUrl;
+  const siteName = siteConfig.siteName || config.siteName;
+  // Split "ForexBot AI" → brand="ForexBot", accent="AI"
+  const parts = siteName.trim().split(' ');
+  const brandHtml = parts.length >= 2
+    ? `${parts.slice(0, -1).join(' ')}<span>${parts.slice(-1)[0]}</span>`
+    : siteName;
   return {
     siteUrl,
-    siteName: siteConfig.siteName || config.siteName,
+    siteName,
+    brandHtml,
+    niche: siteConfig.niche || 'intelligence artificielle et investissement',
     blogDir: siteConfig.blogDir || config.blogDir,
     articlesDir: siteConfig.articlesDir || config.articlesDir,
     productPitch: siteConfig.productPitch || "L'agent IA qui trade pour vous",
@@ -629,7 +637,7 @@ function buildArticleHTML(article, siteConfig = {}) {
 <body>
     <nav class="nav">
         <div class="nav-inner">
-            <a href="${c.siteUrl}" class="nav-logo">◆ CryptoMind<span>AI</span></a>
+            <a href="${c.siteUrl}" class="nav-logo">◆ ${c.brandHtml}</a>
             <ul class="nav-links">
                 <li><a href="${c.siteUrl}">Accueil</a></li>
                 <li><a href="${c.siteUrl}/blog/">Blog</a></li>
@@ -1035,7 +1043,7 @@ function buildBlogIndex(articles, siteConfig = {}) {
 <body>
     <nav class="nav">
         <div class="nav-inner">
-            <a href="${c.siteUrl}" class="nav-logo">◆ CryptoMind<span>AI</span></a>
+            <a href="${c.siteUrl}" class="nav-logo">◆ ${c.brandHtml}</a>
             <ul class="nav-links">
                 <li><a href="${c.siteUrl}">Accueil</a></li>
                 <li><a href="${c.siteUrl}/blog/" style="color:#fff">Blog</a></li>

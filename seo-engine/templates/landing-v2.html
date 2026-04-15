@@ -80,6 +80,31 @@
         .signup-benefits { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
         .signup-benefits li { display: flex; align-items: center; gap: 10px; color: var(--text-dim, #CBD5E1); }
         .signup-benefits .check { color: var(--primary); font-weight: 700; font-size: 1.2rem; }
+
+        /* Fix hero-trust layout (template-v2 uses trust-avatars not hero-trust-avatars) */
+        .hero-trust {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .trust-avatars { display: flex !important; flex-direction: row !important; }
+        .trust-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 14px;
+            border: 2px solid #0A0E1A;
+            margin-left: -10px;
+        }
+        .trust-avatar:first-child { margin-left: 0; }
+        .hero-trust-text { color: #94A3B8; font-size: 0.9rem; }
+
+        /* Fix hero-stats: value + suffix inline */
+        .hero-stat { flex-direction: row !important; align-items: baseline !important; flex-wrap: wrap; justify-content: center; gap: 4px; }
+        .hero-stat-label { flex-basis: 100%; text-align: center; color: #94A3B8; font-size: 0.85rem; margin-top: 4px; }
+        .hero-stats { display: flex; gap: 40px; align-items: flex-start; justify-content: center; margin-top: 30px; }
+        .hero-stat-divider { display: none; }
     </style>
 </head>
 <body>

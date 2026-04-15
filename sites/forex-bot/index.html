@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ForexBot AI : Trading Forex Automatisé par IA</title>
-    <meta name="description" content="Découvrez ForexBot AI, votre agent IA révolutionnaire pour le trading Forex. Investissez dès 250€ et activez votre trading automatisé 24h/24.">
+    <title>ForexBot AI | Trading Forex Automatisé par Intelligence Artificielle</title>
+    <meta name="description" content="Découvrez ForexBot AI, l'agent intelligent qui optimise votre trading forex 24h/24. Maximisez vos profits sans effort grâce à l'IA. Investissement min. 250 €.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://forexbotia.com/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ForexBot AI : Trading Forex Automatisé par IA">
-    <meta property="og:description" content="Découvrez ForexBot AI, votre agent IA révolutionnaire pour le trading Forex. Investissez dès 250€ et activez votre trading automatisé 24h/24.">
+    <meta property="og:title" content="ForexBot AI | Trading Forex Automatisé par Intelligence Artificielle">
+    <meta property="og:description" content="Découvrez ForexBot AI, l'agent intelligent qui optimise votre trading forex 24h/24. Maximisez vos profits sans effort grâce à l'IA. Investissement min. 250 €.">
     <meta property="og:url" content="https://forexbotia.com/">
     <meta property="og:site_name" content="ForexBot AI">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -19,16 +19,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #10b981 !important;
-            --accent: #eab308 !important;
-            --gradient: linear-gradient(135deg, #10b981, #fde047) !important;
-            --gradient-text: linear-gradient(135deg, #10b981, #fde047, #10b981) !important;
+            --primary: #047857 !important;
+            --accent: #EAB308 !important;
+            --gradient: linear-gradient(135deg, #047857, #FCD34D) !important;
+            --gradient-text: linear-gradient(135deg, #047857, #FCD34D, #047857) !important;
         }
-        .hero-glow { background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%) !important; }
+        .hero-glow { background: radial-gradient(circle, rgba(4,120,87,0.18) 0%, transparent 70%) !important; }
         .hero-bg-grid {
             background-image:
-                linear-gradient(rgba(16,185,129,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(16,185,129,0.05) 1px, transparent 1px) !important;
+                linear-gradient(rgba(4,120,87,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(4,120,87,0.05) 1px, transparent 1px) !important;
         }
         .nav-cta, .btn-primary { background: var(--gradient) !important; }
         .feature-icon, .step-number, .pricing-card.popular, .faq-cta .btn-primary {
@@ -41,8 +41,8 @@
             background-clip: text;
         }
         .form-min-invest {
-            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.05)) !important;
-            border-color: rgba(16,185,129,0.4) !important;
+            background: linear-gradient(135deg, rgba(4,120,87,0.15), rgba(4,120,87,0.05)) !important;
+            border-color: rgba(4,120,87,0.4) !important;
         }
         .form-min-invest svg, .form-min-invest strong { color: var(--primary) !important; }
         .hero-badge .pulse-dot { background: var(--primary) !important; }
@@ -80,6 +80,31 @@
         .signup-benefits { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
         .signup-benefits li { display: flex; align-items: center; gap: 10px; color: var(--text-dim, #CBD5E1); }
         .signup-benefits .check { color: var(--primary); font-weight: 700; font-size: 1.2rem; }
+
+        /* Fix hero-trust layout (template-v2 uses trust-avatars not hero-trust-avatars) */
+        .hero-trust {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .trust-avatars { display: flex !important; flex-direction: row !important; }
+        .trust-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 14px;
+            border: 2px solid #0A0E1A;
+            margin-left: -10px;
+        }
+        .trust-avatar:first-child { margin-left: 0; }
+        .hero-trust-text { color: #94A3B8; font-size: 0.9rem; }
+
+        /* Fix hero-stats: value + suffix inline */
+        .hero-stat { flex-direction: row !important; align-items: baseline !important; flex-wrap: wrap; justify-content: center; gap: 4px; }
+        .hero-stat-label { flex-basis: 100%; text-align: center; color: #94A3B8; font-size: 0.85rem; margin-top: 4px; }
+        .hero-stats { display: flex; gap: 40px; align-items: flex-start; justify-content: center; margin-top: 30px; }
+        .hero-stat-divider { display: none; }
     </style>
 </head>
 <body>
@@ -88,12 +113,12 @@
     <div class="container nav-container">
         <a href="#" class="logo"><span class="logo-icon">◆</span> ForexBot<span class="logo-accent">AI</span></a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#features">Fonctionnalités</a></li>
-            <li><a href="#how-it-works">Comment ça marche</a></li>
-            <li><a href="#performance">Performance</a></li>
+            <li><a href="#features">Fonctionnalités Clés</a></li>
+            <li><a href="#how-it-works">Comment ça Marche</a></li>
+            <li><a href="#performance">Performances</a></li>
             <li><a href="#testimonials">Témoignages</a></li>
             <li><a href="#pricing">Tarifs</a></li>
-            <li><a href="#signup" class="nav-cta">Activer l'agent IA</a></li>
+            <li><a href="#signup" class="nav-cta">Activer l'Agent IA</a></li>
         </ul>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -104,12 +129,12 @@
     <div class="hero-glow"></div>
     <div class="container hero-container">
         <div class="hero-content">
-            <div class="hero-badge"><span class="pulse-dot"></span> Trading Forex Intelligent 24/7</div>
-            <h1>Votre Agent IA<br><span class="gradient-text">Trade le Forex</span></h1>
-            <p class="hero-subtitle">ForexBot AI est l'agent IA autonome conçu pour maximiser vos profits sur le marché des devises, sans aucune intervention de votre part.</p>
+            <div class="hero-badge"><span class="pulse-dot"></span> Trading Forex Autonome 24/7</div>
+            <h1>Maîtrisez le Forex avec<br><span class="gradient-text">ForexBot AI</span></h1>
+            <p class="hero-subtitle">Laissez notre agent d'Intelligence Artificielle de pointe analyser le marché et exécuter des trades rentables pour vous, sans intervention manuelle.</p>
             <div class="hero-actions">
-                <a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a>
-                <a href="#how-it-works" class="btn btn-outline btn-lg">Découvrir la performance</a>
+                <a href="#signup" class="btn btn-primary btn-lg">Activer Mon Agent IA</a>
+                <a href="#how-it-works" class="btn btn-outline btn-lg">Voir la Démo</a>
             </div>
             <div class="hero-trust">
                 <div class="trust-avatars">
@@ -119,14 +144,14 @@
                     <div class="trust-avatar" style="background:#10b981;">K</div>
                     <div class="trust-avatar" style="background:#f59e0b;">+</div>
                 </div>
-                <span class="hero-trust-text">Rejoignez <strong>15 000+</strong> traders utilisant l'IA</span>
+                <span class="hero-trust-text">Rejoignez <strong>3 500+</strong> traders qui optimisent leurs gains.</span>
             </div>
             <div class="hero-stats">
                 <div class="hero-stat"><span class="hero-stat-value">97.3</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">Précision des trades</span></div>
                 <div class="hero-stat-divider"></div>
                 <div class="hero-stat"><span class="hero-stat-value">24/7</span><span class="hero-stat-label">Surveillance continue</span></div>
                 <div class="hero-stat-divider"></div>
-                <div class="hero-stat"><span class="hero-stat-value">+127</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">Rendement potentiel</span></div>
+                <div class="hero-stat"><span class="hero-stat-value">+127</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">Rendement annuel moyen</span></div>
             </div>
         </div>
     </div>
@@ -135,17 +160,17 @@
 <section class="features" id="features">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Fonctionnalités Clés</span>
-            <h2>Découvrez la puissance de ForexBot AI pour votre trading <span class="gradient-text">Votre trading</span></h2>
-            <p>Notre IA analyse les marchés 24h/24, identifie les opportunités et exécute des trades pour optimiser vos rendements, même lorsque vous dormez.</p>
+            <span class="section-tag">Fonctionnalités</span>
+            <h2>Découvrez la Puissance du Trading Forex Automatisé par <strong>Intelligence Artificielle</strong> <span class="gradient-text">Intelligence Artificielle</span></h2>
+            <p>ForexBot AI combine technologie de pointe et stratégies éprouvées pour transformer votre expérience de trading. Libérez-vous des contraintes du marché.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card"><div class="feature-icon">◆</div><h3>Trading Autonome 24/7</h3><p>Laissez notre IA trader pour vous, sans interruption, sur tous les marchés Forex.</p></div>
-            <div class="feature-card"><div class="feature-icon">⚡</div><h3>Analyse Prédictive IA</h3><p>Algorithmes avancés pour anticiper les mouvements du marché avec une précision inégalée.</p></div>
-            <div class="feature-card"><div class="feature-icon">🔒</div><h3>Sécurité Renforcée</h3><p>Protocoles de sécurité de pointe pour protéger vos fonds et vos données personnelles.</p></div>
-            <div class="feature-card"><div class="feature-icon">🎯</div><h3>Interface Intuitive</h3><p>Suivez vos performances facilement grâce à une plateforme simple et claire.</p></div>
-            <div class="feature-card"><div class="feature-icon">📊</div><h3>Optimisation Continue</h3><p>L'IA apprend et s'adapte constamment aux conditions du marché pour améliorer vos résultats.</p></div>
-            <div class="feature-card"><div class="feature-icon">🚀</div><h3>Investissement Accessible</h3><p>Commencez à trader avec un investissement minimum de seulement 250€.</p></div>
+            <div class="feature-card"><div class="feature-icon">◆</div><h3>Analyse Prédictive Avancée</h3><p>L'IA scanne des millions de points de données pour anticiper les mouvements du marché avec une précision inégalée.</p></div>
+            <div class="feature-card"><div class="feature-icon">⚡</div><h3>Exécution Ultra-Rapide</h3><p>Les ordres sont placés instantanément pour capitaliser sur les opportunités, minimisant le slippage et maximisant les profits.</p></div>
+            <div class="feature-card"><div class="feature-icon">🔒</div><h3>Gestion des Risques Intelligente</h3><p>Des algorithmes sophistiqués protègent votre capital en ajustant les tailles de position et les stops automatiquement.</p></div>
+            <div class="feature-card"><div class="feature-icon">🎯</div><h3>Trading 24h/24, 7j/7</h3><p>Votre agent ForexBot AI travaille sans relâche, exploitant chaque opportunité, même lorsque vous dormez.</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Personnalisation Stratégique</h3><p>Adaptez les paramètres de l'IA à votre profil de risque et à vos objectifs d'investissement pour un contrôle optimal.</p></div>
+            <div class="feature-card"><div class="feature-icon">🚀</div><h3>Reporting Transparent</h3><p>Accédez à des rapports détaillés sur les performances de votre agent, en temps réel, pour une visibilité complète.</p></div>
         </div>
     </div>
 </section>
@@ -153,14 +178,14 @@
 <section class="steps" id="how-it-works">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Comment ça marche</span>
-            <h2>Lancez votre trading IA en 3 étapes simples <span class="gradient-text">3 étapes</span></h2>
-            <p>Aucune expertise requise. Notre système vous guide pour une expérience de trading fluide et rentable.</p>
+            <span class="section-tag">Comment ça Marche</span>
+            <h2>Votre Chemin Vers le Succès du Trading <strong>en 3 Étapes</strong> <span class="gradient-text">en 3 Étapes</span></h2>
+            <p>Lancer votre agent ForexBot AI est simple et rapide. Suivez ces étapes pour commencer à générer des profits dès aujourd'hui.</p>
         </div>
         <div class="steps-visual">
-            <div class="step-card"><div class="step-number">01</div><h3>Créez votre compte</h3><p>Inscription rapide et sécurisée en quelques minutes seulement. Aucune donnée bancaire n'est demandée à ce stade.</p></div>
-            <div class="step-card"><div class="step-number">02</div><h3>Configurez votre agent</h3><p>Définissez vos objectifs de rendement et votre niveau de risque. L'IA s'adapte à votre profil.</p></div>
-            <div class="step-card"><div class="step-number">03</div><h3>Activez votre trading</h3><p>Lancez votre agent IA et laissez-le travailler pour vous 24h/24 sur le marché du Forex.</p></div>
+            <div class="step-card"><div class="step-number">01</div><h3>Configurez Votre Compte</h3><p>Créez votre compte ForexBot AI en quelques minutes. Connectez-le à votre plateforme de trading existante en toute sécurité.</p></div>
+            <div class="step-card"><div class="step-number">02</div><h3>Définissez Vos Objectifs</h3><p>Personnalisez les paramètres de votre agent IA selon votre tolérance au risque et vos objectifs de rendement. Notre IA s'adapte à vous.</p></div>
+            <div class="step-card"><div class="step-number">03</div><h3>L'IA Trade pour Vous</h3><p>Activez ForexBot AI et laissez-le opérer de manière autonome. Surveillez vos gains en temps réel et profitez de votre liberté.</p></div>
         </div>
     </div>
 </section>
@@ -168,9 +193,9 @@
 <section class="cta-banner">
     <div class="container">
         <div class="cta-banner-inner">
-            <h2>Ne manquez plus une seule opportunité Forex</h2>
-            <p>Laissez notre IA optimiser vos investissements 24h/24.</p>
-            <a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a>
+            <h2>Ne Manquez Plus Aucune Opportunité sur le Forex !</h2>
+            <p>Laissez ForexBot AI travailler pour vous 24h/24 et transformez votre potentiel de gains. Commencez dès maintenant.</p>
+            <a href="#signup" class="btn btn-primary btn-lg">Activer Mon Agent IA</a>
         </div>
     </div>
 </section>
@@ -178,9 +203,9 @@
 <section class="performance" id="performance">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Performance Prouvée</span>
-            <h2>Des résultats concrets grâce à l'IA <span class="gradient-text">Résultats</span></h2>
-            <p>Visualisez les gains réalisés par notre IA sur les marchés Forex. Des statistiques transparentes pour votre tranquillité d'esprit.</p>
+            <span class="section-tag">Performances</span>
+            <h2>Des Résultats Concrets, <strong>Prouvés par l'IA</strong> <span class="gradient-text">Prouvés par l'IA</span></h2>
+            <p>Découvrez les performances exceptionnelles de ForexBot AI. Notre technologie est conçue pour surpasser les attentes des traders exigeants.</p>
         </div>
         <div class="performance-grid">
             <div class="perf-card"><div class="perf-value">+127%</div><div class="perf-label">2025</div></div>
@@ -194,14 +219,14 @@
 <section class="testimonials" id="testimonials">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Avis Clients</span>
-            <h2>Ce que nos utilisateurs disent de ForexBot AI <span class="gradient-text">nos utilisateurs</span></h2>
-            <p>Découvrez les expériences de traders comme vous qui ont choisi l'intelligence artificielle pour leurs investissements.</p>
+            <span class="section-tag">Ils Témoignent</span>
+            <h2>Ce Que Nos Utilisateurs <strong>Disent de Nous</strong> <span class="gradient-text">Disent de Nous</span></h2>
+            <p>Écoutez les expériences de ceux qui ont déjà transformé leur trading grâce à la puissance de ForexBot AI. Des résultats parlent d'eux-mêmes.</p>
         </div>
         <div class="testimonials-grid">
-            <div class="testimonial-card"><p>« Depuis que j'utilise ForexBot AI, mes rendements ont explosé. L'autonomie de l'agent est un vrai plus, je n'ai plus rien à gérer. »</p><div class="testimonial-author"><div class="author-name">Marc D.</div><div class="author-role">Investisseur débutant</div></div></div>
-            <div class="testimonial-card"><p>« J'étais sceptique au début, mais les performances sont là. C'est incroyable de voir une IA trader le Forex avec autant d'efficacité. »</p><div class="testimonial-author"><div class="author-name">Sophie L.</div><div class="author-role">Trader expérimenté</div></div></div>
-            <div class="testimonial-card"><p>« Le minimum d'investissement est très accessible, ce qui m'a permis de tester sans risque. Je suis maintenant un utilisateur fidèle. »</p><div class="testimonial-author"><div class="author-name">Karim B.</div><div class="author-role">Particulier</div></div></div>
+            <div class="testimonial-card"><p>« ForexBot AI a radicalement changé ma façon d'aborder le marché du Forex. Je n'ai plus besoin de passer des heures devant l'écran, l'IA s'occupe de tout avec une efficacité incroyable. Mes profits n'ont jamais été aussi constants. »</p><div class="testimonial-author"><div class="author-name">Marc D.</div><div class="author-role">Trader Indépendant</div></div></div>
+            <div class="testimonial-card"><p>« En tant que débutante, le trading me paraissait intimidant. ForexBot AI a rendu le processus si simple et accessible. Je suis impressionnée par la gestion des risques et les retours sur investissement. C'est un outil indispensable. »</p><div class="testimonial-author"><div class="author-name">Sophie L.</div><div class="author-role">Investisseuse Débutante</div></div></div>
+            <div class="testimonial-card"><p>« J'ai testé de nombreux systèmes automatisés, mais aucun n'arrive à la cheville de ForexBot AI. L'intelligence artificielle derrière est bluffante, s'adaptant aux conditions de marché. Une vraie révolution pour mon portefeuille. »</p><div class="testimonial-author"><div class="author-name">David P.</div><div class="author-role">Expert en Finance</div></div></div>
         </div>
     </div>
 </section>
@@ -209,14 +234,14 @@
 <section class="pricing" id="pricing">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Nos Tarifs</span>
-            <h2>Trouvez le plan parfait pour vos ambitions <span class="gradient-text">le plan</span></h2>
-            <p>Des options flexibles adaptées à tous les niveaux d'investisseurs. Commencez avec notre plan Starter dès 250€.</p>
+            <span class="section-tag">Nos Offres</span>
+            <h2>Choisissez le Plan Adapté à Vos <strong>Ambitions de Trading</strong> <span class="gradient-text">Ambitions de Trading</span></h2>
+            <p>ForexBot AI propose des plans flexibles pour tous les types de traders, du débutant à l'investisseur expérimenté. Trouvez la solution qui vous convient.</p>
         </div>
         <div class="pricing-grid">
-            <div class="pricing-card"><h3>Starter IA</h3><div class="pricing-price"><span class="pricing-amount">250</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Idéal pour débuter avec l'IA.</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
-            <div class="pricing-card popular"><div class="pricing-badge">Populaire</div><h3>Pro Trader</h3><div class="pricing-price"><span class="pricing-amount">1 000</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Pour les investisseurs cherchant plus de performance.</div><a href="#signup" class="btn btn-primary btn-full">Commencer maintenant</a></div>
-            <div class="pricing-card"><h3>Elite Strategist</h3><div class="pricing-price"><span class="pricing-amount">10 000</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Le summum de l'automatisation pour des rendements maximaux.</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
+            <div class="pricing-card"><h3>Essentiel</h3><div class="pricing-price"><span class="pricing-amount">250</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Idéal pour les débutants et petits capitaux.</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
+            <div class="pricing-card popular"><div class="pricing-badge">Populaire</div><h3>Performance</h3><div class="pricing-price"><span class="pricing-amount">1 000</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Notre choix populaire pour une croissance optimisée.</div><a href="#signup" class="btn btn-primary btn-full">Commencer maintenant</a></div>
+            <div class="pricing-card"><h3>Privilège</h3><div class="pricing-price"><span class="pricing-amount">10 000</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Pour les traders exigeants, accès complet et support premium.</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
         </div>
     </div>
 </section>
@@ -224,9 +249,9 @@
 <section class="cta-banner cta-banner-large">
     <div class="container">
         <div class="cta-banner-inner">
-            <h2>Prêt à transformer votre trading ?</h2>
-            <p>Activez votre agent IA dès maintenant et commencez à gagner.</p>
-            <a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a>
+            <h2>Prêt à Révolutionner Votre Trading Forex ?</h2>
+            <p>Activez ForexBot AI aujourd'hui et rejoignez l'élite des traders qui profitent de l'intelligence artificielle.</p>
+            <a href="#signup" class="btn btn-primary btn-lg">Activer Mon Agent IA</a>
         </div>
     </div>
 </section>
@@ -235,8 +260,8 @@
     <div class="container">
         <div class="signup-wrapper">
             <div class="signup-info">
-                <h2>Prêt à laisser l'IA trader le Forex pour Vous ? <span class="gradient-text">trader le Forex</span></h2>
-                <p>Rejoignez la révolution du trading automatisé. Activez votre agent IA et commencez à générer des revenus passifs.</p>
+                <h2>Prêt à laisser l'IA faire le trading forex pour Vous ? <span class="gradient-text">le trading forex</span></h2>
+                <p>Rejoignez la nouvelle génération de traders. Activez votre agent ForexBot AI et commencez à transformer votre potentiel financier.</p>
                 <ul class="signup-benefits">
                     <li><span class="check">✓</span> Inscription rapide, sans engagement</li>
                     <li><span class="check">✓</span> Support 24/7</li>
@@ -246,8 +271,8 @@
             </div>
             <div class="signup-form-wrapper">
                 <form class="signup-form" id="signupForm">
-                    <h3>Ouvrez Votre Compte Gratuitement</h3>
-                    <p class="form-subtitle">Accès immédiat à votre tableau de bord.</p>
+                    <h3>Ouvrez Votre Compte Gratuit</h3>
+                    <p class="form-subtitle">Accès immédiat à votre tableau de bord intelligent.</p>
                     <div class="form-min-invest">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
                         <span>Investissement minimum : <strong>250 €</strong></span>
@@ -258,7 +283,7 @@
                     <div class="form-group"><label for="phone">Numéro de Téléphone</label><input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" required></div>
                     <div class="form-group"><label for="experience">Expérience</label><select id="experience" name="experience" required><option value="" disabled selected>Sélectionnez votre niveau</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé</option><option value="expert">Expert</option></select></div>
                     <div class="form-checkbox"><input type="checkbox" id="terms" name="terms" required><label for="terms">J'accepte les <a href="terms.html" target="_blank">Conditions d'Utilisation</a> et la <a href="privacy.html" target="_blank">Politique de Confidentialité</a></label></div>
-                    <button type="submit" class="btn btn-primary btn-full">Activer l'agent IA</button>
+                    <button type="submit" class="btn btn-primary btn-full">Activer Mon Agent IA</button>
                 </form>
             </div>
         </div>
@@ -267,16 +292,16 @@
 
 <section class="faq" id="faq">
     <div class="container">
-        <div class="section-header"><span class="section-tag">FAQ</span><h2>Questions Fréquentes sur le Trading IA</h2></div>
+        <div class="section-header"><span class="section-tag">FAQ</span><h2>Questions Fréquentes</h2></div>
         <div class="faq-list">
-            <div class="faq-item"><button class="faq-question"><span>Comment fonctionne le trading automatisé par IA ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Notre IA analyse en temps réel les données du marché Forex, identifie les schémas de trading rentables et exécute des transactions automatiquement selon des stratégies prédéfinies et adaptatives.</p></div></div>
-            <div class="faq-item"><button class="faq-question"><span>Quel est le risque associé à ForexBot AI ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Le trading comporte des risques. Bien que notre IA soit conçue pour minimiser les pertes grâce à des analyses sophistiquées, les performances passées ne garantissent pas les résultats futurs. Nous recommandons de ne jamais investir plus que ce que vous pouvez vous permettre de perdre.</p></div></div>
-            <div class="faq-item"><button class="faq-question"><span>Quel est l'investissement minimum requis ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Vous pouvez commencer à utiliser ForexBot AI avec un investissement minimum de 250€. Ce montant vous donne accès à toutes les fonctionnalités de base de notre agent IA.</p></div></div>
-            <div class="faq-item"><button class="faq-question"><span>Dois-je avoir des connaissances en trading pour utiliser ForexBot AI ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Non, absolument pas. ForexBot AI est conçu pour les traders de tous niveaux, y compris les débutants complets. L'IA s'occupe de tout le travail analytique et d'exécution.</p></div></div>
-            <div class="faq-item"><button class="faq-question"><span>Comment puis-je suivre mes performances ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Vous aurez accès à un tableau de bord personnalisé où vous pourrez suivre en temps réel les trades exécutés, vos gains, vos pertes et l'évolution globale de votre portefeuille.</p></div></div>
-            <div class="faq-item"><button class="faq-question"><span>Que se passe-t-il si le marché est très volatil ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Notre IA est programmée pour réagir rapidement aux changements de volatilité. Elle ajustera ses stratégies pour naviguer au mieux dans ces conditions, en privilégiant la préservation du capital et la recherche d'opportunités.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Qu'est-ce que ForexBot AI et comment fonctionne-t-il ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>ForexBot AI est un agent de trading intelligent basé sur l'IA, conçu pour analyser le marché du Forex et exécuter des trades de manière autonome. Il utilise des algorithmes avancés pour identifier les opportunités et gérer les risques 24h/24.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Quel est l'investissement minimum requis pour démarrer ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>L'investissement minimum recommandé pour activer votre agent ForexBot AI est de 250 €. Cela permet à l'IA de disposer d'un capital suffisant pour appliquer ses stratégies de manière optimale.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Est-ce que ForexBot AI est sûr et réglementé ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>ForexBot AI est une technologie logicielle. La sécurité de vos fonds dépend de votre courtier Forex. Nous recommandons toujours d'utiliser des courtiers réglementés. Notre plateforme utilise des protocoles de sécurité robustes pour la protection de vos données.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Puis-je personnaliser les stratégies de trading de l'IA ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Oui, ForexBot AI offre des options de personnalisation. Vous pouvez ajuster des paramètres clés tels que le niveau de risque, les paires de devises préférées ou les objectifs de profit pour que l'IA s'aligne avec votre profil d'investisseur.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Quels sont les résultats typiques que je peux attendre ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Bien que les performances passées ne garantissent pas les résultats futurs, nos utilisateurs ont constaté des rendements annuels moyens compétitifs. Les résultats varient en fonction des conditions de marché et des paramètres choisis.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Comment puis-je retirer mes profits générés par ForexBot AI ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Les profits générés par ForexBot AI sont directement crédités sur votre compte de trading chez votre courtier. Vous pouvez retirer vos fonds à tout moment, conformément aux politiques de retrait de votre courtier.</p></div></div>
         </div>
-        <div class="faq-cta" style="text-align:center;margin-top:40px;"><a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a></div>
+        <div class="faq-cta" style="text-align:center;margin-top:40px;"><a href="#signup" class="btn btn-primary btn-lg">Activer Mon Agent IA</a></div>
     </div>
 </section>
 
@@ -285,13 +310,13 @@
         <div class="footer-top">
             <div class="footer-brand">
                 <a href="#" class="logo"><span class="logo-icon">◆</span> ForexBot<span class="logo-accent">AI</span></a>
-                <p>ForexBot AI, le futur du trading Forex automatisé par intelligence artificielle. Investissez intelligemment.</p>
-                <a href="#signup" class="btn btn-outline footer-cta">Activer l'agent IA →</a>
+                <p>ForexBot AI est la solution de trading nouvelle génération qui met l'intelligence artificielle au service de vos investissements Forex. Simplifiez, automatisez, gagnez.</p>
+                <a href="#signup" class="btn btn-outline footer-cta">Activer Mon Agent IA →</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 ForexBot AI. Tous droits réservés.</p>
-            <p class="risk-warning">Le trading sur le marché des devises (Forex) présente un risque élevé de perte en capital. Les performances passées ne préjugent pas des performances futures. Investissez uniquement les fonds que vous pouvez vous permettre de perdre.</p>
+            <p class="risk-warning">Le trading sur le marché des changes (Forex) comporte un niveau de risque élevé et peut ne pas convenir à tous les investisseurs. La spéculation sur marge peut entraîner des pertes supérieures à votre dépôt initial. Assurez-vous de bien comprendre les risques avant d'investir.</p>
         </div>
     </div>
 </footer>
