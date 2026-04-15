@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "crypto-mind",
+    "domain": "crypto-mind.net",
+    "siteName": "CryptoMind AI",
+    "niche": "AI crypto trading",
+    "lang": "fr",
+    "articlesPerDay": 24,
+    "productPitch": "Agent IA qui trade les cryptos pour vous, 24h/24",
+    "minInvest": 250,
+    "currency": "€",
+    "ctaPrimary": "Activer l'agent IA",
+    "leadWebhook": "https://script.google.com/macros/s/AKfycbxFSjheiMjGA9tYY5vA9M7j8r-yhb1BYl42BI4Epqk3v4cE_8ud-J8BENVl2DWiwN95Ug/exec",
+    "telegramChatId": "",
+    "telegramBotToken": "",
+    "themes": [
+      "crypto-monnaies",
+      "intelligence-artificielle",
+      "trading-algorithmique",
+      "defi-finance-decentralisee",
+      "blockchain"
+    ],
+    "rssFeeds": [
+      { "url": "https://cointelegraph.com/rss", "category": "crypto", "lang": "en" },
+      { "url": "https://www.coindesk.com/arc/outboundfeeds/rss/", "category": "crypto", "lang": "en" },
+      { "url": "https://cryptonews.com/news/feed/", "category": "crypto", "lang": "en" },
+      { "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "ia", "lang": "en" },
+      { "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "ia", "lang": "en" },
+      { "url": "https://feeds.arstechnica.com/arstechnica/technology-lab", "category": "ia", "lang": "en" },
+      { "url": "https://feeds.bloomberg.com/technology/news.rss", "category": "investissement", "lang": "en" }
+    ],
+    "active": true
+  }
+]

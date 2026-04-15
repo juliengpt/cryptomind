@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "generate": "node index.js 3",
-    "generate:1": "node index.js 1",
-    "generate:5": "node index.js 5",
-    "generate:10": "node index.js 10",
-    "cron": "node cron.js 3 60",
-    "cron:fast": "node cron.js 3 30",
-    "cron:turbo": "node cron.js 5 20",
-    "images": "node generate-images.js"
+    "publish": "node publish-for-site.js",
+    "publish:all": "node publish-for-site.js --all",
+    "cron": "node cron-runner.js",
+    "scaffold": "node scaffold-site.js"
   },
   "keywords": [],
   "author": "",
@@ -19,9 +15,6 @@
   "dependencies": {
     "dotenv": "^17.4.2",
     "googleapis": "^171.4.0",
-    "playwright": "^1.59.1",
-    "rss-parser": "^3.13.0",
-    "slugify": "^1.6.9",
-    "xml2js": "^0.6.2"
+    "rss-parser": "^3.13.0"
   }
 }

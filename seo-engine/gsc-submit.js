@@ -59,18 +59,19 @@ async function submitUrl(url) {
   }
 }
 
-async function submitNewArticles(slugs) {
+async function submitNewArticles(slugs, siteUrl) {
+  // siteUrl: optional override (e.g. 'https://crypto-mind.net'). Defaults to config.siteUrl
+  const baseUrl = (siteUrl || config.siteUrl).replace(/\/$/, '');
   let submitted = 0;
 
   for (const slug of slugs) {
-    const url = `${config.siteUrl}/blog/articles/${slug}.html`;
+    const url = `${baseUrl}/blog/articles/${slug}.html`;
     const success = await submitUrl(url);
     if (success) submitted++;
   }
 
-  // Also submit the blog index
   if (slugs.length > 0) {
-    await submitUrl(`${config.siteUrl}/blog/`);
+    await submitUrl(`${baseUrl}/blog/`);
   }
 
   return submitted;

@@ -1,0 +1,83 @@
+name: Hourly Auto-Publish
+
+# Runs every hour at xx:05. Each run iterates active sites in sites.json,
+# uses per-site articlesPerDay accumulator to decide who publishes.
+# Free LLM (Gemini) + Pexels images + Google Indexing API + git push.
+
+on:
+  schedule:
+    - cron: '5 * * * *'
+  workflow_dispatch: {}  # Manual trigger from GitHub UI
+
+permissions:
+  contents: write  # Required to commit & push
+
+concurrency:
+  group: hourly-publish
+  cancel-in-progress: false  # Wait for prior run to finish; never overlap
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install seo-engine dependencies
+        working-directory: seo-engine
+        run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+
+      - name: Write GSC service account credentials
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          if [ -n "$GSC_SERVICE_ACCOUNT_JSON" ]; then
+            echo "$GSC_SERVICE_ACCOUNT_JSON" > seo-engine/gsc-credentials.json
+          else
+            echo "WARN: GSC_SERVICE_ACCOUNT_JSON not set, GSC submission will be skipped"
+          fi
+
+      - name: Run cron-runner
+        working-directory: seo-engine
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: node cron-runner.js
+
+      - name: Commit & push
+        run: |
+          # Remove credentials file before commit so it never lands in git
+          rm -f seo-engine/gsc-credentials.json
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Auto-publish: $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+
+          # Retry push to handle concurrent updates
+          for i in 1 2 3; do
+            if git push origin HEAD; then
+              echo "Push succeeded on attempt $i"
+              break
+            fi
+            echo "Push failed, pulling latest..."
+            git pull --rebase origin "$(git rev-parse --abbrev-ref HEAD)"
+            sleep $((i * 3))
+          done

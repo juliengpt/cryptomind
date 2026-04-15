@@ -2,6 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const config = require('./config');
 
+// Merge per-site overrides with global config defaults.
+// siteConfig fields: siteUrl, siteName, blogDir, articlesDir, productPitch, minInvest, currency, ctaPrimary, lang
+function mergeCfg(siteConfig = {}) {
+  const siteUrl = siteConfig.siteUrl
+    || (siteConfig.domain ? `https://${siteConfig.domain.replace(/^https?:\/\//, '').replace(/\/$/, '')}` : null)
+    || config.siteUrl;
+  return {
+    siteUrl,
+    siteName: siteConfig.siteName || config.siteName,
+    blogDir: siteConfig.blogDir || config.blogDir,
+    articlesDir: siteConfig.articlesDir || config.articlesDir,
+    productPitch: siteConfig.productPitch || "L'agent IA qui trade pour vous",
+    minInvest: siteConfig.minInvest || 250,
+    currency: siteConfig.currency || '€',
+    ctaPrimary: siteConfig.ctaPrimary || "Activer l'agent IA",
+    lang: siteConfig.lang || 'fr',
+  };
+}
+
 // CTA variants — all focused on the AI trading agent
 const CTA_VARIANTS = [
   {
@@ -31,7 +50,7 @@ const CTA_VARIANTS = [
 ];
 
 // Inject CTAs throughout the article
-function injectMidCTA(content, category) {
+function injectMidCTA(content, category, c) {
   let h2Count = 0;
   let ctaIndex = 0;
 
@@ -47,7 +66,7 @@ function injectMidCTA(content, category) {
         <div class="cta-inline-title">${cta.title}</div>
         <div class="cta-inline-text">${cta.text}</div>
     </div>
-    <a href="${config.siteUrl}#signup" class="cta-inline-btn">${cta.btn}</a>
+    <a href="${c.siteUrl}#signup" class="cta-inline-btn">${cta.btn}</a>
 </div>\n${match}`;
     }
 
@@ -57,7 +76,7 @@ function injectMidCTA(content, category) {
     <div class="cta-newsletter-inner">
         <strong>L'agent IA qui trade pour vous</strong>
         <span>Rejoignez +8 000 investisseurs qui laissent notre IA exécuter leurs trades 24h/24.</span>
-        <a href="${config.siteUrl}#signup" class="cta-btn-sm">Activer l'agent</a>
+        <a href="${c.siteUrl}#signup" class="cta-btn-sm">Activer l'agent</a>
     </div>
 </div>\n${match}`;
     }
@@ -71,7 +90,7 @@ function injectMidCTA(content, category) {
         <div class="cta-inline-title">${cta.title}</div>
         <div class="cta-inline-text">${cta.text}</div>
     </div>
-    <a href="${config.siteUrl}#signup" class="cta-inline-btn">${cta.btn}</a>
+    <a href="${c.siteUrl}#signup" class="cta-inline-btn">${cta.btn}</a>
 </div>\n${match}`;
     }
 
@@ -79,7 +98,8 @@ function injectMidCTA(content, category) {
   });
 }
 
-function buildArticleHTML(article) {
+function buildArticleHTML(article, siteConfig = {}) {
+  const c = mergeCfg(siteConfig);
   const publishDate = new Date(article.generatedAt);
   const dateStr = publishDate.toLocaleDateString('fr-FR', {
     year: 'numeric',
@@ -96,47 +116,47 @@ function buildArticleHTML(article) {
     description: article.metaDescription,
     datePublished: isoDate,
     dateModified: isoDate,
-    ...(heroImage ? { image: `${config.siteUrl}/blog/images/${article.slug}.png` } : {}),
+    ...(heroImage ? { image: `${c.siteUrl}/blog/images/${article.slug}.png` } : {}),
     author: {
       '@type': 'Organization',
-      name: config.siteName,
-      url: config.siteUrl,
+      name: c.siteName,
+      url: c.siteUrl,
     },
     publisher: {
       '@type': 'Organization',
-      name: config.siteName,
-      url: config.siteUrl,
+      name: c.siteName,
+      url: c.siteUrl,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${config.siteUrl}/blog/articles/${article.slug}.html`,
+      '@id': `${c.siteUrl}/blog/articles/${article.slug}.html`,
     },
     articleSection: article.category,
     keywords: article.tags.join(', '),
   };
 
-  const contentWithCTAs = injectMidCTA(article.content, article.category);
+  const contentWithCTAs = injectMidCTA(article.content, article.category, c);
 
   const heroImagePath = `../images/${article.slug}.png`;
-  const hasHero = heroImage || fs.existsSync(path.join(config.blogDir, 'images', `${article.slug}.png`));
+  const hasHero = heroImage || fs.existsSync(path.join(c.blogDir, 'images', `${article.slug}.png`));
 
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${escapeHtml(article.title)} — ${config.siteName}</title>
+    <title>${escapeHtml(article.title)} — ${c.siteName}</title>
     <meta name="description" content="${escapeHtml(article.metaDescription)}">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="${config.siteUrl}/blog/articles/${article.slug}.html">
+    <link rel="canonical" href="${c.siteUrl}/blog/articles/${article.slug}.html">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="${escapeHtml(article.title)}">
     <meta property="og:description" content="${escapeHtml(article.metaDescription)}">
-    <meta property="og:url" content="${config.siteUrl}/blog/articles/${article.slug}.html">
-    <meta property="og:site_name" content="${config.siteName}">
-    ${hasHero ? `<meta property="og:image" content="${config.siteUrl}/blog/images/${article.slug}.png">` : ''}
+    <meta property="og:url" content="${c.siteUrl}/blog/articles/${article.slug}.html">
+    <meta property="og:site_name" content="${c.siteName}">
+    ${hasHero ? `<meta property="og:image" content="${c.siteUrl}/blog/images/${article.slug}.png">` : ''}
     <meta property="article:published_time" content="${isoDate}">
     <meta property="article:section" content="${article.category}">
     ${article.tags.map((t) => `<meta property="article:tag" content="${escapeHtml(t)}">`).join('\n    ')}
@@ -145,7 +165,7 @@ function buildArticleHTML(article) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(article.title)}">
     <meta name="twitter:description" content="${escapeHtml(article.metaDescription)}">
-    ${hasHero ? `<meta name="twitter:image" content="${config.siteUrl}/blog/images/${article.slug}.png">` : ''}
+    ${hasHero ? `<meta name="twitter:image" content="${c.siteUrl}/blog/images/${article.slug}.png">` : ''}
 
     <!-- Schema.org -->
     <script type="application/ld+json">${JSON.stringify(schemaOrg)}</script>
@@ -609,13 +629,13 @@ function buildArticleHTML(article) {
 <body>
     <nav class="nav">
         <div class="nav-inner">
-            <a href="${config.siteUrl}" class="nav-logo">◆ CryptoMind<span>AI</span></a>
+            <a href="${c.siteUrl}" class="nav-logo">◆ CryptoMind<span>AI</span></a>
             <ul class="nav-links">
-                <li><a href="${config.siteUrl}">Accueil</a></li>
-                <li><a href="${config.siteUrl}/blog/">Blog</a></li>
-                <li class="hide-mobile"><a href="${config.siteUrl}#performance">Performance</a></li>
-                <li class="hide-mobile"><a href="${config.siteUrl}#pricing">Tarifs</a></li>
-                <li><a href="${config.siteUrl}#signup" class="nav-cta">Commencer</a></li>
+                <li><a href="${c.siteUrl}">Accueil</a></li>
+                <li><a href="${c.siteUrl}/blog/">Blog</a></li>
+                <li class="hide-mobile"><a href="${c.siteUrl}#performance">Performance</a></li>
+                <li class="hide-mobile"><a href="${c.siteUrl}#pricing">Tarifs</a></li>
+                <li><a href="${c.siteUrl}#signup" class="nav-cta">Commencer</a></li>
             </ul>
         </div>
     </nav>
@@ -658,7 +678,7 @@ function buildArticleHTML(article) {
         <div class="article-cta">
             <h3>L'agent IA qui trade pour vous</h3>
             <p>Pendant que vous lisez nos analyses, notre agent IA analyse les marchés crypto 24h/24 et exécute les trades à votre place. <strong>+127% de rendement moyen en 2025</strong>. Rejoignez +8 000 investisseurs.</p>
-            <a href="${config.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
+            <a href="${c.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
             <div class="cta-subtext">À partir de 250 € · Garantie satisfait ou remboursé 30 jours</div>
         </div>
     </article>
@@ -669,7 +689,7 @@ function buildArticleHTML(article) {
     <!-- Sticky bottom CTA -->
     <div class="sticky-cta" id="stickyCta">
         <span class="sticky-cta-text"><strong>CryptoMind AI</strong> — L'IA qui analyse pour vous</span>
-        <a href="${config.siteUrl}#signup" class="sticky-cta-btn">Essai gratuit →</a>
+        <a href="${c.siteUrl}#signup" class="sticky-cta-btn">Essai gratuit →</a>
     </div>
 
     <!-- Social proof toast -->
@@ -685,7 +705,7 @@ function buildArticleHTML(article) {
             <div class="modal-icon">◆</div>
             <h3>L'agent IA qui trade pour vous</h3>
             <p>Notre agent IA <strong>analyse, décide et exécute</strong> vos trades crypto en temps réel, 24h/24. Sans émotions, sans stress, sans intervention humaine. <strong>+127% de rendement moyen en 2025</strong>.</p>
-            <a href="${config.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
+            <a href="${c.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
             <div class="modal-subtext">À partir de 250 € · Garantie 30 jours satisfait ou remboursé</div>
             <div class="modal-social">
                 <div class="modal-avatars">
@@ -707,15 +727,15 @@ function buildArticleHTML(article) {
             <div class="modal-icon">⚡</div>
             <h3>Attendez — un dernier truc</h3>
             <p>Les marchés n'attendent pas. Nos algorithmes IA analysent les données 24h/24 et envoient des alertes avant les mouvements majeurs.</p>
-            <a href="${config.siteUrl}#signup" class="cta-btn">Activer les alertes IA gratuitement</a>
+            <a href="${c.siteUrl}#signup" class="cta-btn">Activer les alertes IA gratuitement</a>
             <div class="modal-subtext">Gratuit pendant 30 jours · Sans engagement</div>
         </div>
     </div>
 
     <footer class="blog-footer">
-        <p>© ${new Date().getFullYear()} ${config.siteName}. Tous droits réservés.</p>
+        <p>© ${new Date().getFullYear()} ${c.siteName}. Tous droits réservés.</p>
         <p style="margin-top: 8px;">
-            <a href="${config.siteUrl}">Accueil</a> · <a href="${config.siteUrl}/blog/">Blog</a>
+            <a href="${c.siteUrl}">Accueil</a> · <a href="${c.siteUrl}/blog/">Blog</a>
         </p>
     </footer>
 
@@ -812,7 +832,7 @@ function buildArticleHTML(article) {
                 gate.innerHTML = '<div class="content-gate-inner">' +
                     '<h3>Inscrivez-vous pour lire la suite</h3>' +
                     '<p>Cet article contient encore des analyses exclusives. Créez votre compte gratuit pour y accéder.</p>' +
-                    '<a href="${config.siteUrl}#signup" class="cta-btn">Lire la suite gratuitement</a>' +
+                    '<a href="${c.siteUrl}#signup" class="cta-btn">Lire la suite gratuitement</a>' +
                     '<div class="content-gate-count">Déjà 8 247 membres inscrits</div>' +
                 '</div>';
 
@@ -838,7 +858,8 @@ function buildArticleHTML(article) {
 </html>`;
 }
 
-function buildBlogIndex(articles) {
+function buildBlogIndex(articles, siteConfig = {}) {
+  const c = mergeCfg(siteConfig);
   const cards = articles
     .sort((a, b) => new Date(b.generatedAt) - new Date(a.generatedAt))
     .map((a) => {
@@ -847,7 +868,7 @@ function buildBlogIndex(articles) {
         month: 'long',
         day: 'numeric',
       });
-      const hasImage = fs.existsSync(path.join(config.blogDir, 'images', `${a.slug}.png`));
+      const hasImage = fs.existsSync(path.join(c.blogDir, 'images', `${a.slug}.png`));
       const imageTag = hasImage
         ? `<div class="card-image"><img src="images/${a.slug}.png" alt="${escapeHtml(a.title)}" loading="lazy"></div>`
         : `<div class="card-image card-image-placeholder"><span>◆</span></div>`;
@@ -872,11 +893,11 @@ function buildBlogIndex(articles) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — ${config.siteName} | Actualités IA, Crypto & Investissement</title>
+    <title>Blog — ${c.siteName} | Actualités IA, Crypto & Investissement</title>
     <meta name="description" content="Découvrez nos analyses et actualités sur l'intelligence artificielle, les crypto-monnaies et l'investissement technologique.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="${config.siteUrl}/blog/">
-    <meta property="og:title" content="Blog — ${config.siteName}">
+    <link rel="canonical" href="${c.siteUrl}/blog/">
+    <meta property="og:title" content="Blog — ${c.siteName}">
     <meta property="og:description" content="Analyses et actualités sur l'IA, les crypto-monnaies et l'investissement.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1014,13 +1035,13 @@ function buildBlogIndex(articles) {
 <body>
     <nav class="nav">
         <div class="nav-inner">
-            <a href="${config.siteUrl}" class="nav-logo">◆ CryptoMind<span>AI</span></a>
+            <a href="${c.siteUrl}" class="nav-logo">◆ CryptoMind<span>AI</span></a>
             <ul class="nav-links">
-                <li><a href="${config.siteUrl}">Accueil</a></li>
-                <li><a href="${config.siteUrl}/blog/" style="color:#fff">Blog</a></li>
-                <li class="hide-mobile"><a href="${config.siteUrl}#performance">Performance</a></li>
-                <li class="hide-mobile"><a href="${config.siteUrl}#pricing">Tarifs</a></li>
-                <li><a href="${config.siteUrl}#signup" class="nav-cta">Commencer</a></li>
+                <li><a href="${c.siteUrl}">Accueil</a></li>
+                <li><a href="${c.siteUrl}/blog/" style="color:#fff">Blog</a></li>
+                <li class="hide-mobile"><a href="${c.siteUrl}#performance">Performance</a></li>
+                <li class="hide-mobile"><a href="${c.siteUrl}#pricing">Tarifs</a></li>
+                <li><a href="${c.siteUrl}#signup" class="nav-cta">Commencer</a></li>
             </ul>
         </div>
     </nav>
@@ -1028,7 +1049,7 @@ function buildBlogIndex(articles) {
     <header class="blog-header">
         <h1>Blog</h1>
         <p>Analyses, tendances et décryptages sur l'intelligence artificielle, les crypto-monnaies et l'investissement technologique.</p>
-        <a href="${config.siteUrl}#signup" class="blog-header-cta">Découvrir CryptoMind AI →</a>
+        <a href="${c.siteUrl}#signup" class="blog-header-cta">Découvrir CryptoMind AI →</a>
     </header>
 
     <div class="blog-grid">
@@ -1036,18 +1057,19 @@ function buildBlogIndex(articles) {
     </div>
 
     <footer class="blog-footer">
-        <p>© ${new Date().getFullYear()} ${config.siteName}. Tous droits réservés.</p>
+        <p>© ${new Date().getFullYear()} ${c.siteName}. Tous droits réservés.</p>
     </footer>
 </body>
 </html>`;
 }
 
-function buildSitemap(articles) {
+function buildSitemap(articles, siteConfig = {}) {
+  const c = mergeCfg(siteConfig);
   const urls = [
-    { loc: `${config.siteUrl}/`, priority: '1.0', changefreq: 'weekly' },
-    { loc: `${config.siteUrl}/blog/`, priority: '0.9', changefreq: 'hourly' },
+    { loc: `${c.siteUrl}/`, priority: '1.0', changefreq: 'weekly' },
+    { loc: `${c.siteUrl}/blog/`, priority: '0.9', changefreq: 'hourly' },
     ...articles.map((a) => ({
-      loc: `${config.siteUrl}/blog/articles/${a.slug}.html`,
+      loc: `${c.siteUrl}/blog/articles/${a.slug}.html`,
       lastmod: new Date(a.generatedAt).toISOString().split('T')[0],
       priority: '0.7',
       changefreq: 'monthly',

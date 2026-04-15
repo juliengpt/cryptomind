@@ -4,5 +4,10 @@ node_modules/
 seo-engine/.env
 seo-engine/node_modules/
 seo-engine/data/seen-articles.json
+seo-engine/data/seen/
+seo-engine/data/cron-state.json
+seo-engine/data/cron-runner.log
+seo-engine/data/auto-hourly.log
+seo-engine/gsc-credentials.json
 my-video/node_modules/
 my-video/.browser-data/
