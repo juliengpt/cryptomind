@@ -52,6 +52,7 @@ function siteConfigForBuilder(site) {
     domain: site.domain,
     siteUrl: `https://${site.domain.replace(/^https?:\/\//, '').replace(/\/$/, '')}`,
     siteName: site.siteName,
+    niche: site.niche,
     blogDir: dirs.blogDir,
     articlesDir: dirs.articlesDir,
     productPitch: site.productPitch,

@@ -696,7 +696,7 @@ function buildArticleHTML(article, siteConfig = {}) {
 
     <!-- Sticky bottom CTA -->
     <div class="sticky-cta" id="stickyCta">
-        <span class="sticky-cta-text"><strong>CryptoMind AI</strong> — L'IA qui analyse pour vous</span>
+        <span class="sticky-cta-text"><strong>${c.siteName}</strong> — L'IA qui travaille pour vous</span>
         <a href="${c.siteUrl}#signup" class="sticky-cta-btn">Essai gratuit →</a>
     </div>
 
@@ -901,12 +901,12 @@ function buildBlogIndex(articles, siteConfig = {}) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — ${c.siteName} | Actualités IA, Crypto & Investissement</title>
-    <meta name="description" content="Découvrez nos analyses et actualités sur l'intelligence artificielle, les crypto-monnaies et l'investissement technologique.">
+    <title>Blog — ${c.siteName} | Actualités et analyses ${c.niche}</title>
+    <meta name="description" content="Analyses et actualités sur ${c.niche}. Décryptages par ${c.siteName}.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="${c.siteUrl}/blog/">
     <meta property="og:title" content="Blog — ${c.siteName}">
-    <meta property="og:description" content="Analyses et actualités sur l'IA, les crypto-monnaies et l'investissement.">
+    <meta property="og:description" content="Analyses et actualités sur ${c.niche}.">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1056,8 +1056,8 @@ function buildBlogIndex(articles, siteConfig = {}) {
 
     <header class="blog-header">
         <h1>Blog</h1>
-        <p>Analyses, tendances et décryptages sur l'intelligence artificielle, les crypto-monnaies et l'investissement technologique.</p>
-        <a href="${c.siteUrl}#signup" class="blog-header-cta">Découvrir CryptoMind AI →</a>
+        <p>Analyses, tendances et décryptages sur ${c.niche}. Par ${c.siteName}.</p>
+        <a href="${c.siteUrl}#signup" class="blog-header-cta">Découvrir ${c.siteName} →</a>
     </header>
 
     <div class="blog-grid">
