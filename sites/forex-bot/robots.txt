@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://forexbotia.com/sitemap.xml

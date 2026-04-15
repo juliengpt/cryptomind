@@ -21,13 +21,73 @@
       "blockchain"
     ],
     "rssFeeds": [
-      { "url": "https://cointelegraph.com/rss", "category": "crypto", "lang": "en" },
-      { "url": "https://www.coindesk.com/arc/outboundfeeds/rss/", "category": "crypto", "lang": "en" },
-      { "url": "https://cryptonews.com/news/feed/", "category": "crypto", "lang": "en" },
-      { "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "ia", "lang": "en" },
-      { "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "ia", "lang": "en" },
-      { "url": "https://feeds.arstechnica.com/arstechnica/technology-lab", "category": "ia", "lang": "en" },
-      { "url": "https://feeds.bloomberg.com/technology/news.rss", "category": "investissement", "lang": "en" }
+      {
+        "url": "https://cointelegraph.com/rss",
+        "category": "crypto",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+        "category": "crypto",
+        "lang": "en"
+      },
+      {
+        "url": "https://cryptonews.com/news/feed/",
+        "category": "crypto",
+        "lang": "en"
+      },
+      {
+        "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+        "category": "ia",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "category": "ia",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+        "category": "ia",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.bloomberg.com/technology/news.rss",
+        "category": "investissement",
+        "lang": "en"
+      }
+    ],
+    "active": true
+  },
+  {
+    "slug": "forex-bot",
+    "domain": "forexbotia.com",
+    "siteName": "ForexBot AI",
+    "niche": "trading forex automatisé par IA",
+    "lang": "fr",
+    "articlesPerDay": 4,
+    "productPitch": "Agent IA qui trade le forex pour vous 24h/24",
+    "minInvest": 250,
+    "currency": "€",
+    "ctaPrimary": "Activer l'agent IA",
+    "leadWebhook": "",
+    "telegramChatId": "",
+    "telegramBotToken": "",
+    "themes": [
+      "forex-trading",
+      "analyse-technique-forex",
+      "trading-algorithmique",
+      "intelligence-artificielle",
+      "investissement",
+      "marches-financiers"
+    ],
+    "rssFeeds": [
+      { "url": "https://www.investing.com/rss/news_1.rss", "category": "investissement", "lang": "en" },
+      { "url": "https://www.fxstreet.com/rss/news", "category": "forex", "lang": "en" },
+      { "url": "https://www.dailyfx.com/feeds/all", "category": "forex", "lang": "en" },
+      { "url": "https://www.forexlive.com/feed/news/", "category": "forex", "lang": "en" },
+      { "url": "https://feeds.bloomberg.com/markets/news.rss", "category": "investissement", "lang": "en" },
+      { "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/", "category": "investissement", "lang": "en" }
     ],
     "active": true
   }
