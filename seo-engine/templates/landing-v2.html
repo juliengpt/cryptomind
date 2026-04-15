@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta.title}}</title>
+    <meta name="description" content="{{meta.description}}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{siteUrl}}/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{meta.title}}">
+    <meta property="og:description" content="{{meta.description}}">
+    <meta property="og:url" content="{{siteUrl}}/">
+    <meta property="og:site_name" content="{{siteName}}">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="#" class="logo"><span class="logo-icon">◆</span> {{siteBrandHtml}}</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features">{{nav.features}}</a></li>
+            <li><a href="#how-it-works">{{nav.howItWorks}}</a></li>
+            <li><a href="#performance">{{nav.performance}}</a></li>
+            <li><a href="#testimonials">{{nav.testimonials}}</a></li>
+            <li><a href="#pricing">{{nav.pricing}}</a></li>
+            <li><a href="#signup" class="nav-cta">{{nav.cta}}</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="pulse-dot"></span> {{hero.badge}}</div>
+            <h1>{{hero.titleMain}}<br><span class="gradient-text">{{hero.titleAccent}}</span></h1>
+            <p class="hero-subtitle">{{hero.subtitle}}</p>
+            <div class="hero-actions">
+                <a href="#signup" class="btn btn-primary btn-lg">{{hero.ctaPrimary}}</a>
+                <a href="#how-it-works" class="btn btn-outline btn-lg">{{hero.ctaSecondary}}</a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-avatars">
+                    <div class="trust-avatar" style="background:#6366f1;">A</div>
+                    <div class="trust-avatar" style="background:#06b6d4;">J</div>
+                    <div class="trust-avatar" style="background:#ec4899;">M</div>
+                    <div class="trust-avatar" style="background:#10b981;">K</div>
+                    <div class="trust-avatar" style="background:#f59e0b;">+</div>
+                </div>
+                <span class="hero-trust-text">{{hero.trust}}</span>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-value">97.3</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">{{hero.stat1Label}}</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-value">24/7</span><span class="hero-stat-label">{{hero.stat2Label}}</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-value">+127</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">{{hero.stat3Label}}</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">{{features.tag}}</span>
+            <h2>{{features.title}} <span class="gradient-text">{{features.titleAccent}}</span></h2>
+            <p>{{features.desc}}</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">◆</div><h3>{{features.items[0].title}}</h3><p>{{features.items[0].desc}}</p></div>
+            <div class="feature-card"><div class="feature-icon">⚡</div><h3>{{features.items[1].title}}</h3><p>{{features.items[1].desc}}</p></div>
+            <div class="feature-card"><div class="feature-icon">🔒</div><h3>{{features.items[2].title}}</h3><p>{{features.items[2].desc}}</p></div>
+            <div class="feature-card"><div class="feature-icon">🎯</div><h3>{{features.items[3].title}}</h3><p>{{features.items[3].desc}}</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>{{features.items[4].title}}</h3><p>{{features.items[4].desc}}</p></div>
+            <div class="feature-card"><div class="feature-icon">🚀</div><h3>{{features.items[5].title}}</h3><p>{{features.items[5].desc}}</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="steps" id="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">{{steps.tag}}</span>
+            <h2>{{steps.title}} <span class="gradient-text">{{steps.titleAccent}}</span></h2>
+            <p>{{steps.desc}}</p>
+        </div>
+        <div class="steps-visual">
+            <div class="step-card"><div class="step-number">01</div><h3>{{steps.s1Title}}</h3><p>{{steps.s1Desc}}</p></div>
+            <div class="step-card"><div class="step-number">02</div><h3>{{steps.s2Title}}</h3><p>{{steps.s2Desc}}</p></div>
+            <div class="step-card"><div class="step-number">03</div><h3>{{steps.s3Title}}</h3><p>{{steps.s3Desc}}</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-banner-inner">
+            <h2>{{cta1Title}}</h2>
+            <p>{{cta1Subtitle}}</p>
+            <a href="#signup" class="btn btn-primary btn-lg">{{hero.ctaPrimary}}</a>
+        </div>
+    </div>
+</section>
+
+<section class="performance" id="performance">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">{{performance.tag}}</span>
+            <h2>{{performance.title}} <span class="gradient-text">{{performance.titleAccent}}</span></h2>
+            <p>{{performance.desc}}</p>
+        </div>
+        <div class="performance-grid">
+            <div class="perf-card"><div class="perf-value">+127%</div><div class="perf-label">2025</div></div>
+            <div class="perf-card"><div class="perf-value">97.3%</div><div class="perf-label">{{hero.stat1Label}}</div></div>
+            <div class="perf-card"><div class="perf-value">24/7</div><div class="perf-label">{{hero.stat2Label}}</div></div>
+            <div class="perf-card"><div class="perf-value">8 247</div><div class="perf-label">Utilisateurs actifs</div></div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">{{testimonials.tag}}</span>
+            <h2>{{testimonials.title}} <span class="gradient-text">{{testimonials.titleAccent}}</span></h2>
+            <p>{{testimonials.desc}}</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card"><p>{{testimonials.t1Text}}</p><div class="testimonial-author"><div class="author-name">{{testimonials.t1Author}}</div><div class="author-role">{{testimonials.t1Role}}</div></div></div>
+            <div class="testimonial-card"><p>{{testimonials.t2Text}}</p><div class="testimonial-author"><div class="author-name">{{testimonials.t2Author}}</div><div class="author-role">{{testimonials.t2Role}}</div></div></div>
+            <div class="testimonial-card"><p>{{testimonials.t3Text}}</p><div class="testimonial-author"><div class="author-name">{{testimonials.t3Author}}</div><div class="author-role">{{testimonials.t3Role}}</div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">{{pricing.tag}}</span>
+            <h2>{{pricing.title}} <span class="gradient-text">{{pricing.titleAccent}}</span></h2>
+            <p>{{pricing.desc}}</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card"><h3>{{pricing.starterName}}</h3><div class="pricing-price"><span class="pricing-amount">{{minInvest}}</span><span class="pricing-currency">{{currency}}</span></div><div class="pricing-desc">{{pricing.starterDesc}}</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
+            <div class="pricing-card popular"><div class="pricing-badge">Populaire</div><h3>{{pricing.proName}}</h3><div class="pricing-price"><span class="pricing-amount">1 000</span><span class="pricing-currency">{{currency}}</span></div><div class="pricing-desc">{{pricing.proDesc}}</div><a href="#signup" class="btn btn-primary btn-full">Commencer maintenant</a></div>
+            <div class="pricing-card"><h3>{{pricing.eliteName}}</h3><div class="pricing-price"><span class="pricing-amount">10 000</span><span class="pricing-currency">{{currency}}</span></div><div class="pricing-desc">{{pricing.eliteDesc}}</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner cta-banner-large">
+    <div class="container">
+        <div class="cta-banner-inner">
+            <h2>{{cta2Title}}</h2>
+            <p>{{cta2Subtitle}}</p>
+            <a href="#signup" class="btn btn-primary btn-lg">{{hero.ctaPrimary}}</a>
+        </div>
+    </div>
+</section>
+
+<section class="signup-section" id="signup">
+    <div class="container">
+        <div class="signup-wrapper">
+            <div class="signup-info">
+                <h2>{{signup.title}} <span class="gradient-text">{{signup.titleAccent}}</span></h2>
+                <p>{{signup.desc}}</p>
+                <ul class="signup-benefits">
+                    <li><span class="check">✓</span> Inscription rapide, sans engagement</li>
+                    <li><span class="check">✓</span> Support 24/7</li>
+                    <li><span class="check">✓</span> Retirez vos fonds à tout moment</li>
+                    <li><span class="check">✓</span> Garantie satisfait ou remboursé 30 jours</li>
+                </ul>
+            </div>
+            <div class="signup-form-wrapper">
+                <form class="signup-form" id="signupForm">
+                    <h3>{{signup.formTitle}}</h3>
+                    <p class="form-subtitle">{{signup.formSub}}</p>
+                    <div class="form-min-invest">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        <span>Investissement minimum : <strong>{{minInvest}} {{currency}}</strong></span>
+                    </div>
+                    <div class="form-group"><label for="firstName">Prénom</label><input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required></div>
+                    <div class="form-group"><label for="lastName">Nom</label><input type="text" id="lastName" name="lastName" placeholder="Votre nom" required></div>
+                    <div class="form-group"><label for="email">Adresse Email</label><input type="email" id="email" name="email" placeholder="vous@exemple.com" required></div>
+                    <div class="form-group"><label for="phone">Numéro de Téléphone</label><input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" required></div>
+                    <div class="form-group"><label for="experience">Expérience</label><select id="experience" name="experience" required><option value="" disabled selected>Sélectionnez votre niveau</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé</option><option value="expert">Expert</option></select></div>
+                    <div class="form-checkbox"><input type="checkbox" id="terms" name="terms" required><label for="terms">J'accepte les <a href="terms.html" target="_blank">Conditions d'Utilisation</a> et la <a href="privacy.html" target="_blank">Politique de Confidentialité</a></label></div>
+                    <button type="submit" class="btn btn-primary btn-full">{{hero.ctaPrimary}}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header"><span class="section-tag">{{faq.tag}}</span><h2>{{faq.title}}</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><button class="faq-question"><span>{{faq.q1}}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>{{faq.a1}}</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>{{faq.q2}}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>{{faq.a2}}</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>{{faq.q3}}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>{{faq.a3}}</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>{{faq.q4}}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>{{faq.a4}}</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>{{faq.q5}}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>{{faq.a5}}</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>{{faq.q6}}</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>{{faq.a6}}</p></div></div>
+        </div>
+        <div class="faq-cta" style="text-align:center;margin-top:40px;"><a href="#signup" class="btn btn-primary btn-lg">{{hero.ctaPrimary}}</a></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="logo"><span class="logo-icon">◆</span> {{siteBrandHtml}}</a>
+                <p>{{footer.desc}}</p>
+                <a href="#signup" class="btn btn-outline footer-cta">{{hero.ctaPrimary}} →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 {{siteName}}. Tous droits réservés.</p>
+            <p class="risk-warning">{{footer.warning}}</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
