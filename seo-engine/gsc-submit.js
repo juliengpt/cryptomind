@@ -26,7 +26,10 @@ async function getAuthClient() {
 
     authClient = new google.auth.GoogleAuth({
       credentials,
-      scopes: ['https://www.googleapis.com/auth/indexing'],
+      scopes: [
+        'https://www.googleapis.com/auth/indexing',
+        'https://www.googleapis.com/auth/webmasters',
+      ],
     });
 
     return authClient;
@@ -77,4 +80,27 @@ async function submitNewArticles(slugs, siteUrl) {
   return submitted;
 }
 
-module.exports = { submitUrl, submitNewArticles };
+// Submit (or refresh) a sitemap for a domain.
+// domain is the bare domain, e.g. 'forexbotia.com'.
+// Works for sc-domain: properties (set up as "Domain" in GSC).
+async function submitSitemap(domain) {
+  const auth = await getAuthClient();
+  if (!auth) return false;
+
+  try {
+    const { google } = require('googleapis');
+    const wm = google.webmasters({ version: 'v3', auth: await auth.getClient() });
+    const bare = domain.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    await wm.sitemaps.submit({
+      siteUrl: `sc-domain:${bare}`,
+      feedpath: `https://${bare}/sitemap.xml`,
+    });
+    console.log(`  [GSC] Sitemap refreshed: ${bare}`);
+    return true;
+  } catch (err) {
+    console.log(`  [GSC] Sitemap submit failed for ${domain}: ${err.message.slice(0, 120)}`);
+    return false;
+  }
+}
+
+module.exports = { submitUrl, submitNewArticles, submitSitemap };

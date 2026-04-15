@@ -13,7 +13,7 @@ const https = require('https');
 const { fetchAllNews, markUsed } = require('./news-fetcher');
 const { generateArticle } = require('./llm-gemini');
 const { buildArticleHTML, buildBlogIndex, buildSitemap } = require('./html-builder');
-const { submitNewArticles } = require('./gsc-submit');
+const { submitNewArticles, submitSitemap } = require('./gsc-submit');
 
 const ROOT = path.join(__dirname, '..');
 const SITES_FILE = path.join(__dirname, 'sites.json');
@@ -228,6 +228,8 @@ async function publishOneArticle(site) {
   // 9. Submit to GSC (best effort)
   try {
     await submitNewArticles([article.slug], cfg.siteUrl);
+    // Also ping sitemap so Google knows to re-crawl it (includes the new article)
+    await submitSitemap(site.domain);
   } catch (e) {
     console.log(`  GSC error: ${e.message}`);
   }
