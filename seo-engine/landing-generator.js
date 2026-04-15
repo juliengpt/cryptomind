@@ -17,6 +17,13 @@ const SITES_FILE = path.join(__dirname, 'sites.json');
 // Keys to fill via Gemini — structure the generator targets.
 // These keys map 1-to-1 to placeholders {{KEY}} in landing-template.html.
 const CONTENT_SCHEMA = `{
+  "theme": {
+    "primary": "Couleur hex principale cohérente avec la niche (ex: forex=#10b981 vert finance, santé=#3b82f6 bleu, luxe=#f59e0b or). PAS #6366f1 ni #8b5cf6 (déjà utilisés)",
+    "accent": "Couleur hex accent complémentaire (ex: #06b6d4, #f43f5e, #eab308)",
+    "gradientStart": "Hex pour gradient start — même que primary",
+    "gradientEnd": "Hex pour gradient end — proche de accent mais plus clair",
+    "glowRgb": "Les 3 valeurs RGB de la primary sans le #, séparées par virgules (ex: '16,185,129' pour #10b981)"
+  },
   "meta": {
     "title": "60-70 char SEO title combining site name and main keyword",
     "description": "150-160 char SEO meta description"

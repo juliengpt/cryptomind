@@ -17,6 +17,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: {{theme.primary}} !important;
+            --accent: {{theme.accent}} !important;
+            --gradient: linear-gradient(135deg, {{theme.gradientStart}}, {{theme.gradientEnd}}) !important;
+            --gradient-text: linear-gradient(135deg, {{theme.gradientStart}}, {{theme.gradientEnd}}, {{theme.gradientStart}}) !important;
+        }
+        .hero-glow { background: radial-gradient(circle, rgba({{theme.glowRgb}},0.18) 0%, transparent 70%) !important; }
+        .hero-bg-grid {
+            background-image:
+                linear-gradient(rgba({{theme.glowRgb}},0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba({{theme.glowRgb}},0.05) 1px, transparent 1px) !important;
+        }
+        .nav-cta, .btn-primary { background: var(--gradient) !important; }
+        .feature-icon, .step-number, .pricing-card.popular, .faq-cta .btn-primary {
+            background: var(--gradient) !important;
+        }
+        .logo-icon, .logo-accent, .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .form-min-invest {
+            background: linear-gradient(135deg, rgba({{theme.glowRgb}},0.15), rgba({{theme.glowRgb}},0.05)) !important;
+            border-color: rgba({{theme.glowRgb}},0.4) !important;
+        }
+        .form-min-invest svg, .form-min-invest strong { color: var(--primary) !important; }
+        .hero-badge .pulse-dot { background: var(--primary) !important; }
+    </style>
 </head>
 <body>
 
