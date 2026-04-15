@@ -37,42 +37,44 @@ function themeOverrideCss(theme) {
   const gStart = gradientStart || primary;
   const gEnd = gradientEnd || accent;
   const rgb = glowRgb || '99,102,241';
+  // Order matters with !important. Put general `a` rule first, then specific button overrides
+  // last so they win.
   return `<style>
     :root { --primary: ${primary} !important; --accent: ${accent} !important; }
-    .nav-cta, .cta-btn, .cta-btn-sm, .btn-primary,
-    .article-category, .tag, .progress-bar, .sticky-cta-btn,
-    .cta-inline-btn, .blog-header-cta, .card-image-overlay,
-    .faq-cta .btn-primary {
-      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
-    }
-    .sticky-cta-btn,
-    .cta-btn,
-    .cta-btn-sm,
-    .cta-inline-btn,
-    .nav-cta,
-    .btn-primary,
-    .blog-header-cta,
-    .faq-cta .btn-primary {
-      color: #0a0e1a !important;
-      font-weight: 800 !important;
-      text-shadow: none !important;
-    }
-    .article-tags .tag { color: ${primary} !important; }
-    .article-category { color: #0a0e1a !important; font-weight: 700 !important; }
     a { color: ${primary} !important; }
     .article-content em,
     .logo span,
     .content-gate-count,
-    .modal-icon {
+    .modal-icon,
+    .card-category {
       color: ${primary} !important;
-    }
-    .modal-avatar, .blog-card:hover {
-      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
     }
     .blog-card { border-color: rgba(${rgb},0.2); }
     .blog-card:hover { border-color: rgba(${rgb},0.5) !important; }
-    .card-category { color: ${primary} !important; }
-    .article-tags .tag { background: rgba(${rgb},0.15) !important; color: ${primary} !important; border-color: rgba(${rgb},0.3) !important; }
+    .modal-avatar, .blog-card:hover {
+      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
+    }
+    .article-tags .tag {
+      background: rgba(${rgb},0.15) !important;
+      color: ${primary} !important;
+      border-color: rgba(${rgb},0.3) !important;
+    }
+    /* Gradient backgrounds (must override originals) */
+    a.nav-cta, a.cta-btn, a.cta-btn-sm, a.btn-primary,
+    .article-category, a.progress-bar, a.sticky-cta-btn,
+    a.cta-inline-btn, a.blog-header-cta, .card-image-overlay,
+    .faq-cta a.btn-primary, button.cta-btn {
+      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
+    }
+    /* Dark text on colored CTAs — HIGH specificity, last to win */
+    a.sticky-cta-btn, a.cta-btn, a.cta-btn-sm, a.cta-inline-btn,
+    a.nav-cta, a.btn-primary, a.blog-header-cta,
+    .faq-cta a.btn-primary, button.cta-btn,
+    .article-category {
+      color: #0a0e1a !important;
+      font-weight: 800 !important;
+      text-shadow: none !important;
+    }
   </style>`;
 }
 
