@@ -45,6 +45,11 @@ function themeOverrideCss(theme) {
     .faq-cta .btn-primary {
       background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
     }
+    .sticky-cta-btn {
+      color: #0a0e1a !important;
+      font-weight: 800 !important;
+      text-shadow: none !important;
+    }
     a { color: ${primary} !important; }
     .article-content em,
     .logo span,
@@ -67,7 +72,7 @@ const CTA_VARIANTS = [
   {
     icon: '◆',
     title: "L'agent IA qui trade pour vous, 24h/24",
-    text: "Notre IA analyse, décide et exécute vos trades crypto en temps réel. Sans émotions, sans stress.",
+    text: "Notre IA analyse, décide et exécute vos trades en temps réel. Sans émotions, sans stress.",
     btn: "Activer l'agent IA →",
   },
   {
@@ -746,7 +751,7 @@ function buildArticleHTML(article, siteConfig = {}) {
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="modal-icon">◆</div>
             <h3>L'agent IA qui trade pour vous</h3>
-            <p>Notre agent IA <strong>analyse, décide et exécute</strong> vos trades crypto en temps réel, 24h/24. Sans émotions, sans stress, sans intervention humaine. <strong>+127% de rendement moyen en 2025</strong>.</p>
+            <p>Notre agent IA <strong>analyse, décide et exécute</strong> vos trades en temps réel, 24h/24. Sans émotions, sans stress, sans intervention humaine. <strong>+127% de rendement moyen en 2025</strong>.</p>
             <a href="${c.siteUrl}#signup" class="cta-btn">Activer l'agent IA</a>
             <div class="modal-subtext">À partir de 250 € · Garantie 30 jours satisfait ou remboursé</div>
             <div class="modal-social">
