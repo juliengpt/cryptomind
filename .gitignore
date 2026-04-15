@@ -8,6 +8,8 @@ seo-engine/data/seen/
 seo-engine/data/cron-state.json
 seo-engine/data/cron-runner.log
 seo-engine/data/auto-hourly.log
+seo-engine/data/scheduler.log
+seo-engine/run-hourly.bat
 seo-engine/gsc-credentials.json
 my-video/node_modules/
 my-video/.browser-data/

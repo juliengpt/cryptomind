@@ -89,6 +89,9 @@ REGLES STRICTES :
 }
 
 // === GEMINI ===
+// Tries multiple Gemini models in order — when one is overloaded (503), fall through to the next.
+const GEMINI_MODELS = ['gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash-lite'];
+
 async function callGemini(siteConfig, newsItem) {
   if (!GEMINI_API_KEY) throw new Error('GEMINI_API_KEY missing');
   const body = JSON.stringify({
@@ -99,17 +102,26 @@ async function callGemini(siteConfig, newsItem) {
       responseMimeType: 'application/json',
     },
   });
-  const { status, text } = await postJson({
-    hostname: 'generativelanguage.googleapis.com',
-    path: `/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`,
-    headers: { 'Content-Type': 'application/json' },
-    body,
-  });
-  if (status !== 200) throw new Error(`Gemini ${status}: ${text.slice(0, 200)}`);
-  const data = JSON.parse(text);
-  const out = data.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!out) throw new Error('Gemini empty response');
-  return extractJson(out);
+  const errors = [];
+  for (const model of GEMINI_MODELS) {
+    const { status, text } = await postJson({
+      hostname: 'generativelanguage.googleapis.com',
+      path: `/v1beta/models/${model}:generateContent?key=${GEMINI_API_KEY}`,
+      headers: { 'Content-Type': 'application/json' },
+      body,
+    });
+    if (status === 200) {
+      const data = JSON.parse(text);
+      const out = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (!out) { errors.push(`${model}: empty response`); continue; }
+      try { return extractJson(out); }
+      catch (e) { errors.push(`${model}: JSON parse error: ${e.message}`); continue; }
+    }
+    // Keep trying other models on 429 (quota) or 503 (overload)
+    errors.push(`${model}: ${status} ${text.slice(0, 100)}`);
+    if (status !== 429 && status !== 503 && status !== 500) break;
+  }
+  throw new Error(`All Gemini models failed: ${errors.join(' | ')}`);
 }
 
 // === MISTRAL ===
