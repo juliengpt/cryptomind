@@ -45,11 +45,20 @@ function themeOverrideCss(theme) {
     .faq-cta .btn-primary {
       background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
     }
-    .sticky-cta-btn {
+    .sticky-cta-btn,
+    .cta-btn,
+    .cta-btn-sm,
+    .cta-inline-btn,
+    .nav-cta,
+    .btn-primary,
+    .blog-header-cta,
+    .faq-cta .btn-primary {
       color: #0a0e1a !important;
       font-weight: 800 !important;
       text-shadow: none !important;
     }
+    .article-tags .tag { color: ${primary} !important; }
+    .article-category { color: #0a0e1a !important; font-weight: 700 !important; }
     a { color: ${primary} !important; }
     .article-content em,
     .logo span,
