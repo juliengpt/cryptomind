@@ -46,6 +46,40 @@
         }
         .form-min-invest svg, .form-min-invest strong { color: var(--primary) !important; }
         .hero-badge .pulse-dot { background: var(--primary) !important; }
+
+        /* Layout overrides for v2 template (single-column hero, no trading-card visual) */
+        .hero-container { grid-template-columns: 1fr !important; max-width: 900px; margin: 0 auto; text-align: center; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero-actions { justify-content: center; }
+        .hero-trust { justify-content: center; }
+        .hero-stats { justify-content: center; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; }
+        .hero-subtitle { margin-left: auto; margin-right: auto; }
+
+        /* Feature icons: use gradient bg squares instead of emoji */
+        .feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; margin-bottom: 20px; -webkit-text-fill-color: #fff; }
+
+        /* Step numbers */
+        .step-number { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; margin-bottom: 16px; -webkit-text-fill-color: #fff; }
+
+        /* Pricing card amounts keep value, currency small */
+        .pricing-card h3 { margin: 8px 0 12px; }
+        .pricing-price { display: flex; align-items: baseline; gap: 6px; margin: 16px 0; }
+        .pricing-amount { font-size: 2.5rem; font-weight: 800; }
+        .pricing-currency { font-size: 1.5rem; color: var(--text-dim, #94A3B8); }
+        .pricing-desc { color: var(--text-dim, #94A3B8); margin-bottom: 20px; }
+
+        /* Perf cards */
+        .perf-card { text-align: center; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+        .perf-value { font-size: 2.2rem; font-weight: 800; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .perf-label { color: var(--text-dim, #94A3B8); font-size: 0.9rem; }
+        .performance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        @media (max-width: 768px) { .performance-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Signup benefits list */
+        .signup-benefits { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
+        .signup-benefits li { display: flex; align-items: center; gap: 10px; color: var(--text-dim, #CBD5E1); }
+        .signup-benefits .check { color: var(--primary); font-weight: 700; font-size: 1.2rem; }
     </style>
 </head>
 <body>
