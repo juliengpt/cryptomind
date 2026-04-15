@@ -284,6 +284,23 @@ async function main() {
   const outPath = path.join(ROOT, 'sites', slug, 'index.html');
   fs.writeFileSync(outPath, html, 'utf-8');
   console.log(`Wrote: sites/${slug}/index.html`);
+
+  // Generate niche-colored favicon
+  const t = content.theme || {};
+  const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="${t.gradientStart || '#6366f1'}"/>
+      <stop offset="100%" stop-color="${t.gradientEnd || '#06b6d4'}"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="#0a0e1a"/>
+  <path d="M16 4 L26 14 L16 28 L6 14 Z" fill="url(#g)"/>
+  <path d="M16 4 L26 14 L16 18 Z" fill="rgba(255,255,255,0.2)"/>
+</svg>
+`;
+  fs.writeFileSync(path.join(ROOT, 'sites', slug, 'favicon.svg'), favicon, 'utf-8');
+  console.log(`Wrote: sites/${slug}/favicon.svg (themed)`);
 }
 
 if (require.main === module) main().catch(e => { console.error('FATAL:', e.message); process.exit(1); });

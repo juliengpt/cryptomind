@@ -26,7 +26,40 @@ function mergeCfg(siteConfig = {}) {
     currency: siteConfig.currency || '€',
     ctaPrimary: siteConfig.ctaPrimary || "Activer l'agent IA",
     lang: siteConfig.lang || 'fr',
+    theme: siteConfig.theme || null,
   };
+}
+
+// Generate a <style> block that overrides primary/accent colors from theme
+function themeOverrideCss(theme) {
+  if (!theme) return '';
+  const { primary, accent, gradientStart, gradientEnd, glowRgb } = theme;
+  const gStart = gradientStart || primary;
+  const gEnd = gradientEnd || accent;
+  const rgb = glowRgb || '99,102,241';
+  return `<style>
+    :root { --primary: ${primary} !important; --accent: ${accent} !important; }
+    .nav-cta, .cta-btn, .cta-btn-sm, .btn-primary,
+    .article-category, .tag, .progress-bar, .sticky-cta-btn,
+    .cta-inline-btn, .blog-header-cta, .card-image-overlay,
+    .faq-cta .btn-primary {
+      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
+    }
+    a { color: ${primary} !important; }
+    .article-content em,
+    .logo span,
+    .content-gate-count,
+    .modal-icon {
+      color: ${primary} !important;
+    }
+    .modal-avatar, .blog-card:hover {
+      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
+    }
+    .blog-card { border-color: rgba(${rgb},0.2); }
+    .blog-card:hover { border-color: rgba(${rgb},0.5) !important; }
+    .card-category { color: ${primary} !important; }
+    .article-tags .tag { background: rgba(${rgb},0.15) !important; color: ${primary} !important; border-color: rgba(${rgb},0.3) !important; }
+  </style>`;
 }
 
 // CTA variants — all focused on the AI trading agent
@@ -633,6 +666,7 @@ function buildArticleHTML(article, siteConfig = {}) {
             .toast { left: 12px; right: 12px; max-width: none; }
         }
     </style>
+    ${themeOverrideCss(c.theme)}
 </head>
 <body>
     <nav class="nav">
@@ -1039,6 +1073,7 @@ function buildBlogIndex(articles, siteConfig = {}) {
             .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
+    ${themeOverrideCss(c.theme)}
 </head>
 <body>
     <nav class="nav">

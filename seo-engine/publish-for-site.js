@@ -48,6 +48,15 @@ function siteDirs(site) {
 
 function siteConfigForBuilder(site) {
   const dirs = siteDirs(site);
+  // Load theme from data/site-content/<slug>.json if available (produced by landing-generator.js)
+  let theme = null;
+  try {
+    const contentPath = path.join(__dirname, 'data', 'site-content', `${site.slug}.json`);
+    if (fs.existsSync(contentPath)) {
+      const content = JSON.parse(fs.readFileSync(contentPath, 'utf-8'));
+      if (content.theme) theme = content.theme;
+    }
+  } catch {}
   return {
     domain: site.domain,
     siteUrl: `https://${site.domain.replace(/^https?:\/\//, '').replace(/\/$/, '')}`,
@@ -60,6 +69,7 @@ function siteConfigForBuilder(site) {
     currency: site.currency,
     ctaPrimary: site.ctaPrimary,
     lang: site.lang,
+    theme,
   };
 }
 

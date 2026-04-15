@@ -141,6 +141,29 @@
             .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
+    <style>
+    :root { --primary: #10b981 !important; --accent: #f59e0b !important; }
+    .nav-cta, .cta-btn, .cta-btn-sm, .btn-primary,
+    .article-category, .tag, .progress-bar, .sticky-cta-btn,
+    .cta-inline-btn, .blog-header-cta, .card-image-overlay,
+    .faq-cta .btn-primary {
+      background: linear-gradient(135deg, #10b981, #fde047) !important;
+    }
+    a { color: #10b981 !important; }
+    .article-content em,
+    .logo span,
+    .content-gate-count,
+    .modal-icon {
+      color: #10b981 !important;
+    }
+    .modal-avatar, .blog-card:hover {
+      background: linear-gradient(135deg, #10b981, #fde047) !important;
+    }
+    .blog-card { border-color: rgba(16,185,129,0.2); }
+    .blog-card:hover { border-color: rgba(16,185,129,0.5) !important; }
+    .card-category { color: #10b981 !important; }
+    .article-tags .tag { background: rgba(16,185,129,0.15) !important; color: #10b981 !important; border-color: rgba(16,185,129,0.3) !important; }
+  </style>
 </head>
 <body>
     <nav class="nav">
