@@ -1,0 +1,22 @@
+[Wed 04/15/2026 13:15:05.02] === run started ===
+◇ injected env (6) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+◇ injected env (0) from .env // tip: ⌘ suppress logs { quiet: true }
+◇ injected env (0) from .env // tip: ⌁ auth for agents [www.vestauth.com]
+[2026-04-15T11:15:06.039Z] ===== cron-runner start =====
+[2026-04-15T11:15:06.041Z] Active sites: 1
+[2026-04-15T11:15:06.041Z] crypto-mind: articlesPerDay=24, accumulator 2.000
+
+=== Publishing for site: crypto-mind (crypto-mind.net) ===
+  Registry: 21 existing articles
+Fetching news from 7 RSS feeds (site: crypto-mind)...
+  crypto: 30 articles from cointelegraph.com
+  crypto: 25 articles from www.coindesk.com
+  crypto: 20 articles from cryptonews.com
+  ia: 20 articles from techcrunch.com
+  ia: 10 articles from www.theverge.com
+  ia: 20 articles from feeds.arstechnica.com
+  investissement: 30 articles from feeds.bloomberg.com
+Total new articles found: 154
+  News selected: Bitcoin pulls back as $75,000 remains 'both the milestone and the ceiling'
+  [LLM] Trying Gemini (attempt 1/2)...
