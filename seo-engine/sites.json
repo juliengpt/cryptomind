@@ -82,12 +82,69 @@
       "marches-financiers"
     ],
     "rssFeeds": [
+      {
+        "url": "https://www.investing.com/rss/news_1.rss",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.fxstreet.com/rss/news",
+        "category": "forex",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.dailyfx.com/feeds/all",
+        "category": "forex",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.forexlive.com/feed/news/",
+        "category": "forex",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.bloomberg.com/markets/news.rss",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/",
+        "category": "investissement",
+        "lang": "en"
+      }
+    ],
+    "active": true
+  },
+  {
+    "slug": "epargne-ia",
+    "domain": "epargneia.com",
+    "siteName": "Epargne IA",
+    "niche": "épargne intelligente et investissement automatisé par IA",
+    "lang": "fr",
+    "articlesPerDay": 24,
+    "productPitch": "Agent IA qui optimise votre épargne et vos placements 24h/24",
+    "minInvest": 250,
+    "currency": "€",
+    "ctaPrimary": "Activer l'agent IA",
+    "leadWebhook": "",
+    "telegramChatId": "",
+    "telegramBotToken": "",
+    "themes": [
+      "epargne",
+      "investissement",
+      "placement-financier",
+      "assurance-vie",
+      "PEA",
+      "intelligence-artificielle",
+      "fintech"
+    ],
+    "rssFeeds": [
       { "url": "https://www.investing.com/rss/news_1.rss", "category": "investissement", "lang": "en" },
-      { "url": "https://www.fxstreet.com/rss/news", "category": "forex", "lang": "en" },
-      { "url": "https://www.dailyfx.com/feeds/all", "category": "forex", "lang": "en" },
-      { "url": "https://www.forexlive.com/feed/news/", "category": "forex", "lang": "en" },
       { "url": "https://feeds.bloomberg.com/markets/news.rss", "category": "investissement", "lang": "en" },
-      { "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/", "category": "investissement", "lang": "en" }
+      { "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/", "category": "investissement", "lang": "en" },
+      { "url": "https://techcrunch.com/category/fintech/feed/", "category": "fintech", "lang": "en" },
+      { "url": "https://feeds.bloomberg.com/technology/news.rss", "category": "ia", "lang": "en" },
+      { "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "ia", "lang": "en" }
     ],
     "active": true
   }
