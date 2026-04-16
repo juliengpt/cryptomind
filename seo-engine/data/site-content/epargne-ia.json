@@ -1,147 +1,147 @@
 {
   "theme": {
-    "primary": "#00b894",
-    "accent": "#0984e3",
-    "gradientStart": "#00b894",
-    "gradientEnd": "#a29bfe",
-    "glowRgb": "0,184,148"
+    "primary": "#008080",
+    "accent": "#FF7F50",
+    "gradientStart": "#008080",
+    "gradientEnd": "#FFA07A",
+    "glowRgb": "0,128,128"
   },
   "meta": {
-    "title": "Epargne IA : Optimisez votre épargne avec l'IA",
-    "description": "Découvrez Epargne IA, votre agent d'investissement automatisé par IA. Optimisez votre épargne et vos placements 24h/24 dès 250€."
+    "title": "Epargne IA : Investissement Intelligent et Automatisé par IA",
+    "description": "Optimisez votre épargne et vos placements avec Epargne IA, votre agent intelligent personnel. Investissez dès 250€ avec une gestion automatisée 24h/24."
   },
   "nav": {
     "features": "Fonctionnalités",
     "howItWorks": "Comment ça marche",
     "performance": "Performance",
-    "testimonials": "Avis clients",
+    "testimonials": "Témoignages",
     "pricing": "Tarifs",
     "cta": "Activer l'agent IA"
   },
   "hero": {
-    "badge": "Investissement Intelligent 24/7",
-    "titleMain": "Votre Épargne, Rendue Intelligente",
-    "titleAccent": "Par l'IA",
-    "subtitle": "Laissez notre agent IA optimiser vos placements et votre épargne de manière autonome, jour et nuit, pour des rendements supérieurs.",
+    "badge": "Optimisation IA 24h/24",
+    "titleMain": "Votre Épargne, Révolutionnée.",
+    "titleAccent": "Par l'IA.",
+    "subtitle": "Découvrez Epargne IA, l'agent autonome qui analyse, optimise et investit votre argent pour vous, en continu, avec une précision inégalée.",
     "ctaPrimary": "Activer l'agent IA",
-    "ctaSecondary": "Découvrir comment",
-    "trust": "Rejoignez plus de <strong>10 000+</strong> épargnants visionnaires",
-    "stat1Label": "Rendement moyen constaté",
+    "ctaSecondary": "Découvrir la technologie",
+    "trust": "Rejoignez <strong>10 000+</strong> épargnants avertis",
+    "stat1Label": "Précision des stratégies",
     "stat2Label": "Surveillance continue",
-    "stat3Label": "Optimisation IA"
+    "stat3Label": "Potentiel de rendement optimisé"
   },
   "features": {
     "tag": "Fonctionnalités Clés",
-    "title": "Découvrez la puissance de l'épargne automatisée par IA",
-    "titleAccent": "Intelligente et Performante",
-    "desc": "Notre agent IA analyse, anticipe et ajuste vos investissements en temps réel pour maximiser vos gains tout en minimisant les risques.",
+    "title": "Le Pouvoir de l'Intelligence Artificielle au Service de Votre Argent",
+    "titleAccent": "IA Avancée pour",
+    "desc": "Notre technologie exclusive apprend et s'adapte en temps réel pour maximiser vos gains, minimiser les risques et gérer votre patrimoine intelligemment.",
     "items": [
       {
-        "title": "IA d'Analyse Prédictive",
-        "desc": "Anticipe les tendances du marché pour des décisions d'investissement optimales."
+        "title": "Gestion Intelligente",
+        "desc": "L'IA analyse les marchés et ajuste vos placements automatiquement."
       },
       {
         "title": "Optimisation Continue",
-        "desc": "Votre portefeuille est ajusté automatiquement 24h/24 pour s'adapter aux conditions du marché."
+        "desc": "Votre portefeuille est constamment surveillé et amélioré pour de meilleures performances."
       },
       {
-        "title": "Investissement dès 250€",
-        "desc": "Accessible à tous, commencez à faire fructifier votre argent sans effort."
+        "title": "Sécurité Renforcée",
+        "desc": "Protocoles de sécurité de pointe pour une protection maximale de vos fonds."
       },
       {
-        "title": "Sécurité Avancée",
-        "desc": "Protocoles de sécurité robustes pour protéger vos fonds et vos données."
+        "title": "Accessibilité Facile",
+        "desc": "Dès 250€, activez votre agent IA sans complication."
       },
       {
         "title": "Transparence Totale",
-        "desc": "Suivez vos performances et comprenez les décisions de l'IA en temps réel."
+        "desc": "Suivez en temps réel les décisions et les performances de votre agent IA."
       },
       {
-        "title": "Gestion Simplifiée",
-        "desc": "Une interface intuitive pour une expérience utilisateur fluide et agréable."
+        "title": "Personnalisation Poussée",
+        "desc": "Paramétrez vos objectifs et votre profil de risque pour une stratégie sur mesure."
       }
     ]
   },
   "steps": {
     "tag": "Comment ça marche",
-    "title": "Lancez votre épargne intelligente",
-    "titleAccent": "en 3 étapes",
-    "desc": "L'IA prend le relais pour faire travailler votre argent, pendant que vous profitez de la vie.",
-    "s1Title": "Créez votre compte",
-    "s1Desc": "Inscription rapide et sécurisée en quelques minutes. Choisissez votre plan.",
-    "s2Title": "Configurez vos objectifs",
-    "s2Desc": "Définissez vos horizons d'investissement et votre profil de risque. L'IA s'adapte.",
-    "s3Title": "Activez l'agent IA",
-    "s3Desc": "Notre technologie prend le contrôle pour optimiser vos placements et votre épargne."
+    "title": "Démarrez Votre Épargne Intelligente en 3 Étapes Simples",
+    "titleAccent": "Votre Argent Travaille",
+    "desc": "Il suffit de quelques minutes pour connecter votre compte et laisser notre IA prendre le relais. Simple, rapide et efficace.",
+    "s1Title": "Inscription Rapide",
+    "s1Desc": "Créez votre compte en quelques clics et renseignez vos objectifs d'épargne.",
+    "s2Title": "Activation IA",
+    "s2Desc": "Définissez votre capital de départ (minimum 250€) et activez votre agent IA.",
+    "s3Title": "Performance Automatisée",
+    "s3Desc": "Notre IA gère, optimise et fait fructifier votre épargne 24h/24, 7j/7."
   },
   "performance": {
-    "tag": "Performance IA",
-    "title": "Des résultats prouvés grâce à l'IA",
-    "titleAccent": "et des algorithmes",
-    "desc": "Nos algorithmes d'IA analysent des milliards de points de données pour identifier les meilleures opportunités d'investissement."
+    "tag": "Performance Démontrée",
+    "title": "Des Résultats Concrets Grâce à l'IA",
+    "titleAccent": "Performance Optimisée",
+    "desc": "Notre algorithme exclusif est conçu pour identifier les opportunités et générer des rendements supérieurs, tout en maîtrisant les risques."
   },
   "comparison": {
-    "tag": "IA vs Tradionnel",
-    "title": "L'avantage de l'investissement par IA",
-    "titleAccent": "sur les méthodes classiques",
-    "desc": "Bénéficiez d'une réactivité, d'une précision et d'une capacité d'analyse inégalées par les approches manuelles."
+    "tag": "Pourquoi Choisir Epargne IA",
+    "title": "IA vs. Épargne Traditionnelle : Le Duel Gagnant",
+    "titleAccent": "Avantage IA",
+    "desc": "Bénéficiez d'une analyse de marché exhaustive et d'une prise de décision instantanée, impossible à répliquer par une gestion humaine classique."
   },
   "testimonials": {
-    "tag": "Ils nous font confiance",
-    "title": "Ce que nos utilisateurs disent",
-    "titleAccent": "de l'IA",
-    "desc": "Découvrez les retours d'expérience de ceux qui ont choisi l'épargne intelligente.",
-    "t1Text": "« Depuis que j'utilise Epargne IA, mon patrimoine a connu une croissance constante. L'automatisation par IA me libère et me rassure. »",
+    "tag": "Ils Nous Font Confiance",
+    "title": "Ce Que Nos Utilisateurs Disent de Nous",
+    "titleAccent": "Avis Clients",
+    "desc": "Découvrez comment Epargne IA transforme la vie financière de nos utilisateurs.",
+    "t1Text": "« Depuis que j'utilise Epargne IA, mes placements sont plus performants et je perds moins de temps. L'IA est vraiment bluffante de précision ! »",
     "t1Author": "Sophie D.",
-    "t1Role": "Investisseuse Particulière",
-    "t2Text": "« L'interface est simple, mais la puissance derrière est incroyable. L'IA gère mon épargne mieux que je ne pourrais le faire seul. »",
+    "t1Role": "Investisseuse Prudente",
+    "t2Text": "« J'étais sceptique au début, mais les résultats parlent d'eux-mêmes. Mon épargne a progressé de manière significative grâce à l'agent IA. »",
     "t2Author": "Marc L.",
-    "t2Role": "Entrepreneur",
-    "t3Text": "« J'étais sceptique au début, mais les performances parlent d'elles-mêmes. C'est l'avenir de l'investissement, accessible dès maintenant. »",
-    "t3Author": "Amélie R.",
-    "t3Role": "Professionnelle de la finance"
+    "t2Role": "Entrepreneur Agile",
+    "t3Text": "« La simplicité d'utilisation combinée à la puissance de l'IA est le combo parfait pour optimiser mon patrimoine sans y penser. Recommandé ! »",
+    "t3Author": "Émilie R.",
+    "t3Role": "Professionnelle Active"
   },
   "pricing": {
-    "tag": "Nos Plans",
-    "title": "Choisissez le plan qui vous convient",
-    "titleAccent": "le mieux",
-    "desc": "Des options flexibles pour accompagner votre croissance financière, quel que soit votre point de départ.",
+    "tag": "Tarification Transparente",
+    "title": "Choisissez le Plan Adapté à Vos Ambitions",
+    "titleAccent": "Nos Formules",
+    "desc": "Des options flexibles pour tous les niveaux d'épargne, avec l'IA à vos côtés.",
     "starterName": "Essentiel",
-    "starterDesc": "Idéal pour débuter et tester l'IA.",
+    "starterDesc": "Démarrez avec l'essentiel de l'IA.",
     "proName": "Performance",
-    "proDesc": "Optimisation avancée pour une croissance accélérée.",
+    "proDesc": "Optimisation maximale pour vos objectifs.",
     "eliteName": "Premium",
-    "eliteDesc": "Accompagnement sur-mesure et gestion prioritaire."
+    "eliteDesc": "Gestion experte IA et accompagnement personnalisé."
   },
   "signup": {
-    "title": "Prêt à laisser l'IA transformer votre épargne ?",
-    "titleAccent": "Transformez",
-    "desc": "Rejoignez la révolution de l'épargne intelligente et commencez à bâtir votre avenir financier sereinement.",
-    "formTitle": "Ouvrez Votre Compte IA",
-    "formSub": "Gratuit et sans engagement"
+    "title": "Prêt à laisser l'IA Gérer Votre Épargne pour Vous ?",
+    "titleAccent": "Confiez-nous Votre Argent",
+    "desc": "Activez votre agent IA dès maintenant et commencez à bâtir un avenir financier plus serein et prospère.",
+    "formTitle": "Ouvrez Votre Compte Gratuitement",
+    "formSub": "Quelques minutes suffisent pour activer votre agent IA."
   },
   "faq": {
     "tag": "FAQ",
-    "title": "Questions Fréquentes",
-    "q1": "Comment fonctionne l'IA d'Epargne IA ?",
-    "a1": "Notre IA analyse en temps réel les marchés financiers, les données économiques et les tendances pour prendre des décisions d'investissement automatisées et optimisées. Elle apprend continuellement pour améliorer ses performances.",
+    "title": "Vos Questions, Nos Réponses",
+    "q1": "Comment fonctionne Epargne IA concrètement ?",
+    "a1": "Epargne IA est un agent basé sur l'intelligence artificielle qui analyse les marchés financiers en temps réel. Il utilise des algorithmes avancés pour identifier les meilleures opportunités d'investissement et d'optimisation de votre portefeuille, le tout de manière autonome et 24h/24.",
     "q2": "Quel est le montant minimum d'investissement ?",
-    "a2": "Vous pouvez commencer à investir avec un minimum de 250€. L'objectif est de rendre l'épargne intelligente accessible à tous.",
-    "q3": "Mes fonds sont-ils sécurisés ?",
-    "a3": "Oui, la sécurité de vos fonds est notre priorité absolue. Nous utilisons des protocoles de sécurité de pointe et travaillons avec des institutions financières régulées.",
-    "q4": "Puis-je retirer mon argent à tout moment ?",
-    "a4": "Oui, vous conservez le contrôle total de votre argent. Les retraits peuvent être initiés à tout moment, sous réserve des délais habituels de traitement bancaire.",
-    "q5": "L'IA prend-elle en compte mon profil de risque ?",
-    "a5": "Absolument. Lors de la configuration, vous définissez votre profil de risque. L'IA adapte ensuite sa stratégie d'investissement pour correspondre à vos attentes et à votre tolérance au risque.",
-    "q6": "Comment Epargne IA se différencie-t-elle d'un conseiller financier traditionnel ?",
-    "a6": "Notre IA offre une réactivité 24/7, une analyse de données à grande échelle et une absence d'émotions, permettant des décisions plus objectives et rapides que celles d'un humain."
+    "a2": "Vous pouvez commencer à épargner et investir intelligemment avec un minimum de 250€. Notre objectif est de rendre l'investissement automatisé accessible à tous.",
+    "q3": "Mes fonds sont-ils en sécurité ?",
+    "a3": "La sécurité de vos fonds est notre priorité absolue. Nous utilisons des protocoles de sécurité de pointe et travaillons avec des institutions financières régulées pour garantir la protection de vos actifs.",
+    "q4": "L'IA peut-elle faire des erreurs ?",
+    "a4": "Bien que l'IA soit conçue pour minimiser les risques, aucun système d'investissement n'est infaillible. Cependant, notre IA est constamment mise à jour et optimisée pour s'adapter aux conditions changeantes du marché et réduire les erreurs potentielles.",
+    "q5": "Comment puis-je suivre les performances de mon épargne ?",
+    "a5": "Vous avez accès à un tableau de bord intuitif vous permettant de suivre en temps réel les décisions de votre agent IA, l'évolution de votre portefeuille et les performances générées.",
+    "q6": "Puis-je retirer mon argent à tout moment ?",
+    "a6": "Oui, vous conservez le contrôle total de vos fonds. Vous pouvez demander un retrait à tout moment, conformément aux conditions générales de nos partenaires financiers."
   },
-  "cta1Title": "Ne laissez plus votre argent dormir",
-  "cta1Subtitle": "Activez l'agent IA et commencez à optimiser votre épargne dès aujourd'hui.",
-  "cta2Title": "Prêt à faire fructifier votre capital intelligemment ?",
-  "cta2Subtitle": "Rejoignez Epargne IA et laissez notre technologie travailler pour vous.",
+  "cta1Title": "Ne Laissez Plus Votre Épargne Dormir.",
+  "cta1Subtitle": "Laissez l'IA la faire travailler pour vous et atteindre vos objectifs financiers.",
+  "cta2Title": "Prêt à Révolutionner Votre Épargne ?",
+  "cta2Subtitle": "Activez votre agent IA dès aujourd'hui et transformez votre avenir financier.",
   "footer": {
-    "desc": "Epargne IA est votre partenaire pour une gestion d'épargne et d'investissement intelligente et automatisée.",
-    "warning": "Les investissements comportent des risques de perte en capital. Les performances passées ne préjugent pas des performances futures. Les rendements ne sont pas garantis."
+    "desc": "Epargne IA : L'intelligence artificielle au service de votre patrimoine. Investissez plus intelligemment, vivez plus sereinement.",
+    "warning": "Les performances passées ne préjugent pas des performances futures. L'investissement comporte des risques de perte en capital. Les informations fournies sont à titre indicatif et ne constituent pas un conseil financier."
   }
 }

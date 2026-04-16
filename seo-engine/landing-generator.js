@@ -285,8 +285,31 @@ async function main() {
   fs.writeFileSync(outPath, html, 'utf-8');
   console.log(`Wrote: sites/${slug}/index.html`);
 
-  // Generate niche-colored favicon
+  // Generate niche-specific favicon (unique shape per site)
   const t = content.theme || {};
+  const shapes = {
+    // Diamond (default)
+    diamond: '<path d="M16 4 L26 14 L16 28 L6 14 Z" fill="url(#g)"/><path d="M16 4 L26 14 L16 18 Z" fill="rgba(255,255,255,0.2)"/>',
+    // Shield (finance/security)
+    shield: '<path d="M16 4 C16 4 6 8 6 8 L6 16 C6 22 16 28 16 28 C16 28 26 22 26 16 L26 8 C26 8 16 4 16 4 Z" fill="url(#g)"/><path d="M16 4 C16 4 26 8 26 8 L26 16 C26 22 16 28 16 28 Z" fill="rgba(255,255,255,0.15)"/>',
+    // Chart arrow (trading/growth)
+    chart: '<path d="M6 24 L12 16 L17 19 L26 8 L26 12 L17 22 L12 19 L6 26 Z" fill="url(#g)"/><circle cx="26" cy="8" r="3" fill="url(#g)"/><path d="M22 8 L26 8 L26 12" fill="none" stroke="url(#g)" stroke-width="1.5"/>',
+    // Circle coin (savings/money)
+    coin: '<circle cx="16" cy="16" r="11" fill="url(#g)"/><circle cx="16" cy="16" r="8" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/><text x="16" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#0a0e1a" font-family="Arial">€</text>',
+    // Bolt (tech/AI)
+    bolt: '<path d="M18 4 L8 18 H15 L14 28 L24 14 H17 Z" fill="url(#g)"/><path d="M18 4 L24 14 H17 L18 4 Z" fill="rgba(255,255,255,0.2)"/>',
+    // Brain (AI/intelligence)
+    brain: '<circle cx="13" cy="14" r="6" fill="url(#g)"/><circle cx="20" cy="14" r="6" fill="url(#g)"/><circle cx="16.5" cy="20" r="5" fill="url(#g)"/><circle cx="16.5" cy="14" r="3" fill="#0a0e1a"/><circle cx="16.5" cy="14" r="1.5" fill="url(#g)"/>',
+  };
+  // Pick shape based on niche keywords
+  const nicheL = (site.niche || '').toLowerCase();
+  let shape = 'diamond';
+  if (nicheL.includes('épargne') || nicheL.includes('savings') || nicheL.includes('pea')) shape = 'coin';
+  else if (nicheL.includes('forex') || nicheL.includes('stock') || nicheL.includes('trading')) shape = 'chart';
+  else if (nicheL.includes('sécurité') || nicheL.includes('assurance') || nicheL.includes('protect')) shape = 'shield';
+  else if (nicheL.includes('ia') || nicheL.includes('intelligence') || nicheL.includes('ai')) shape = 'bolt';
+  else if (nicheL.includes('crypto') || nicheL.includes('blockchain')) shape = 'diamond';
+
   const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <defs>
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -295,8 +318,7 @@ async function main() {
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="8" fill="#0a0e1a"/>
-  <path d="M16 4 L26 14 L16 28 L6 14 Z" fill="url(#g)"/>
-  <path d="M16 4 L26 14 L16 18 Z" fill="rgba(255,255,255,0.2)"/>
+  ${shapes[shape]}
 </svg>
 `;
   fs.writeFileSync(path.join(ROOT, 'sites', slug, 'favicon.svg'), favicon, 'utf-8');

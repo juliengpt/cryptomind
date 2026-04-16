@@ -2,10 +2,9 @@
   <defs>
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#10b981"/>
-      <stop offset="100%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#67e8f9"/>
     </linearGradient>
   </defs>
   <rect width="32" height="32" rx="8" fill="#0a0e1a"/>
-  <path d="M16 4 L26 14 L16 28 L6 14 Z" fill="url(#g)"/>
-  <path d="M16 4 L26 14 L16 18 Z" fill="rgba(255,255,255,0.2)"/>
+  <path d="M6 24 L12 16 L17 19 L26 8 L26 12 L17 22 L12 19 L6 26 Z" fill="url(#g)"/><circle cx="26" cy="8" r="3" fill="url(#g)"/><path d="M22 8 L26 8 L26 12" fill="none" stroke="url(#g)" stroke-width="1.5"/>
 </svg>

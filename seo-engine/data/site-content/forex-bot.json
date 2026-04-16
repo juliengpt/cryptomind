@@ -1,14 +1,14 @@
 {
   "theme": {
     "primary": "#10b981",
-    "accent": "#f59e0b",
+    "accent": "#06b6d4",
     "gradientStart": "#10b981",
-    "gradientEnd": "#fde047",
+    "gradientEnd": "#67e8f9",
     "glowRgb": "16,185,129"
   },
   "meta": {
-    "title": "ForexBot AI : Trading Forex Automatisé par IA",
-    "description": "Découvrez ForexBot AI, votre agent IA dédié au trading Forex. Générez des profits 24h/24 avec un investissement minimum de 250€."
+    "title": "ForexBot AI : Trading Forex Automatisé par IA | 24h/24",
+    "description": "Découvrez ForexBot AI, votre agent IA révolutionnaire pour le trading Forex automatisé. Investissez dès 250€ et activez votre agent IA pour des profits 24h/24."
   },
   "nav": {
     "features": "Fonctionnalités",
@@ -22,126 +22,126 @@
     "badge": "Trading Forex Intelligent 24/7",
     "titleMain": "Votre Agent IA",
     "titleAccent": "Trade le Forex",
-    "subtitle": "Profitez d'un trading Forex automatisé et performant grâce à notre IA avancée, disponible 24h/24 pour maximiser vos gains.",
+    "subtitle": "Laissez notre intelligence artificielle optimiser vos investissements sur le marché des devises, en continu, pour une efficacité maximale.",
     "ctaPrimary": "Activer l'agent IA",
-    "ctaSecondary": "Découvrir la démo",
-    "trust": "Rejoignez <strong>15 000+</strong> traders qui font confiance à l'IA",
+    "ctaSecondary": "Découvrir la stratégie",
+    "trust": "Rejoignez <strong>20 000+</strong> traders rentables",
     "stat1Label": "Précision des signaux",
     "stat2Label": "Surveillance continue",
-    "stat3Label": "Rendement potentiel"
+    "stat3Label": "Potentiel de gains"
   },
   "features": {
-    "tag": "Fonctionnalités Clés",
-    "title": "Découvrez la puissance de notre IA pour le trading Forex",
-    "titleAccent": "Trading Intelligent",
-    "desc": "ForexBot AI analyse les marchés en temps réel pour exécuter des trades optimisés, vous offrant une nouvelle dimension de performance.",
+    "tag": "Fonctionnalités",
+    "title": "Découvrez les atouts de ForexBot AI pour votre trading",
+    "titleAccent": "ForexBot AI",
+    "desc": "Notre agent IA exclusif analyse les marchés Forex en temps réel pour exécuter des trades optimisés, vous libérant du temps et maximisant votre potentiel.",
     "items": [
       {
-        "title": "Trading Autonome 24/7",
-        "desc": "Votre agent IA opère sans interruption pour saisir toutes les opportunités."
+        "title": "Trading 24/7",
+        "desc": "Votre agent IA opère sans interruption, profitant des meilleures opportunités, jour et nuit."
       },
       {
-        "title": "Algorithmes d'IA Avancés",
-        "desc": "Des modèles prédictifs de pointe pour des décisions de trading optimales."
+        "title": "Analyse IA Avancée",
+        "desc": "Utilise des algorithmes de pointe pour une détection précise des tendances et des points d'entrée/sortie."
       },
       {
-        "title": "Gestion des Risques Intégrée",
-        "desc": "Protection de votre capital grâce à des stratégies de gestion de risque sophistiquées."
+        "title": "Gestion des Risques",
+        "desc": "Intègre des stratégies de gestion de risque personnalisables pour protéger votre capital."
       },
       {
         "title": "Interface Intuitive",
-        "desc": "Suivez vos performances facilement avec une plateforme simple et claire."
+        "desc": "Suivez vos performances facilement grâce à un tableau de bord clair et accessible."
       },
       {
-        "title": "Signaux de Trading Précis",
-        "desc": "Recevez des alertes et des analyses basées sur des données concrètes."
+        "title": "Adaptabilité Marché",
+        "desc": "L'IA apprend et s'adapte continuellement aux conditions changeantes du marché Forex."
       },
       {
-        "title": "Adaptabilité aux Marchés",
-        "desc": "L'IA apprend et s'adapte en permanence aux fluctuations du marché Forex."
+        "title": "Transactions Sécurisées",
+        "desc": "Protocoles de sécurité robustes pour garantir la protection de vos fonds et données."
       }
     ]
   },
   "steps": {
     "tag": "Comment ça marche",
-    "title": "Lancez-vous en 3 étapes simples",
-    "titleAccent": "Simple et Rapide",
-    "desc": "Démarrer avec ForexBot AI est facile. Laissez notre technologie transformer votre approche du trading Forex.",
-    "s1Title": "Inscription Rapide",
-    "s1Desc": "Créez votre compte en quelques minutes et accédez à notre plateforme IA.",
-    "s2Title": "Dépôt Sécurisé",
-    "s2Desc": "Déposez votre capital à partir de 250€ via nos méthodes de paiement sécurisées.",
-    "s3Title": "Activer l'Agent IA",
-    "s3Desc": "Lancez votre agent IA et laissez-le trader le Forex pour vous 24h/24."
+    "title": "Lancez votre trading IA en 3 étapes simples",
+    "titleAccent": "3 étapes",
+    "desc": "Démarrer avec notre technologie de trading automatique est plus simple que jamais. Suivez ces étapes pour commencer à générer des revenus.",
+    "s1Title": "Inscription Facile",
+    "s1Desc": "Créez votre compte en quelques minutes et accédez à notre plateforme sécurisée. C'est votre première étape vers le trading intelligent.",
+    "s2Title": "Configuration de l'Agent",
+    "s2Desc": "Définissez vos paramètres de risque et d'investissement. Notre IA s'occupe du reste, en appliquant la stratégie choisie.",
+    "s3Title": "Trading Automatisé",
+    "s3Desc": "Laissez ForexBot AI opérer sur les marchés. Surveillez vos performances et profitez des résultats sans intervention manuelle."
   },
   "performance": {
     "tag": "Performance",
-    "title": "Des Résultats Quantifiables",
-    "titleAccent": "Performance Prouvée",
-    "desc": "Suivez les performances historiques et en temps réel de ForexBot AI pour constater son efficacité."
+    "title": "Nos Résultats Parlent d'Eux-Mêmes",
+    "titleAccent": "Nos Résultats",
+    "desc": "Consultez les données de performance transparentes de notre IA. Voyez comment elle surpasse les méthodes de trading traditionnelles."
   },
   "comparison": {
-    "tag": "Pourquoi nous choisir",
-    "title": "IA vs. Trading Manuel : Le Choix de l'Efficacité",
-    "titleAccent": "Avantage IA",
-    "desc": "ForexBot AI combine vitesse, analyse de données massives et absence d'émotions pour surpasser les méthodes de trading traditionnelles."
+    "tag": "Comparaison",
+    "title": "IA vs Trading Manuel : Le Verdict",
+    "titleAccent": "Le Verdict",
+    "desc": "Découvrez pourquoi notre agent IA offre une efficacité et une rentabilité supérieures par rapport aux approches manuelles du trading Forex."
   },
   "testimonials": {
-    "tag": "Avis Clients",
+    "tag": "Témoignages",
     "title": "Ce que nos utilisateurs disent de ForexBot AI",
-    "titleAccent": "Ils nous font confiance",
-    "desc": "Découvrez les expériences de traders ayant déjà adopté notre solution d'IA pour le Forex.",
-    "t1Text": "« Depuis que j'utilise ForexBot AI, mon portefeuille a connu une croissance constante. L'automatisation me permet de me concentrer sur d'autres aspects de ma vie. »",
-    "t1Author": "Jean D.",
-    "t1Role": "Trader Particulier",
-    "t2Text": "« La précision des trades générés par l'IA est impressionnante. L'interface est claire et le support client réactif. Un excellent investissement. »",
+    "titleAccent": "nos utilisateurs",
+    "desc": "Des traders débutants aux experts, découvrez comment ForexBot AI transforme leur expérience de trading Forex. Fiabilité et performance prouvées.",
+    "t1Text": "« Depuis que j'utilise ForexBot AI, mon portefeuille a pris une toute autre dimension. La simplicité d'utilisation et les résultats constants sont bluffants. Je ne trade plus jamais sans lui ! »",
+    "t1Author": "Marc D.",
+    "t1Role": "Investisseur Forex",
+    "t2Text": "« J'étais sceptique au début, mais la précision de l'IA est incroyable. Elle détecte des opportunités que j'aurais manquées. C'est un véritable game-changer pour le trading Forex. »",
     "t2Author": "Sophie L.",
-    "t2Role": "Investisseuse Active",
-    "t3Text": "« J'étais sceptique au début, mais ForexBot AI a dépassé mes attentes. Le trading 24/7 est un vrai plus pour le marché du Forex. »",
-    "t3Author": "Marc R.",
+    "t2Role": "Trader Part-time",
+    "t3Text": "« Le trading autonome 24/7 est un rêve devenu réalité. ForexBot AI gère mes investissements pendant que je me concentre sur mes autres activités. Je recommande vivement ! »",
+    "t3Author": "Karim B.",
     "t3Role": "Entrepreneur"
   },
   "pricing": {
     "tag": "Tarifs",
-    "title": "Choisissez le plan adapté à vos objectifs",
-    "titleAccent": "Plans Flexibles",
-    "desc": "Commencez avec un investissement minimum et augmentez selon vos ambitions.",
+    "title": "Choisissez le plan qui vous convient",
+    "titleAccent": "qui vous convient",
+    "desc": "Des options flexibles pour tous les niveaux d'investisseurs, avec un accès complet à notre technologie IA révolutionnaire.",
     "starterName": "Essentiel",
     "starterDesc": "Idéal pour débuter avec l'IA.",
-    "proName": "Performance",
-    "proDesc": "Optimisé pour une croissance régulière.",
+    "proName": "Avancé",
+    "proDesc": "Performance optimisée pour les traders actifs.",
     "eliteName": "Premium",
-    "eliteDesc": "Pour les traders visant l'excellence."
+    "eliteDesc": "Accès complet et support dédié."
   },
   "signup": {
-    "title": "Prêt à laisser l'IA trader le Forex pour Vous ?",
-    "titleAccent": "Révolutionnez Votre Trading",
-    "desc": "Rejoignez la nouvelle ère du trading Forex automatisé. Activer votre agent IA dès maintenant pour des profits continus.",
-    "formTitle": "Ouvrez Votre Compte Gratuitement",
-    "formSub": "Accès immédiat à notre plateforme IA."
+    "title": "Prêt à laisser l'IA générer des profits pour Vous ?",
+    "titleAccent": "générer des profits",
+    "desc": "Ne manquez plus une opportunité sur le marché Forex. Activez votre agent IA dès aujourd'hui et transformez votre trading.",
+    "formTitle": "Ouvrez Votre Compte",
+    "formSub": "Investissement minimum de 250 € requis."
   },
   "faq": {
     "tag": "FAQ",
-    "title": "Questions Fréquentes sur ForexBot AI",
-    "q1": "Comment fonctionne le trading Forex automatisé par IA ?",
-    "a1": "Notre agent IA analyse en permanence les données du marché Forex, identifie les opportunités de trading et exécute des transactions automatiquement selon des algorithmes avancés pour maximiser les profits tout en gérant les risques.",
-    "q2": "Quel est le dépôt minimum requis ?",
-    "a2": "Vous pouvez commencer à trader avec un dépôt minimum de 250€. Notre objectif est de rendre le trading Forex automatisé accessible à tous.",
-    "q3": "Mon argent est-il en sécurité ?",
-    "a3": "Oui, votre capital est géré avec les plus hauts standards de sécurité. Nous utilisons des protocoles de cryptage avancés et travaillons avec des partenaires financiers réglementés.",
-    "q4": "L'IA peut-elle garantir des profits ?",
-    "a4": "Bien que notre IA soit conçue pour optimiser les rendements, le trading sur le marché Forex comporte des risques. Nous ne pouvons pas garantir de profits spécifiques, mais nous nous efforçons de maximiser les opportunités.",
-    "q5": "Puis-je retirer mes gains à tout moment ?",
-    "a5": "Oui, vous avez le contrôle total de vos fonds. Les demandes de retrait sont traitées rapidement selon nos procédures internes.",
-    "q6": "Comment l'IA s'adapte-t-elle aux changements du marché ?",
-    "a6": "L'IA de ForexBot est en apprentissage continu. Elle analyse les nouvelles données du marché et ajuste ses stratégies en temps réel pour rester performante face aux évolutions."
+    "title": "Vos Questions sur le Trading IA",
+    "q1": "Qu'est-ce que ForexBot AI exactement ?",
+    "a1": "ForexBot AI est un agent logiciel avancé utilisant l'intelligence artificielle pour analyser les marchés du Forex et exécuter des transactions de manière autonome, 24h/24 et 7j/7.",
+    "q2": "Quel est le rendement moyen attendu ?",
+    "a2": "Les rendements passés ne préjugent pas des rendements futurs. Cependant, notre IA est conçue pour maximiser la rentabilité en exploitant les inefficiences du marché et en gérant les risques.",
+    "q3": "Quel est le montant minimum pour commencer ?",
+    "a3": "L'investissement minimum requis pour activer votre agent IA est de 250 €. Cela vous permet de bénéficier de la puissance de notre technologie dès le départ.",
+    "q4": "Est-ce que je peux perdre de l'argent avec le trading Forex ?",
+    "a4": "Oui, le trading sur le marché des changes comporte des risques de perte en capital. Notre IA intègre des mécanismes de gestion des risques, mais la perte totale du capital investi est possible.",
+    "q5": "Comment l'IA s'adapte-t-elle aux changements du marché ?",
+    "a5": "Notre IA utilise des algorithmes d'apprentissage automatique qui lui permettent d'analyser en continu les nouvelles données du marché et d'ajuster ses stratégies pour optimiser les performances.",
+    "q6": "Comment puis-je activer mon agent IA ?",
+    "a6": "Une fois votre compte créé et votre dépôt effectué, vous pouvez activer votre agent IA directement depuis votre tableau de bord. La configuration est simple et guidée."
   },
-  "cta1Title": "Ne manquez plus aucune opportunité Forex",
-  "cta1Subtitle": "Laissez notre IA travailler pour vous 24h/24 et 7j/7.",
+  "cta1Title": "Ne ratez plus une seule opportunité Forex",
+  "cta1Subtitle": "Laissez notre IA travailler pour vous et maximisez votre potentiel de gains.",
   "cta2Title": "Prêt à transformer votre trading ?",
-  "cta2Subtitle": "Activer l'agent IA et commencez à générer des profits dès aujourd'hui.",
+  "cta2Subtitle": "Activez votre agent IA dès maintenant et commencez à investir intelligemment.",
   "footer": {
-    "desc": "ForexBot AI : Votre partenaire IA pour un trading Forex automatisé et performant.",
-    "warning": "Le trading sur le marché des devises (Forex) comporte des risques significatifs. Les performances passées ne préjugent pas des performances futures. Investissez uniquement ce que vous pouvez vous permettre de perdre."
+    "desc": "ForexBot AI : Votre partenaire pour un trading Forex automatisé et performant grâce à l'intelligence artificielle.",
+    "warning": "Le trading de devises sur le marché Forex comporte un risque élevé et peut ne pas convenir à tous les investisseurs. Vous pourriez perdre tout ou partie de votre capital investi. N'investissez jamais de l'argent que vous ne pouvez pas vous permettre de perdre."
   }
 }
