@@ -203,7 +203,7 @@ async function publishOneArticle(site) {
 
   // 6. Write article HTML
   if (!fs.existsSync(dirs.articlesDir)) fs.mkdirSync(dirs.articlesDir, { recursive: true });
-  const html = buildArticleHTML(articleObj, cfg);
+  const html = buildArticleHTML(articleObj, cfg, registry);
   fs.writeFileSync(path.join(dirs.articlesDir, `${article.slug}.html`), html, 'utf-8');
   console.log(`  Wrote ${article.slug}.html`);
 

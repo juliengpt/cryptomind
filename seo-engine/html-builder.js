@@ -155,7 +155,7 @@ function injectMidCTA(content, category, c) {
   });
 }
 
-function buildArticleHTML(article, siteConfig = {}) {
+function buildArticleHTML(article, siteConfig = {}, registry = []) {
   const c = mergeCfg(siteConfig);
   const publishDate = new Date(article.generatedAt);
   const dateStr = publishDate.toLocaleDateString('fr-FR', {
@@ -165,6 +165,88 @@ function buildArticleHTML(article, siteConfig = {}) {
   });
   const isoDate = publishDate.toISOString();
   const heroImage = article.heroImage || null;
+
+  // --- BREADCRUMB SCHEMA ---
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: c.siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${c.siteUrl}/blog/` },
+      { '@type': 'ListItem', position: 3, name: article.category || 'Article', item: `${c.siteUrl}/blog/` },
+      { '@type': 'ListItem', position: 4, name: article.title },
+    ],
+  };
+
+  // --- TOC: extract H2 titles, add anchors ---
+  let tocIndex = 0;
+  const tocItems = [];
+  const contentWithAnchors = (article.content || '').replace(/<h2>(.*?)<\/h2>/gi, (match, title) => {
+    const id = `section-${tocIndex++}`;
+    tocItems.push({ id, title: title.replace(/<[^>]+>/g, '') });
+    return `<h2 id="${id}">${title}</h2>`;
+  });
+
+  const tocHtml = tocItems.length >= 3 ? `
+        <nav class="toc" aria-label="Sommaire">
+            <h3>📑 Sommaire</h3>
+            <ol>${tocItems.map(t => `<li><a href="#${t.id}">${escapeHtml(t.title)}</a></li>`).join('')}</ol>
+        </nav>` : '';
+
+  // --- RELATED ARTICLES (maillage interne) ---
+  const related = registry
+    .filter(r => r.slug !== article.slug)
+    .map(r => {
+      let score = 0;
+      if (r.category === article.category) score += 3;
+      if (r.tags && article.tags) {
+        for (const t of r.tags) { if (article.tags.includes(t)) score += 2; }
+      }
+      return { ...r, score };
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+
+  const relatedHtml = related.length > 0 ? `
+        <div class="related-articles">
+            <h3>📖 À lire aussi</h3>
+            <div class="related-grid">
+                ${related.map(r => `<a href="${r.slug}.html" class="related-card">
+                    <span class="related-cat">${escapeHtml((r.category || '').replace(/-/g, ' '))}</span>
+                    <span class="related-title">${escapeHtml(r.title)}</span>
+                </a>`).join('\n                ')}
+            </div>
+        </div>` : '';
+
+  // --- SOCIAL SHARE ---
+  const shareUrl = encodeURIComponent(`${c.siteUrl}/blog/articles/${article.slug}.html`);
+  const shareTitle = encodeURIComponent(article.title);
+  const socialHtml = `
+        <div class="social-share">
+            <span>Partager :</span>
+            <a href="https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}" target="_blank" rel="noopener" title="LinkedIn">in</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${shareUrl}" target="_blank" rel="noopener" title="Facebook">f</a>
+            <a href="https://wa.me/?text=${shareTitle}%20${shareUrl}" target="_blank" rel="noopener" title="WhatsApp">wa</a>
+        </div>`;
+
+  // --- INLINE INTERNAL LINKS: inject 2 links to related articles inside content ---
+  let contentWithLinks = contentWithAnchors;
+  if (related.length >= 2) {
+    let linkInjected = 0;
+    contentWithLinks = contentWithLinks.replace(/<\/p>/g, (match) => {
+      if (linkInjected < 2 && related[linkInjected]) {
+        const r = related[linkInjected];
+        // Inject after every 3rd </p>
+        if (tocIndex > 0 && (linkInjected === 0 ? tocIndex >= 2 : true)) {
+          tocIndex--;
+          linkInjected++;
+          return `${match}\n<p class="internal-link">👉 <strong>À lire :</strong> <a href="${r.slug}.html">${escapeHtml(r.title)}</a></p>`;
+        }
+      }
+      return match;
+    });
+  }
 
   const schemaOrg = {
     '@context': 'https://schema.org',
@@ -192,7 +274,7 @@ function buildArticleHTML(article, siteConfig = {}) {
     keywords: article.tags.join(', '),
   };
 
-  const contentWithCTAs = injectMidCTA(article.content, article.category, c);
+  const contentWithCTAs = injectMidCTA(contentWithLinks, article.category, c);
 
   const heroImagePath = `../images/${article.slug}.png`;
   const hasHero = heroImage || fs.existsSync(path.join(c.blogDir, 'images', `${article.slug}.png`));
@@ -226,6 +308,7 @@ function buildArticleHTML(article, siteConfig = {}) {
 
     <!-- Schema.org -->
     <script type="application/ld+json">${JSON.stringify(schemaOrg)}</script>
+    <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <!-- Fonts -->
@@ -468,6 +551,39 @@ function buildArticleHTML(article, siteConfig = {}) {
             font-size: 13px;
         }
 
+        /* Breadcrumbs */
+        .breadcrumbs { font-size: 13px; color: #64748B; margin-bottom: 20px; }
+        .breadcrumbs a { color: #94A3B8; }
+        .breadcrumbs a:hover { color: #fff; }
+        .breadcrumbs span { margin: 0 6px; }
+
+        /* Table of Contents */
+        .toc { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
+        .toc h3 { font-size: 16px; margin-bottom: 12px; color: #E2E8F0; }
+        .toc ol { padding-left: 20px; margin: 0; }
+        .toc li { margin-bottom: 6px; font-size: 15px; }
+        .toc a { color: #94A3B8; text-decoration: none; }
+        .toc a:hover { color: var(--primary, #00D4FF); text-decoration: underline; }
+
+        /* Related articles */
+        .related-articles { margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .related-articles h3 { margin-bottom: 16px; font-size: 20px; color: #E2E8F0; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+        .related-card { display: block; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; text-decoration: none !important; transition: border-color 0.3s; }
+        .related-card:hover { border-color: var(--primary, #6366f1); }
+        .related-cat { display: block; font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--primary, #00D4FF) !important; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .related-title { display: block; font-size: 15px; font-weight: 600; color: #E2E8F0 !important; line-height: 1.4; }
+
+        /* Internal link callout */
+        .internal-link { background: rgba(255,255,255,0.02); border-left: 3px solid var(--primary, #6366f1); padding: 8px 16px; margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 15px; }
+        .internal-link a { color: var(--primary, #00D4FF) !important; font-weight: 600; }
+
+        /* Social share */
+        .social-share { display: flex; align-items: center; gap: 12px; margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .social-share span { font-size: 14px; color: #64748B; }
+        .social-share a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); color: #94A3B8 !important; font-weight: 700; font-size: 14px; text-decoration: none !important; transition: background 0.2s; }
+        .social-share a:hover { background: var(--primary, #6366f1); color: #fff !important; }
+
         /* Sources */
         .article-sources {
             margin-top: 32px; padding: 24px;
@@ -700,6 +816,11 @@ function buildArticleHTML(article, siteConfig = {}) {
     </nav>
 
     <article class="article-wrapper" itemscope itemtype="https://schema.org/Article">
+        <nav class="breadcrumbs" aria-label="Fil d'Ariane">
+            <a href="${c.siteUrl}">Accueil</a> <span>›</span>
+            <a href="${c.siteUrl}/blog/">Blog</a> <span>›</span>
+            <span>${escapeHtml(article.category.replace(/-/g, ' '))}</span>
+        </nav>
         <div class="article-meta">
             <span class="article-category">${escapeHtml(article.category.replace(/-/g, ' '))}</span>
             <time datetime="${isoDate}">${dateStr}</time>
@@ -715,6 +836,8 @@ function buildArticleHTML(article, siteConfig = {}) {
 
         <p class="article-excerpt" itemprop="description">${escapeHtml(article.excerpt)}</p>
 
+        ${tocHtml}
+
         <div class="article-content" itemprop="articleBody">
             ${contentWithCTAs}
         </div>
@@ -722,6 +845,9 @@ function buildArticleHTML(article, siteConfig = {}) {
         <div class="article-tags">
             ${article.tags.map((t) => `<span class="tag">#${escapeHtml(t)}</span>`).join('\n            ')}
         </div>
+
+        ${socialHtml}
+        ${relatedHtml}
 
         ${
           article.sources && article.sources.length > 0

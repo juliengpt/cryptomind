@@ -14,6 +14,17 @@
     <meta property="og:site_name" content="{{siteName}}">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
+    <!-- FAQ Schema.org — boosts rich snippets in Google search results -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"{{faq.q1}}","acceptedAnswer":{"@type":"Answer","text":"{{faq.a1}}"}},
+      {"@type":"Question","name":"{{faq.q2}}","acceptedAnswer":{"@type":"Answer","text":"{{faq.a2}}"}},
+      {"@type":"Question","name":"{{faq.q3}}","acceptedAnswer":{"@type":"Answer","text":"{{faq.a3}}"}},
+      {"@type":"Question","name":"{{faq.q4}}","acceptedAnswer":{"@type":"Answer","text":"{{faq.a4}}"}},
+      {"@type":"Question","name":"{{faq.q5}}","acceptedAnswer":{"@type":"Answer","text":"{{faq.a5}}"}},
+      {"@type":"Question","name":"{{faq.q6}}","acceptedAnswer":{"@type":"Answer","text":"{{faq.a6}}"}}
+    ]}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
