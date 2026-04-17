@@ -225,13 +225,12 @@ async function publishOneArticle(site) {
   fs.writeFileSync(dirs.sitemapPath, buildSitemap(registry, cfg), 'utf-8');
   console.log('  Rebuilt blog index + sitemap');
 
-  // 9. Submit to GSC (best effort)
+  // 9. Refresh sitemap in GSC (natural crawl — no Indexing API to avoid spam flags)
   try {
-    await submitNewArticles([article.slug], cfg.siteUrl);
-    // Also ping sitemap so Google knows to re-crawl it (includes the new article)
     await submitSitemap(site.domain);
+    console.log(`  GSC sitemap refreshed`);
   } catch (e) {
-    console.log(`  GSC error: ${e.message}`);
+    console.log(`  GSC sitemap error: ${e.message}`);
   }
 
   // 10. Mark news as used (so we don't reprocess it next run)

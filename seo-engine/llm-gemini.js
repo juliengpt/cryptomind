@@ -43,10 +43,23 @@ function buildPrompt(siteConfig, newsItem) {
     : newsItem.category === 'ia' ? 'intelligence artificielle'
     : 'investissement';
 
+  // Randomize article length and section count to look natural to Google
+  const profiles = [
+    { words: '800-1200', sections: 4, perSection: '200-300' },
+    { words: '1200-1800', sections: 5, perSection: '250-350' },
+    { words: '1800-2500', sections: 6, perSection: '300-400' },
+    { words: '2500-3200', sections: 7, perSection: '350-450' },
+    { words: '3000-3500', sections: 8, perSection: '375-440' },
+  ];
+  const profile = profiles[Math.floor(Math.random() * profiles.length)];
+  const sectionPlaceholders = Array.from({ length: profile.sections - 1 }, (_, i) =>
+    `    {"title": "Titre H2 section ${i + 2}", "content": "<p>...</p>"}`
+  ).join(',\n');
+
   return `Tu es un journaliste tech/finance pour le blog français de "${siteConfig.siteName}" (niche : ${siteConfig.niche}).
 Le produit promu sur ce site est : ${siteConfig.productPitch}.
 
-Génère un article SEO de 2500-3000 mots en français sur cette actualité réelle :
+Génère un article SEO de ${profile.words} mots en français sur cette actualité réelle :
 TITRE SOURCE : ${newsItem.title}
 RÉSUMÉ : ${(newsItem.summary || newsItem.title).slice(0, 500)}
 CATÉGORIE : ${cat}
@@ -67,21 +80,18 @@ Réponds UNIQUEMENT avec ce JSON valide (aucun texte avant/après, pas de markdo
     "inline3": "english pexels query 3-5 words"
   },
   "sections": [
-    {"title": "Titre H2 section 1", "content": "<p>HTML 350-450 mots avec <strong>, <em>, <ul><li>...</p>"},
-    {"title": "Titre H2 section 2", "content": "<p>...</p>"},
-    {"title": "Titre H2 section 3", "content": "<p>...</p>"},
-    {"title": "Titre H2 section 4", "content": "<p>...</p>"},
-    {"title": "Titre H2 section 5", "content": "<p>...</p>"},
-    {"title": "Titre H2 section 6", "content": "<p>...</p>"},
+    {"title": "Titre H2 section 1", "content": "<p>HTML ${profile.perSection} mots avec <strong>, <em>, <ul><li>...</p>"},
+${sectionPlaceholders},
     {"title": "Conclusion", "content": "<p>...</p>"}
   ]
 }
 
 REGLES STRICTES :
-- Francais journalistique haute qualite, ton expert
-- Faits reels, chiffres precis, analyse approfondie
+- Francais journalistique haute qualite, ton naturel et varie (pas robotique)
+- Faits reels, chiffres precis, analyse approfondie, opinions argumentees
 - Integre subtilement la pertinence pour ${siteConfig.niche} sans publicite directe
-- 7 sections totales, 350-450 mots par section minimum
+- ${profile.sections} sections totales, ${profile.perSection} mots par section
+- Varie le style : certaines phrases courtes, d'autres longues. Utilise des questions rhetoriques, des analogies, des citations fictives d'experts
 - HTML uniquement dans content : <p>, <strong>, <em>, <ul><li>, <blockquote>
 - imageQueries en ANGLAIS, termes visuels concrets et tres specifiques
 - slug court (max 60 chars), kebab-case, sans accents, finissant par -2026
