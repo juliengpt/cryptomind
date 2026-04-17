@@ -237,12 +237,21 @@ async function main() {
   const projectOk = await createPagesProject(slug, domain);
   if (!projectOk) { console.error('Cloudflare Pages project creation failed. Aborting.'); process.exit(1); }
 
-  // 2. Add custom domain
-  await sleep(3000); // Give CF a moment to register the project
+  // 2. Trigger first deployment
+  console.log(`  [CF] Triggering first build...`);
+  const { data: buildData } = await cfApi('POST', `/accounts/${CF_ACCOUNT}/pages/projects/${slug}/deployments`, {});
+  if (buildData.result?.id) {
+    console.log(`  [CF] Build triggered: ${buildData.result.id}`);
+  } else {
+    console.log(`  [CF] Build trigger note: ${JSON.stringify(buildData.errors || buildData.messages || '').slice(0, 150)}`);
+  }
+
+  // 3. Add custom domain (after build is queued so the project is ready)
+  await sleep(5000);
   await addCustomDomain(slug, domain);
   await addCustomDomain(slug, `www.${domain}`);
 
-  // 3. Setup Google Search Console (verify domain + add site + sitemap)
+  // 4. Setup Google Search Console (verify domain + add site + sitemap)
   console.log('');
   const gscOk = await setupGsc(domain);
   if (!gscOk) {
