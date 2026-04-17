@@ -1,5 +1,229 @@
 [
   {
+    "slug": "malaisie-croissance-pib-conflit-impact-2026",
+    "title": "Malaisie : Croissance freinée par les tensions mondiales",
+    "category": "investissement",
+    "tags": [
+      "Malaisie",
+      "PIB",
+      "Conflit Moyen-Orient",
+      "Trading Crypto",
+      "IA"
+    ],
+    "excerpt": "Le PIB malaisien progresse, mais le conflit au Moyen-Orient pèse sur l'économie. Analyse pour les investisseurs et le trading crypto.",
+    "readTime": "13 min",
+    "generatedAt": "2026-04-17T07:24:03.450Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "depart-dirigeant-apple-impact-crypto-2026",
+    "title": "Apple : Un départ clé et son écho sur les marchés crypto",
+    "category": "investissement",
+    "tags": [
+      "Apple",
+      "Technologie",
+      "Marchés Financiers",
+      "Innovation",
+      "Crypto"
+    ],
+    "excerpt": "Le départ d'un dirigeant senior chez Apple, responsable de l'Apple Watch et des santé connectées, soulève des questions sur l'innovation et son impact potentiel sur l'écosystème des actifs numériques.",
+    "readTime": "11 min",
+    "generatedAt": "2026-04-17T07:23:40.341Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "xrp-performance-volume-faible-analyse-ia-2026",
+    "title": "XRP Dépasse Bitcoin : Quand le Volume Faible Interroge l'IA",
+    "category": "crypto monnaies",
+    "tags": [
+      "XRP",
+      "analyse crypto",
+      "volume trading",
+      "intelligence artificielle",
+      "stratégies de trading"
+    ],
+    "excerpt": "XRP surclasse BTC et ETH, mais le volume faible tempère l'enthousiasme. Découvrez comment l'IA analyse ces signaux complexes pour un trading optimal 24/7.",
+    "readTime": "16 min",
+    "generatedAt": "2026-04-17T07:22:03.924Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "essor-technologie-chine-marche-actions-2026",
+    "title": "Chine : La tech détrône le \"vin d'empereur\" en bourse",
+    "category": "investissement",
+    "tags": [
+      "Chine",
+      "Bourse",
+      "Technologie",
+      "Investissement",
+      "AI Crypto Trading"
+    ],
+    "excerpt": "Découvrez comment un fabricant chinois de puces laser a surpassé Moutai, signe d'un changement d'appétit des investisseurs vers la technologie avancée.",
+    "readTime": "11 min",
+    "generatedAt": "2026-04-17T07:21:02.351Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "indicateur-bitcoin-precedent-2026",
+    "title": "Bitcoin: L'indicateur qui prédit les creux depuis 2015",
+    "category": "crypto monnaies",
+    "tags": [
+      "Bitcoin",
+      "BTC",
+      "Indicateur Technique",
+      "Analyse Crypto",
+      "Trading AI"
+    ],
+    "excerpt": "Découvrez un indicateur clé qui a anticipé tous les creux du Bitcoin depuis 2015. Une analyse pour les investisseurs et traders crypto.",
+    "readTime": "11 min",
+    "generatedAt": "2026-04-17T07:20:32.651Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "bitfinex-hack-recuperation-et-impact-crypto-2026",
+    "title": "Bitfinex: 606k$ en Bitcoin déplacés, quel impact?",
+    "category": "crypto monnaies",
+    "tags": [
+      "Bitfinex",
+      "Bitcoin",
+      "Hack",
+      "LEO Token",
+      "US Government"
+    ],
+    "excerpt": "Les États-Unis déplacent 606 000$ en Bitcoin liés au hack Bitfinex 2016. Analyse de l'impact sur le marché et le token LEO.",
+    "readTime": "8 min",
+    "generatedAt": "2026-04-17T07:19:12.421Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "securite-crypto-attaques-multiples-2026",
+    "title": "Sécurité crypto : Douzaines d'entités visées après un hack majeur",
+    "category": "crypto monnaies",
+    "tags": [
+      "sécurité crypto",
+      "hacking",
+      "DeFi",
+      "Rhea Finance",
+      "Grinex"
+    ],
+    "excerpt": "Analyse des récents hacks crypto, incluant Rhea Finance et Grinex, et leurs implications pour la sécurité des actifs numériques.",
+    "readTime": "9 min",
+    "generatedAt": "2026-04-17T07:18:38.132Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "alerte-coreenne-dans-la-crypto-2026",
+    "title": "Crypto : 100 travailleurs nord-coréens démasqués par l'Ethereum Foundation",
+    "category": "crypto monnaies",
+    "tags": [
+      "Ethereum Foundation",
+      "Corée du Nord",
+      "blockchain",
+      "sécurité crypto",
+      "cybercriminalité"
+    ],
+    "excerpt": "Le Ketman Project, financé par l'Ethereum Foundation, révèle 100 travailleurs nord-coréens dans la crypto. Analyse des implications et des risques pour les projets.",
+    "readTime": "9 min",
+    "generatedAt": "2026-04-17T07:18:16.751Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "fausse-ledger-chinoise-esp-2026",
+    "title": "Fausse Ledger: Espressif Systems dans le viseur",
+    "category": "crypto monnaies",
+    "tags": [
+      "Ledger",
+      "sécurité crypto",
+      "Espressif Systems",
+      "hardware wallet",
+      "cybercriminalité"
+    ],
+    "excerpt": "Une fausse Ledger vendue en Chine révèle l'implication d'Espressif Systems. Comment sécuriser vos cryptos face à ces menaces ?",
+    "readTime": "11 min",
+    "generatedAt": "2026-04-17T07:17:35.063Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "bouygues-iliad-orange-rachat-sfr-2026",
+    "title": "SFR : Le marché télécom français en pleine mutation",
+    "category": "investissement",
+    "tags": [
+      "télécom",
+      "SFR",
+      "rachat",
+      "investissement",
+      "marché français"
+    ],
+    "excerpt": "Bouygues, Iliad et Orange négocient le rachat de SFR. Analyse des enjeux et implications pour le secteur des télécoms et l'investissement.",
+    "readTime": "10 min",
+    "generatedAt": "2026-04-17T07:17:05.185Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "hiver-crypto-volume-cex-chute-2026",
+    "title": "Crypto : L'hiver se prolonge, le volume des CEX chute de 39%",
+    "category": "crypto monnaies",
+    "tags": [
+      "crypto",
+      "blockchain",
+      "trading",
+      "intelligence artificielle",
+      "marché crypto"
+    ],
+    "excerpt": "Le volume des échanges sur les plateformes centralisées (CEX) a chuté de 39% au premier trimestre, marquant un coup dur pour le marché crypto. Analyse et perspectives.",
+    "readTime": "10 min",
+    "generatedAt": "2026-04-17T07:16:42.624Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "netflix-chute-perspectives-decevantes-2026",
+    "title": "Netflix : Chute en Bourse après des Perspectives Décevantes",
+    "category": "investissement",
+    "tags": [
+      "Netflix",
+      "Bourse",
+      "Technologie",
+      "Streaming",
+      "Analyse Financière"
+    ],
+    "excerpt": "Netflix déçoit les investisseurs avec ses prévisions pour le T2. Analyse des raisons, du départ de Reed Hastings et de l'impact sur le secteur tech.",
+    "readTime": "8 min",
+    "generatedAt": "2026-04-17T07:16:17.260Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "fraude-meta-1-coin-condamnation-texas-man-2026",
+    "title": "Fraude Crypto: 23 ans de prison pour le cerveau de Meta-1 Coin",
+    "category": "crypto monnaies",
+    "tags": [
+      "fraude crypto",
+      "Meta-1 Coin",
+      "justice",
+      "sécurité financière",
+      "trading IA"
+    ],
+    "excerpt": "Un homme du Texas écope de 23 ans de prison pour une fraude de 20 millions de dollars avec Meta-1 Coin, une affaire qui souligne les risques du trading crypto non régulé.",
+    "readTime": "14 min",
+    "generatedAt": "2026-04-17T07:15:51.750Z",
+    "generatedBy": "Gemini"
+  },
+  {
+    "slug": "bitcoin-securite-quantique-hoskinson-menace-2026",
+    "title": "Bitcoin face au quantique : Hoskinson sceptique, le risque pour 1.7M BTC",
+    "category": "crypto monnaies",
+    "tags": [
+      "Bitcoin",
+      "Cardano",
+      "Charles Hoskinson",
+      "sécurité quantique",
+      "IA trading crypto"
+    ],
+    "excerpt": "Charles Hoskinson (Cardano) critique la défense quantique de Bitcoin. Un risque majeur pèse sur 1.7 million de BTC. Analyse pour CryptoMind AI.",
+    "readTime": "9 min",
+    "generatedAt": "2026-04-17T07:15:21.824Z",
+    "generatedBy": "Gemini"
+  },
+  {
     "slug": "envision-aesc-ipo-hong-kong-levier-ia-2026",
     "title": "Envision AESC : L'IPO à Hong Kong qui passionne les investisseurs",
     "category": "investissement",

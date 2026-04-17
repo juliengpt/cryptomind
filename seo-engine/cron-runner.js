@@ -53,8 +53,8 @@ async function main() {
       continue;
     }
 
-    // Publish floor(cur) articles, keep fractional remainder
-    const toPublish = Math.floor(cur);
+    // Publish floor(cur) articles, capped at 2 per run to avoid Gemini rate limits
+    const toPublish = Math.min(Math.floor(cur), 2);
     let publishedCount = 0;
     let remainder = cur - toPublish;
 
