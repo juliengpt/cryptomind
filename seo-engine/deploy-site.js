@@ -119,10 +119,27 @@ async function addCustomDomain(slug, domain) {
   });
   if (data.success !== false || JSON.stringify(data).includes('already associated')) {
     console.log(`  [CF] Custom domain ${domain} added`);
-    return true;
+  } else {
+    console.log(`  [CF] Domain error (${status}): ${JSON.stringify(data.errors || data).slice(0, 200)}`);
   }
-  console.log(`  [CF] Domain error (${status}): ${JSON.stringify(data.errors || data).slice(0, 200)}`);
-  return false;
+
+  // Add CNAME DNS record pointing to <slug>.pages.dev
+  const bare = domain.replace(/^www\./, '');
+  const zoneId = await getZoneId(bare);
+  if (zoneId) {
+    const target = `${slug}.pages.dev`;
+    const { data: cname } = await cfApi('POST', `/zones/${zoneId}/dns_records`, {
+      type: 'CNAME', name: domain, content: target, ttl: 1, proxied: true,
+    });
+    if (cname.success) {
+      console.log(`  [CF] CNAME ${domain} → ${target}`);
+    } else if (JSON.stringify(cname).includes('already exists')) {
+      console.log(`  [CF] CNAME ${domain} already exists`);
+    } else {
+      console.log(`  [CF] CNAME error: ${JSON.stringify(cname.errors).slice(0, 150)}`);
+    }
+  }
+  return true;
 }
 
 async function setupGsc(domain) {
