@@ -139,12 +139,66 @@
       "fintech"
     ],
     "rssFeeds": [
+      {
+        "url": "https://www.investing.com/rss/news_1.rss",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.bloomberg.com/markets/news.rss",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://techcrunch.com/category/fintech/feed/",
+        "category": "fintech",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.bloomberg.com/technology/news.rss",
+        "category": "ia",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+        "category": "ia",
+        "lang": "en"
+      }
+    ],
+    "active": true
+  },
+  {
+    "slug": "gold-trade",
+    "domain": "goldtradeia.com",
+    "siteName": "GoldTrade AI",
+    "niche": "trading or et métaux précieux par IA",
+    "lang": "fr",
+    "articlesPerDay": 5,
+    "productPitch": "Agent IA qui trade l'or et les métaux précieux pour vous 24h/24",
+    "minInvest": 250,
+    "currency": "€",
+    "ctaPrimary": "Activer l'agent IA",
+    "leadWebhook": "",
+    "telegramChatId": "",
+    "telegramBotToken": "",
+    "themes": [
+      "trading-or",
+      "metaux-precieux",
+      "commodities",
+      "investissement-or",
+      "marches-financiers"
+    ],
+    "rssFeeds": [
       { "url": "https://www.investing.com/rss/news_1.rss", "category": "investissement", "lang": "en" },
       { "url": "https://feeds.bloomberg.com/markets/news.rss", "category": "investissement", "lang": "en" },
       { "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/", "category": "investissement", "lang": "en" },
-      { "url": "https://techcrunch.com/category/fintech/feed/", "category": "fintech", "lang": "en" },
-      { "url": "https://feeds.bloomberg.com/technology/news.rss", "category": "ia", "lang": "en" },
-      { "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "ia", "lang": "en" }
+      { "url": "https://www.kitco.com/rss/", "category": "or", "lang": "en" },
+      { "url": "https://www.mining.com/feed/", "category": "metaux", "lang": "en" }
     ],
     "active": true
   }
