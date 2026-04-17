@@ -175,14 +175,20 @@ async function setupGsc(domain) {
   console.log('  [GSC] Waiting 10s for DNS propagation...');
   await sleep(10000);
 
+  // Include user's personal email as co-owner so they can see the property in GSC UI
+  const userEmail = process.env.GSC_USER_EMAIL || '';
+  const owners = [serviceAccountEmail];
+  if (userEmail) owners.push(userEmail);
+
   try {
     await sv.webResource.insert({
       verificationMethod: 'DNS_TXT',
       requestBody: {
         site: { type: 'INET_DOMAIN', identifier: domain },
+        owners,
       },
     });
-    console.log(`  [GSC] Domain ${domain} VERIFIED`);
+    console.log(`  [GSC] Domain ${domain} VERIFIED (owners: ${owners.join(', ')})`);
   } catch (e) {
     if (e.message.includes('already verified')) {
       console.log(`  [GSC] Domain ${domain} already verified`);
