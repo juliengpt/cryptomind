@@ -124,8 +124,9 @@ async function addCustomDomain(slug, domain) {
   }
 
   // Add CNAME DNS record pointing to <slug>.pages.dev
-  const bare = domain.replace(/^www\./, '');
-  const zoneId = await getZoneId(bare);
+  // Always use the root domain (not www) to find the correct zone
+  const rootDomain = domain.replace(/^www\./, '').split('.').slice(-2).join('.');
+  const zoneId = await getZoneId(rootDomain);
   if (zoneId) {
     const target = `${slug}.pages.dev`;
     const { data: cname } = await cfApi('POST', `/zones/${zoneId}/dns_records`, {
