@@ -1337,6 +1337,9 @@ function buildBlogIndex(articles, siteConfig = {}) {
 
     <footer class="blog-footer">
         <p>© ${new Date().getFullYear()} ${c.siteName}. Tous droits réservés.</p>
+        <p style="margin-top: 12px; font-size: 12px; opacity: 0.5;">
+            Nos partenaires : <a href="https://crypto-mind.net" rel="noopener">CryptoMind AI</a> · <a href="https://forexbotia.com" rel="noopener">ForexBot AI</a> · <a href="https://epargneia.com" rel="noopener">Epargne IA</a> · <a href="https://goldtradeia.com" rel="noopener">GoldTrade AI</a>
+        </p>
     </footer>
 </body>
 </html>`;
