@@ -143,40 +143,116 @@
     </style>
     <style>
     :root { --primary: #008080 !important; --accent: #FF7F50 !important; }
+
+    /* Base colors */
+    body { background: #0A0E1A !important; color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    h1, h2, h3, h4 { font-family: 'Inter', sans-serif !important; color: #E2E8F0 !important; }
     a { color: #008080 !important; }
-    .article-content em,
-    .logo span,
-    .content-gate-count,
-    .modal-icon,
-    .card-category {
-      color: #008080 !important;
+    p, li, span, div, time { color: #94A3B8 !important; }
+    strong { color: #E2E8F0 !important; }
+
+    /* Nav */
+    .nav { background: rgba(10,14,26,0.92) !important; border-bottom-color: rgba(255,255,255,0.06) !important; }
+    .nav-logo { color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    .nav-logo span { color: #008080 !important; }
+    .nav-links a { color: #94A3B8 !important; }
+    .nav-links a:hover { color: #E2E8F0 !important; }
+
+    /* Cards & surfaces */
+    .blog-card, .feature-card, .testimonial-card, .pricing-card, .step-card, .perf-card,
+    .article-sources, .toc, .cta-inline, .cta-inline-dark, .cta-newsletter,
+    .modal, .related-card, .signup-form, .faq-answer {
+      background: rgba(255,255,255,0.03) !important;
+      border-color: rgba(255,255,255,0.06) !important;
+      color: #94A3B8 !important;
     }
-    .blog-card { border-color: rgba(0,128,128,0.2); }
-    .blog-card:hover { border-color: rgba(0,128,128,0.5) !important; }
-    .modal-avatar, .blog-card:hover {
-      background: linear-gradient(135deg, #008080, #FFA07A) !important;
-    }
+    .blog-card:hover { border-color: #008080 !important; }
+
+    /* Blog header */
+    .blog-header h1 { color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    .blog-header p { color: #94A3B8 !important; }
+
+    /* Article content */
+    .article-content p { color: #94A3B8 !important; }
+    .article-content h2 { color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    .article-content em { color: #008080 !important; }
+    .article-excerpt { color: #94A3B8 !important; }
+    .article-category { color: #0a0e1a !important; }
+    .breadcrumbs, .breadcrumbs a { color: #94A3B8 !important; }
+    .card-category { color: #008080 !important; }
+    .card-title { color: #E2E8F0 !important; }
+
+    /* Tags */
     .article-tags .tag {
-      background: rgba(0,128,128,0.15) !important;
+      background: rgba(0,128,128,0.1) !important;
       color: #008080 !important;
-      border-color: rgba(0,128,128,0.3) !important;
+      border-color: rgba(0,128,128,0.25) !important;
     }
-    /* Gradient backgrounds (must override originals) */
+    .tag { color: #008080 !important; }
+
+    /* Related articles */
+    .related-articles h3 { color: #E2E8F0 !important; }
+    .related-card { background: rgba(255,255,255,0.03) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .related-cat { color: #008080 !important; }
+    .related-title { color: #E2E8F0 !important; }
+
+    /* Social share */
+    .social-share a { background: rgba(0,128,128,0.1) !important; color: #94A3B8 !important; }
+    .social-share a:hover { background: #008080 !important; color: #0a0e1a !important; }
+
+    /* Internal links */
+    .internal-link { border-left-color: #008080 !important; background: rgba(0,128,128,0.05) !important; }
+
+    /* TOC */
+    .toc { background: rgba(255,255,255,0.03) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .toc h3 { color: #E2E8F0 !important; }
+    .toc a { color: #94A3B8 !important; }
+    .toc a:hover { color: #008080 !important; }
+
+    /* Sticky bar + progress */
+    .sticky-cta { background: rgba(10,14,26,0.95) !important; border-top-color: rgba(255,255,255,0.06) !important; }
+    .sticky-cta-text strong { color: #E2E8F0 !important; }
+    .progress-bar { background: #008080 !important; }
+
+    /* Modal */
+    .modal { background: rgba(255,255,255,0.03) !important; }
+    .modal h3 { color: #E2E8F0 !important; }
+    .modal p { color: #94A3B8 !important; }
+    .modal-subtext { color: #94A3B8 !important; }
+    .modal-social { color: #94A3B8 !important; }
+
+    /* Footer */
+    .footer { background: #0A0E1A !important; }
+    .footer p, .risk-warning { color: #94A3B8 !important; }
+
+    /* CTA buttons — gradient background */
     a.nav-cta, a.cta-btn, a.cta-btn-sm, a.btn-primary,
-    .article-category, a.progress-bar, a.sticky-cta-btn,
-    a.cta-inline-btn, a.blog-header-cta, .card-image-overlay,
+    .article-category, a.sticky-cta-btn,
+    a.cta-inline-btn, a.blog-header-cta,
     .faq-cta a.btn-primary, button.cta-btn {
       background: linear-gradient(135deg, #008080, #FFA07A) !important;
     }
-    /* Dark text on colored CTAs — HIGH specificity, last to win */
+    /* CTA text color */
     a.sticky-cta-btn, a.cta-btn, a.cta-btn-sm, a.cta-inline-btn,
     a.nav-cta, a.btn-primary, a.blog-header-cta,
     .faq-cta a.btn-primary, button.cta-btn,
     .article-category {
       color: #0a0e1a !important;
-      font-weight: 800 !important;
+      font-weight: 700 !important;
       text-shadow: none !important;
     }
+
+    /* CTA inline */
+    .cta-inline, .cta-inline-dark { background: rgba(255,255,255,0.03) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .cta-inline-title { color: #E2E8F0 !important; }
+    .cta-inline-text { color: #94A3B8 !important; }
+    .cta-newsletter-inner strong { color: #E2E8F0 !important; }
+    .cta-newsletter-inner span { color: #94A3B8 !important; }
+
+    /* FAQ */
+    .faq-question { color: #E2E8F0 !important; background: rgba(255,255,255,0.03) !important; }
+    .faq-question:hover { color: #008080 !important; }
+    .faq-icon { stroke: #94A3B8 !important; }
   </style>
 </head>
 <body>
@@ -201,6 +277,19 @@
 
     <div class="blog-grid">
         
+        <a href="articles/nio-entre-guerre-des-prix-et-rentabilite-analyse-pour-investisseurs-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/nio-entre-guerre-des-prix-et-rentabilite-analyse-pour-investisseurs-2026.png" alt="NIO : La rentabilité en ligne de mire malgré la guerre des prix" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">investissement</div>
+                <h2>NIO : La rentabilité en ligne de mire malgré la guerre des prix</h2>
+                <p>Le PDG de NIO Lihong Qin aborde la rentabilité, la guerre des prix des VE et l'impact géopolitique. Analyse pour l'investisseur avisé.</p>
+                <div class="card-meta">
+                    <time>24 avril 2026</time>
+                    <span>5 min</span>
+                </div>
+            </div>
+        </a>
+
         <a href="articles/fonds-mutuels-inde-fidelite-investisseurs-a-lepreuve-2026.html" class="blog-card">
             <div class="card-image"><img src="images/fonds-mutuels-inde-fidelite-investisseurs-a-lepreuve-2026.png" alt="Fonds Mutuels Indiens : La Fidélité des Investisseurs à l'Épreuve" loading="lazy"></div>
             <div class="card-body">
