@@ -1,0 +1,1 @@
+/blog/articles/*.html /blog/articles/:splat 301

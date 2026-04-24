@@ -1012,6 +1012,9 @@ function buildArticleHTML(article, siteConfig = {}, registry = []) {
         <p style="margin-top: 8px;">
             <a href="${c.siteUrl}">Accueil</a> · <a href="${c.siteUrl}/blog/">Blog</a>
         </p>
+        <p style="margin-top: 12px; font-size: 12px; opacity: 0.5;">
+            Nos partenaires : <a href="https://crypto-mind.net" rel="noopener">CryptoMind AI</a> · <a href="https://forexbotia.com" rel="noopener">ForexBot AI</a> · <a href="https://epargneia.com" rel="noopener">Epargne IA</a> · <a href="https://goldtradeia.com" rel="noopener">GoldTrade AI</a>
+        </p>
     </footer>
 
     <script>
