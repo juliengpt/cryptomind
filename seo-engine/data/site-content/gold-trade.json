@@ -1,0 +1,18 @@
+{
+  "theme": {
+    "primary": "#C5A55A",
+    "accent": "#1F3A2E",
+    "gradientStart": "#C5A55A",
+    "gradientEnd": "#A8884A",
+    "glowRgb": "197,165,90",
+    "lightMode": true,
+    "bgColor": "#FAF7F0",
+    "bgCard": "#FFFFFF",
+    "textColor": "#1A1614",
+    "textDim": "#6B5E4F",
+    "borderColor": "rgba(197,165,90,0.2)",
+    "fontHeading": "'Cormorant Garamond', Georgia, serif",
+    "fontBody": "'Source Sans 3', 'Source Sans Pro', sans-serif",
+    "fontUrl": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+  }
+}

@@ -37,45 +37,135 @@ function themeOverrideCss(theme) {
   const gStart = gradientStart || primary;
   const gEnd = gradientEnd || accent;
   const rgb = glowRgb || '99,102,241';
-  // Order matters with !important. Put general `a` rule first, then specific button overrides
-  // last so they win.
-  return `<style>
+  const isLight = theme.lightMode === true;
+  const bg = theme.bgColor || (isLight ? '#FAF7F0' : '#0A0E1A');
+  const bgCard = theme.bgCard || (isLight ? '#FFFFFF' : 'rgba(255,255,255,0.03)');
+  const textColor = theme.textColor || (isLight ? '#1A1614' : '#E2E8F0');
+  const textDim = theme.textDim || (isLight ? '#6B5E4F' : '#94A3B8');
+  const border = theme.borderColor || (isLight ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.06)');
+  const fontHead = theme.fontHeading || "'Inter', sans-serif";
+  const fontBody = theme.fontBody || "'Inter', sans-serif";
+  const fontUrl = theme.fontUrl || '';
+  const ctaText = isLight ? '#FFFFFF' : '#0a0e1a';
+
+  let css = '';
+  if (fontUrl) {
+    css += `<link href="${fontUrl}" rel="stylesheet">\n`;
+  }
+  css += `<style>
     :root { --primary: ${primary} !important; --accent: ${accent} !important; }
+
+    /* Base colors */
+    body { background: ${bg} !important; color: ${textColor} !important; font-family: ${fontBody} !important; }
+    h1, h2, h3, h4 { font-family: ${fontHead} !important; color: ${textColor} !important; }
     a { color: ${primary} !important; }
-    .article-content em,
-    .logo span,
-    .content-gate-count,
-    .modal-icon,
-    .card-category {
-      color: ${primary} !important;
+    p, li, span, div, time { color: ${textDim} !important; }
+    strong { color: ${textColor} !important; }
+
+    /* Nav */
+    .nav { background: ${isLight ? 'rgba(250,247,240,0.95)' : 'rgba(10,14,26,0.92)'} !important; border-bottom-color: ${border} !important; }
+    .nav-logo { color: ${textColor} !important; font-family: ${fontHead} !important; }
+    .nav-logo span { color: ${primary} !important; }
+    .nav-links a { color: ${textDim} !important; }
+    .nav-links a:hover { color: ${textColor} !important; }
+
+    /* Cards & surfaces */
+    .blog-card, .feature-card, .testimonial-card, .pricing-card, .step-card, .perf-card,
+    .article-sources, .toc, .cta-inline, .cta-inline-dark, .cta-newsletter,
+    .modal, .related-card, .signup-form, .faq-answer {
+      background: ${bgCard} !important;
+      border-color: ${border} !important;
+      color: ${textDim} !important;
     }
-    .blog-card { border-color: rgba(${rgb},0.2); }
-    .blog-card:hover { border-color: rgba(${rgb},0.5) !important; }
-    .modal-avatar, .blog-card:hover {
-      background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
-    }
+    .blog-card:hover { border-color: ${primary} !important; }
+
+    /* Blog header */
+    .blog-header h1 { color: ${textColor} !important; font-family: ${fontHead} !important; }
+    .blog-header p { color: ${textDim} !important; }
+
+    /* Article content */
+    .article-content p { color: ${textDim} !important; }
+    .article-content h2 { color: ${textColor} !important; font-family: ${fontHead} !important; }
+    .article-content em { color: ${primary} !important; }
+    .article-excerpt { color: ${textDim} !important; }
+    .article-category { color: ${ctaText} !important; }
+    .breadcrumbs, .breadcrumbs a { color: ${textDim} !important; }
+    .card-category { color: ${primary} !important; }
+    .card-title { color: ${textColor} !important; }
+
+    /* Tags */
     .article-tags .tag {
-      background: rgba(${rgb},0.15) !important;
+      background: rgba(${rgb},0.1) !important;
       color: ${primary} !important;
-      border-color: rgba(${rgb},0.3) !important;
+      border-color: rgba(${rgb},0.25) !important;
     }
-    /* Gradient backgrounds (must override originals) */
+    .tag { color: ${primary} !important; }
+
+    /* Related articles */
+    .related-articles h3 { color: ${textColor} !important; }
+    .related-card { background: ${bgCard} !important; border-color: ${border} !important; }
+    .related-cat { color: ${primary} !important; }
+    .related-title { color: ${textColor} !important; }
+
+    /* Social share */
+    .social-share a { background: rgba(${rgb},0.1) !important; color: ${textDim} !important; }
+    .social-share a:hover { background: ${primary} !important; color: ${ctaText} !important; }
+
+    /* Internal links */
+    .internal-link { border-left-color: ${primary} !important; background: rgba(${rgb},0.05) !important; }
+
+    /* TOC */
+    .toc { background: ${bgCard} !important; border-color: ${border} !important; }
+    .toc h3 { color: ${textColor} !important; }
+    .toc a { color: ${textDim} !important; }
+    .toc a:hover { color: ${primary} !important; }
+
+    /* Sticky bar + progress */
+    .sticky-cta { background: ${isLight ? 'rgba(250,247,240,0.98)' : 'rgba(10,14,26,0.95)'} !important; border-top-color: ${border} !important; }
+    .sticky-cta-text strong { color: ${textColor} !important; }
+    .progress-bar { background: ${primary} !important; }
+
+    /* Modal */
+    .modal { background: ${bgCard} !important; }
+    .modal h3 { color: ${textColor} !important; }
+    .modal p { color: ${textDim} !important; }
+    .modal-subtext { color: ${textDim} !important; }
+    .modal-social { color: ${textDim} !important; }
+
+    /* Footer */
+    .footer { background: ${isLight ? '#F0EDE5' : '#0A0E1A'} !important; }
+    .footer p, .risk-warning { color: ${textDim} !important; }
+
+    /* CTA buttons — gradient background */
     a.nav-cta, a.cta-btn, a.cta-btn-sm, a.btn-primary,
-    .article-category, a.progress-bar, a.sticky-cta-btn,
-    a.cta-inline-btn, a.blog-header-cta, .card-image-overlay,
+    .article-category, a.sticky-cta-btn,
+    a.cta-inline-btn, a.blog-header-cta,
     .faq-cta a.btn-primary, button.cta-btn {
       background: linear-gradient(135deg, ${gStart}, ${gEnd}) !important;
     }
-    /* Dark text on colored CTAs — HIGH specificity, last to win */
+    /* CTA text color */
     a.sticky-cta-btn, a.cta-btn, a.cta-btn-sm, a.cta-inline-btn,
     a.nav-cta, a.btn-primary, a.blog-header-cta,
     .faq-cta a.btn-primary, button.cta-btn,
     .article-category {
-      color: #0a0e1a !important;
-      font-weight: 800 !important;
+      color: ${ctaText} !important;
+      font-weight: 700 !important;
       text-shadow: none !important;
     }
+
+    /* CTA inline */
+    .cta-inline, .cta-inline-dark { background: ${bgCard} !important; border-color: ${border} !important; }
+    .cta-inline-title { color: ${textColor} !important; }
+    .cta-inline-text { color: ${textDim} !important; }
+    .cta-newsletter-inner strong { color: ${textColor} !important; }
+    .cta-newsletter-inner span { color: ${textDim} !important; }
+
+    /* FAQ */
+    .faq-question { color: ${textColor} !important; background: ${bgCard} !important; }
+    .faq-question:hover { color: ${primary} !important; }
+    .faq-icon { stroke: ${textDim} !important; }
   </style>`;
+  return css;
 }
 
 // CTA variants — all focused on the AI trading agent
@@ -1063,7 +1153,7 @@ function buildBlogIndex(articles, siteConfig = {}) {
             <div class="card-body">
                 <div class="card-category">${escapeHtml(a.category.replace(/-/g, ' '))}</div>
                 <h2>${escapeHtml(a.title)}</h2>
-                <p>${escapeHtml(a.excerpt)}</p>
+                <p>${escapeHtml(a.excerpt || a.title || '')}</p>
                 <div class="card-meta">
                     <time>${date}</time>
                     <span>${a.readTime}</span>

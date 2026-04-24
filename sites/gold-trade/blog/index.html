@@ -141,7 +141,120 @@
             .blog-grid { grid-template-columns: 1fr; }
         }
     </style>
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root { --primary: #C5A55A !important; --accent: #1F3A2E !important; }
+
+    /* Base colors */
+    body { background: #FAF7F0 !important; color: #1A1614 !important; font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif !important; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', Georgia, serif !important; color: #1A1614 !important; }
+    a { color: #C5A55A !important; }
+    p, li, span, div, time { color: #6B5E4F !important; }
+    strong { color: #1A1614 !important; }
+
+    /* Nav */
+    .nav { background: rgba(250,247,240,0.95) !important; border-bottom-color: rgba(197,165,90,0.2) !important; }
+    .nav-logo { color: #1A1614 !important; font-family: 'Cormorant Garamond', Georgia, serif !important; }
+    .nav-logo span { color: #C5A55A !important; }
+    .nav-links a { color: #6B5E4F !important; }
+    .nav-links a:hover { color: #1A1614 !important; }
+
+    /* Cards & surfaces */
+    .blog-card, .feature-card, .testimonial-card, .pricing-card, .step-card, .perf-card,
+    .article-sources, .toc, .cta-inline, .cta-inline-dark, .cta-newsletter,
+    .modal, .related-card, .signup-form, .faq-answer {
+      background: #FFFFFF !important;
+      border-color: rgba(197,165,90,0.2) !important;
+      color: #6B5E4F !important;
+    }
+    .blog-card:hover { border-color: #C5A55A !important; }
+
+    /* Blog header */
+    .blog-header h1 { color: #1A1614 !important; font-family: 'Cormorant Garamond', Georgia, serif !important; }
+    .blog-header p { color: #6B5E4F !important; }
+
+    /* Article content */
+    .article-content p { color: #6B5E4F !important; }
+    .article-content h2 { color: #1A1614 !important; font-family: 'Cormorant Garamond', Georgia, serif !important; }
+    .article-content em { color: #C5A55A !important; }
+    .article-excerpt { color: #6B5E4F !important; }
+    .article-category { color: #FFFFFF !important; }
+    .breadcrumbs, .breadcrumbs a { color: #6B5E4F !important; }
+    .card-category { color: #C5A55A !important; }
+    .card-title { color: #1A1614 !important; }
+
+    /* Tags */
+    .article-tags .tag {
+      background: rgba(197,165,90,0.1) !important;
+      color: #C5A55A !important;
+      border-color: rgba(197,165,90,0.25) !important;
+    }
+    .tag { color: #C5A55A !important; }
+
+    /* Related articles */
+    .related-articles h3 { color: #1A1614 !important; }
+    .related-card { background: #FFFFFF !important; border-color: rgba(197,165,90,0.2) !important; }
+    .related-cat { color: #C5A55A !important; }
+    .related-title { color: #1A1614 !important; }
+
+    /* Social share */
+    .social-share a { background: rgba(197,165,90,0.1) !important; color: #6B5E4F !important; }
+    .social-share a:hover { background: #C5A55A !important; color: #FFFFFF !important; }
+
+    /* Internal links */
+    .internal-link { border-left-color: #C5A55A !important; background: rgba(197,165,90,0.05) !important; }
+
+    /* TOC */
+    .toc { background: #FFFFFF !important; border-color: rgba(197,165,90,0.2) !important; }
+    .toc h3 { color: #1A1614 !important; }
+    .toc a { color: #6B5E4F !important; }
+    .toc a:hover { color: #C5A55A !important; }
+
+    /* Sticky bar + progress */
+    .sticky-cta { background: rgba(250,247,240,0.98) !important; border-top-color: rgba(197,165,90,0.2) !important; }
+    .sticky-cta-text strong { color: #1A1614 !important; }
+    .progress-bar { background: #C5A55A !important; }
+
+    /* Modal */
+    .modal { background: #FFFFFF !important; }
+    .modal h3 { color: #1A1614 !important; }
+    .modal p { color: #6B5E4F !important; }
+    .modal-subtext { color: #6B5E4F !important; }
+    .modal-social { color: #6B5E4F !important; }
+
+    /* Footer */
+    .footer { background: #F0EDE5 !important; }
+    .footer p, .risk-warning { color: #6B5E4F !important; }
+
+    /* CTA buttons — gradient background */
+    a.nav-cta, a.cta-btn, a.cta-btn-sm, a.btn-primary,
+    .article-category, a.sticky-cta-btn,
+    a.cta-inline-btn, a.blog-header-cta,
+    .faq-cta a.btn-primary, button.cta-btn {
+      background: linear-gradient(135deg, #C5A55A, #A8884A) !important;
+    }
+    /* CTA text color */
+    a.sticky-cta-btn, a.cta-btn, a.cta-btn-sm, a.cta-inline-btn,
+    a.nav-cta, a.btn-primary, a.blog-header-cta,
+    .faq-cta a.btn-primary, button.cta-btn,
+    .article-category {
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      text-shadow: none !important;
+    }
+
+    /* CTA inline */
+    .cta-inline, .cta-inline-dark { background: #FFFFFF !important; border-color: rgba(197,165,90,0.2) !important; }
+    .cta-inline-title { color: #1A1614 !important; }
+    .cta-inline-text { color: #6B5E4F !important; }
+    .cta-newsletter-inner strong { color: #1A1614 !important; }
+    .cta-newsletter-inner span { color: #6B5E4F !important; }
+
+    /* FAQ */
+    .faq-question { color: #1A1614 !important; background: #FFFFFF !important; }
+    .faq-question:hover { color: #C5A55A !important; }
+    .faq-icon { stroke: #6B5E4F !important; }
+  </style>
 </head>
 <body>
     <nav class="nav">
