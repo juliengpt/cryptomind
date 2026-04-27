@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — TradePilot AI | Actualités et analyses trading actions ETF et indices boursiers par IA</title>
+    <meta name="description" content="Analyses et actualités sur trading actions ETF et indices boursiers par IA. Décryptages par TradePilot AI.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://trade-pilot-ai.com/blog/">
+    <meta property="og:title" content="Blog — TradePilot AI">
+    <meta property="og:description" content="Analyses et actualités sur trading actions ETF et indices boursiers par IA.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A0E1A;
+            color: #E2E8F0;
+            line-height: 1.6;
+        }
+        a { color: inherit; text-decoration: none; }
+        .nav {
+            position: fixed; top: 0; width: 100%; z-index: 100;
+            background: rgba(10,14,26,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding: 16px 0;
+        }
+        .nav-inner {
+            max-width: 1100px; margin: 0 auto; padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo { font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; }
+        .nav-logo span { color: #00D4FF; }
+        .nav-links { display: flex; gap: 24px; list-style: none; align-items: center; }
+        .nav-links a { color: #94A3B8; font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: #fff; }
+        .nav-cta { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: #fff !important; padding: 8px 20px; border-radius: 8px; font-weight: 600; }
+        .nav-cta:hover { opacity: 0.9; }
+        @media (max-width: 768px) {
+            .nav-links { gap: 12px; }
+            .nav-links .hide-mobile { display: none; }
+            .nav-cta { padding: 6px 14px; font-size: 13px; }
+        }
+        .blog-header {
+            max-width: 1100px; margin: 0 auto;
+            padding: 140px 24px 40px;
+        }
+        .blog-header h1 {
+            font-size: 48px; font-weight: 800; color: #fff;
+            margin-bottom: 16px; letter-spacing: -1px;
+        }
+        .blog-header p { font-size: 18px; color: #64748B; max-width: 600px; margin-bottom: 32px; }
+        .blog-header-cta {
+            display: inline-block;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #00D4FF, #7B61FF);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 15px;
+        }
+        .blog-header-cta:hover { opacity: 0.9; }
+        .blog-grid {
+            max-width: 1100px; margin: 0 auto;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+        .blog-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-card:hover {
+            border-color: rgba(0,212,255,0.2);
+            background: rgba(0,212,255,0.03);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,212,255,0.08);
+        }
+        .card-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .blog-card:hover .card-image img { transform: scale(1.05); }
+        .card-image-placeholder {
+            background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(123,97,255,0.08));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card-image-placeholder span {
+            font-size: 48px;
+            color: rgba(0,212,255,0.2);
+        }
+        .card-body { padding: 24px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+        .card-category {
+            font-size: 12px; font-weight: 600;
+            color: #00D4FF; text-transform: uppercase;
+            letter-spacing: 1px; margin-bottom: 12px;
+        }
+        .blog-card h2 {
+            font-size: 20px; font-weight: 700; color: #fff;
+            line-height: 1.3; margin-bottom: 12px;
+        }
+        .blog-card p {
+            font-size: 15px; color: #64748B;
+            line-height: 1.6; flex: 1; margin-bottom: 16px;
+        }
+        .card-meta {
+            font-size: 13px; color: #475569;
+            display: flex; justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .blog-footer {
+            max-width: 1100px; margin: 0 auto;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            text-align: center;
+            color: #475569;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .blog-header h1 { font-size: 32px; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <style>
+    :root { --primary: #10b981 !important; --accent: #f43f5e !important; }
+
+    /* Base colors */
+    body { background: #0A0E1A !important; color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    h1, h2, h3, h4 { font-family: 'Inter', sans-serif !important; color: #E2E8F0 !important; }
+    a { color: #10b981 !important; }
+    p, li, span, div, time { color: #94A3B8 !important; }
+    strong { color: #E2E8F0 !important; }
+
+    /* Nav */
+    .nav { background: rgba(10,14,26,0.92) !important; border-bottom-color: rgba(255,255,255,0.06) !important; }
+    .nav-logo { color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    .nav-logo span { color: #10b981 !important; }
+    .nav-links a { color: #94A3B8 !important; }
+    .nav-links a:hover { color: #E2E8F0 !important; }
+
+    /* Cards & surfaces */
+    .blog-card, .feature-card, .testimonial-card, .pricing-card, .step-card, .perf-card,
+    .article-sources, .toc, .cta-inline, .cta-inline-dark, .cta-newsletter,
+    .modal, .related-card, .signup-form, .faq-answer {
+      background: rgba(255,255,255,0.03) !important;
+      border-color: rgba(255,255,255,0.06) !important;
+      color: #94A3B8 !important;
+    }
+    .blog-card:hover { border-color: #10b981 !important; }
+
+    /* Blog header */
+    .blog-header h1 { color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    .blog-header p { color: #94A3B8 !important; }
+
+    /* Article content */
+    .article-content p { color: #94A3B8 !important; }
+    .article-content h2 { color: #E2E8F0 !important; font-family: 'Inter', sans-serif !important; }
+    .article-content em { color: #10b981 !important; }
+    .article-excerpt { color: #94A3B8 !important; }
+    .article-category { color: #0a0e1a !important; }
+    .breadcrumbs, .breadcrumbs a { color: #94A3B8 !important; }
+    .card-category { color: #10b981 !important; }
+    .card-title { color: #E2E8F0 !important; }
+
+    /* Tags */
+    .article-tags .tag {
+      background: rgba(16,185,129,0.1) !important;
+      color: #10b981 !important;
+      border-color: rgba(16,185,129,0.25) !important;
+    }
+    .tag { color: #10b981 !important; }
+
+    /* Related articles */
+    .related-articles h3 { color: #E2E8F0 !important; }
+    .related-card { background: rgba(255,255,255,0.03) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .related-cat { color: #10b981 !important; }
+    .related-title { color: #E2E8F0 !important; }
+
+    /* Social share */
+    .social-share a { background: rgba(16,185,129,0.1) !important; color: #94A3B8 !important; }
+    .social-share a:hover { background: #10b981 !important; color: #0a0e1a !important; }
+
+    /* Internal links */
+    .internal-link { border-left-color: #10b981 !important; background: rgba(16,185,129,0.05) !important; }
+
+    /* TOC */
+    .toc { background: rgba(255,255,255,0.03) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .toc h3 { color: #E2E8F0 !important; }
+    .toc a { color: #94A3B8 !important; }
+    .toc a:hover { color: #10b981 !important; }
+
+    /* Sticky bar + progress */
+    .sticky-cta { background: rgba(10,14,26,0.95) !important; border-top-color: rgba(255,255,255,0.06) !important; }
+    .sticky-cta-text strong { color: #E2E8F0 !important; }
+    .progress-bar { background: #10b981 !important; }
+
+    /* Modal */
+    .modal { background: rgba(255,255,255,0.03) !important; }
+    .modal h3 { color: #E2E8F0 !important; }
+    .modal p { color: #94A3B8 !important; }
+    .modal-subtext { color: #94A3B8 !important; }
+    .modal-social { color: #94A3B8 !important; }
+
+    /* Footer */
+    .footer { background: #0A0E1A !important; }
+    .footer p, .risk-warning { color: #94A3B8 !important; }
+
+    /* CTA buttons — gradient background */
+    a.nav-cta, a.cta-btn, a.cta-btn-sm, a.btn-primary,
+    .article-category, a.sticky-cta-btn,
+    a.cta-inline-btn, a.blog-header-cta,
+    .faq-cta a.btn-primary, button.cta-btn {
+      background: linear-gradient(135deg, #10b981, #f7a0a0) !important;
+    }
+    /* CTA text color */
+    a.sticky-cta-btn, a.cta-btn, a.cta-btn-sm, a.cta-inline-btn,
+    a.nav-cta, a.btn-primary, a.blog-header-cta,
+    .faq-cta a.btn-primary, button.cta-btn,
+    .article-category {
+      color: #0a0e1a !important;
+      font-weight: 700 !important;
+      text-shadow: none !important;
+    }
+
+    /* CTA inline */
+    .cta-inline, .cta-inline-dark { background: rgba(255,255,255,0.03) !important; border-color: rgba(255,255,255,0.06) !important; }
+    .cta-inline-title { color: #E2E8F0 !important; }
+    .cta-inline-text { color: #94A3B8 !important; }
+    .cta-newsletter-inner strong { color: #E2E8F0 !important; }
+    .cta-newsletter-inner span { color: #94A3B8 !important; }
+
+    /* FAQ */
+    .faq-question { color: #E2E8F0 !important; background: rgba(255,255,255,0.03) !important; }
+    .faq-question:hover { color: #10b981 !important; }
+    .faq-icon { stroke: #94A3B8 !important; }
+  </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="https://trade-pilot-ai.com" class="nav-logo">◆ TradePilot<span>AI</span></a>
+            <ul class="nav-links">
+                <li><a href="https://trade-pilot-ai.com">Accueil</a></li>
+                <li><a href="https://trade-pilot-ai.com/blog/" style="color:#fff">Blog</a></li>
+                <li class="hide-mobile"><a href="https://trade-pilot-ai.com#performance">Performance</a></li>
+                <li class="hide-mobile"><a href="https://trade-pilot-ai.com#pricing">Tarifs</a></li>
+                <li><a href="https://trade-pilot-ai.com#signup" class="nav-cta">Commencer</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <h1>Blog</h1>
+        <p>Analyses, tendances et décryptages sur trading actions ETF et indices boursiers par IA. Par TradePilot AI.</p>
+        <a href="https://trade-pilot-ai.com#signup" class="blog-header-cta">Découvrir TradePilot AI →</a>
+    </header>
+
+    <div class="blog-grid">
+        
+        <a href="articles/pound-incertitudes-traders-se-prot-gent-2026.html" class="blog-card">
+            <div class="card-image"><img src="images/pound-incertitudes-traders-se-prot-gent-2026.png" alt="La Livre Sterling Sous Tension : Risques Majeurs pour les Traders" loading="lazy"></div>
+            <div class="card-body">
+                <div class="card-category">investissement</div>
+                <h2>La Livre Sterling Sous Tension : Risques Majeurs pour les Traders</h2>
+                <p>La livre sterling fait face à des risques politiques, électoraux et géopolitiques. Analyse des stratégies de protection des traders.</p>
+                <div class="card-meta">
+                    <time>27 avril 2026</time>
+                    <span>5 min</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <footer class="blog-footer">
+        <p>© 2026 TradePilot AI. Tous droits réservés.</p>
+        <p style="margin-top: 12px; font-size: 12px; opacity: 0.5;">
+            Nos partenaires : <a href="https://crypto-mind.net" rel="noopener">CryptoMind AI</a> · <a href="https://forexbotia.com" rel="noopener">ForexBot AI</a> · <a href="https://epargneia.com" rel="noopener">Epargne IA</a> · <a href="https://goldtradeia.com" rel="noopener">GoldTrade AI</a>
+        </p>
+    </footer>
+</body>
+</html>

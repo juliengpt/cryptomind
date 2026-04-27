@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePilot AI : Trading IA Actions, ETF & Indices</title>
+    <meta name="description" content="Optimisez vos investissements avec TradePilot AI, votre copilote IA pour le trading d'actions, ETF et indices boursiers. Tradez 24/7.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://trade-pilot-ai.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TradePilot AI : Trading IA Actions, ETF & Indices">
+    <meta property="og:description" content="Optimisez vos investissements avec TradePilot AI, votre copilote IA pour le trading d'actions, ETF et indices boursiers. Tradez 24/7.">
+    <meta property="og:url" content="https://trade-pilot-ai.com/">
+    <meta property="og:site_name" content="TradePilot AI">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- FAQ Schema.org — boosts rich snippets in Google search results -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Quels types d'actifs TradePilot AI peut-il trader ?","acceptedAnswer":{"@type":"Answer","text":"TradePilot AI est spécialisé dans le trading d'actions cotées en bourse, d'Exchange Traded Funds (ETF) et d'indices boursiers majeurs. Notre IA est conçue pour analyser et négocier ces instruments financiers avec une grande précision."}},
+      {"@type":"Question","name":"Quel est le montant minimum d'investissement requis ?","acceptedAnswer":{"@type":"Answer","text":"Vous pouvez commencer à utiliser TradePilot AI avec un investissement minimum de 250€. Ce montant vous permet d'activer votre agent IA et de débuter votre parcours de trading automatisé."}},
+      {"@type":"Question","name":"Comment l'IA prend-elle ses décisions de trading ?","acceptedAnswer":{"@type":"Answer","text":"Notre IA utilise des algorithmes sophistiqués, l'apprentissage automatique et l'analyse de données massives pour identifier les tendances, évaluer les risques et exécuter les trades au moment le plus opportun, 24h/24."}},
+      {"@type":"Question","name":"Est-ce que TradePilot AI convient aux débutants ?","acceptedAnswer":{"@type":"Answer","text":"Absolument. TradePilot AI est conçu pour être accessible aux traders de tous niveaux. L'interface est intuitive et la configuration de l'agent IA est guidée, rendant le trading automatisé simple et efficace, même pour les novices."}},
+      {"@type":"Question","name":"Comment mes fonds et mes données sont-ils sécurisés ?","acceptedAnswer":{"@type":"Answer","text":"La sécurité est notre priorité absolue. Nous utilisons des protocoles de cryptage avancés et des mesures de sécurité robustes pour protéger vos informations personnelles et financières, ainsi que vos actifs investis."}},
+      {"@type":"Question","name":"Puis-je retirer mes fonds à tout moment ?","acceptedAnswer":{"@type":"Answer","text":"Oui, vous conservez le contrôle total de vos fonds. Les procédures de dépôt et de retrait sont conçues pour être simples et rapides, vous permettant d'accéder à votre capital selon vos besoins."}}
+    ]}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #10b981 !important;
+            --accent: #f43f5e !important;
+            --gradient: linear-gradient(135deg, #10b981, #f7a0a0) !important;
+            --gradient-text: linear-gradient(135deg, #10b981, #f7a0a0, #10b981) !important;
+        }
+        .hero-glow { background: radial-gradient(circle, rgba(16,185,129,0.18) 0%, transparent 70%) !important; }
+        .hero-bg-grid {
+            background-image:
+                linear-gradient(rgba(16,185,129,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16,185,129,0.05) 1px, transparent 1px) !important;
+        }
+        .nav-cta, .btn-primary { background: var(--gradient) !important; }
+        .feature-icon, .step-number, .pricing-card.popular, .faq-cta .btn-primary {
+            background: var(--gradient) !important;
+        }
+        .logo-icon, .logo-accent, .gradient-text {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .form-min-invest {
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(16,185,129,0.05)) !important;
+            border-color: rgba(16,185,129,0.4) !important;
+        }
+        .form-min-invest svg, .form-min-invest strong { color: var(--primary) !important; }
+        .hero-badge .pulse-dot { background: var(--primary) !important; }
+
+        /* Layout overrides for v2 template (single-column hero, no trading-card visual) */
+        .hero-container { grid-template-columns: 1fr !important; max-width: 900px; margin: 0 auto; text-align: center; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero-actions { justify-content: center; }
+        .hero-trust { justify-content: center; }
+        .hero-stats { justify-content: center; }
+        .hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1.1; }
+        .hero-subtitle { margin-left: auto; margin-right: auto; }
+
+        /* Feature icons: use gradient bg squares instead of emoji */
+        .feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; margin-bottom: 20px; -webkit-text-fill-color: #fff; }
+
+        /* Step numbers */
+        .step-number { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #fff; margin-bottom: 16px; -webkit-text-fill-color: #fff; }
+
+        /* Pricing card amounts keep value, currency small */
+        .pricing-card h3 { margin: 8px 0 12px; }
+        .pricing-price { display: flex; align-items: baseline; gap: 6px; margin: 16px 0; }
+        .pricing-amount { font-size: 2.5rem; font-weight: 800; }
+        .pricing-currency { font-size: 1.5rem; color: var(--text-dim, #94A3B8); }
+        .pricing-desc { color: var(--text-dim, #94A3B8); margin-bottom: 20px; }
+
+        /* Perf cards */
+        .perf-card { text-align: center; padding: 24px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); }
+        .perf-value { font-size: 2.2rem; font-weight: 800; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .perf-label { color: var(--text-dim, #94A3B8); font-size: 0.9rem; }
+        .performance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        @media (max-width: 768px) { .performance-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        /* Signup benefits list */
+        .signup-benefits { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; }
+        .signup-benefits li { display: flex; align-items: center; gap: 10px; color: var(--text-dim, #CBD5E1); }
+        .signup-benefits .check { color: var(--primary); font-weight: 700; font-size: 1.2rem; }
+
+        /* Fix hero-trust layout (template-v2 uses trust-avatars not hero-trust-avatars) */
+        .hero-trust {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+        .trust-avatars { display: flex !important; flex-direction: row !important; }
+        .trust-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-weight: 700; font-size: 14px;
+            border: 2px solid #0A0E1A;
+            margin-left: -10px;
+        }
+        .trust-avatar:first-child { margin-left: 0; }
+        .hero-trust-text { color: #94A3B8; font-size: 0.9rem; }
+
+        /* Fix hero-stats: value + suffix inline */
+        .hero-stat { flex-direction: row !important; align-items: baseline !important; flex-wrap: wrap; justify-content: center; gap: 4px; }
+        .hero-stat-label { flex-basis: 100%; text-align: center; color: #94A3B8; font-size: 0.85rem; margin-top: 4px; }
+        .hero-stats { display: flex; gap: 40px; align-items: flex-start; justify-content: center; margin-top: 30px; }
+        .hero-stat-divider { display: none; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+    <div class="container nav-container">
+        <a href="#" class="logo"><span class="logo-icon">◆</span> TradePilot<span class="logo-accent">AI</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#features">Fonctionnalités</a></li>
+            <li><a href="#how-it-works">Comment ça marche</a></li>
+            <li><a href="#performance">Performances</a></li>
+            <li><a href="#testimonials">Témoignages</a></li>
+            <li><a href="#pricing">Tarifs</a></li>
+            <li><a href="#signup" class="nav-cta">Démarrer</a></li>
+        </ul>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-badge"><span class="pulse-dot"></span> Trading Intelligent 24/7</div>
+            <h1>Votre Copilote IA<br><span class="gradient-text">Pour Vos Investissements</span></h1>
+            <p class="hero-subtitle">TradePilot AI analyse et exécute vos trades sur actions, ETF et indices, maximisant vos profits en continu.</p>
+            <div class="hero-actions">
+                <a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a>
+                <a href="#how-it-works" class="btn btn-outline btn-lg">Découvrir les performances</a>
+            </div>
+            <div class="hero-trust">
+                <div class="trust-avatars">
+                    <div class="trust-avatar" style="background:#6366f1;">A</div>
+                    <div class="trust-avatar" style="background:#06b6d4;">J</div>
+                    <div class="trust-avatar" style="background:#ec4899;">M</div>
+                    <div class="trust-avatar" style="background:#10b981;">K</div>
+                    <div class="trust-avatar" style="background:#f59e0b;">+</div>
+                </div>
+                <span class="hero-trust-text">Rejoignez <strong>5 000+</strong> investisseurs avant-gardistes</span>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat"><span class="hero-stat-value">97.3</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">Précision des signaux</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-value">24/7</span><span class="hero-stat-label">Disponibilité continue</span></div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat"><span class="hero-stat-value">+127</span><span class="hero-stat-suffix">%</span><span class="hero-stat-label">Rendement potentiel moyen</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="features" id="features">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Fonctionnalités</span>
+            <h2>Découvrez les atouts de TradePilot AI <span class="gradient-text">Performance & Sérénité</span></h2>
+            <p>Notre IA spécialisée excelle dans l'anticipation des mouvements du marché pour optimiser vos placements sur actions, ETF et indices.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card"><div class="feature-icon">◆</div><h3>Trading Autonome 24/7</h3><p>Laissez notre IA travailler pour vous, jour et nuit, sans interruption.</p></div>
+            <div class="feature-card"><div class="feature-icon">⚡</div><h3>Analyse Prédictive Avancée</h3><p>Exploitez des algorithmes de pointe pour anticiper les tendances du marché.</p></div>
+            <div class="feature-card"><div class="feature-icon">🔒</div><h3>Gestion du Risque Intelligente</h3><p>Paramétrez vos seuils de sécurité pour une protection optimale de votre capital.</p></div>
+            <div class="feature-card"><div class="feature-icon">🎯</div><h3>Diversification Facile</h3><p>Investissez dans un large éventail d'actions, ETF et indices avec une seule plateforme.</p></div>
+            <div class="feature-card"><div class="feature-icon">📊</div><h3>Interface Intuitive</h3><p>Suivez vos performances et gérez vos investissements simplement.</p></div>
+            <div class="feature-card"><div class="feature-icon">🚀</div><h3>Sécurité Renforcée</h3><p>Vos données et vos fonds sont protégés par les plus hauts standards de sécurité.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="steps" id="how-it-works">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Comment ça marche</span>
+            <h2>Lancez votre trading IA en 3 étapes <span class="gradient-text">Simple & Rapide</span></h2>
+            <p>Commencez à générer des revenus passifs grâce à notre technologie IA avancée en quelques minutes.</p>
+        </div>
+        <div class="steps-visual">
+            <div class="step-card"><div class="step-number">01</div><h3>Créez Votre Compte</h3><p>Inscription rapide et sécurisée pour accéder à notre plateforme de trading IA.</p></div>
+            <div class="step-card"><div class="step-number">02</div><h3>Configurez Votre Agent</h3><p>Définissez vos objectifs et votre tolérance au risque pour personnaliser votre stratégie IA.</p></div>
+            <div class="step-card"><div class="step-number">03</div><h3>Activez & Investissez</h3><p>Lancez votre agent IA et laissez-le trader pour vous sur les marchés financiers.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-banner-inner">
+            <h2>Ne Manquez Plus Aucune Opportunité</h2>
+            <p>Laissez la puissance de l'IA transformer votre stratégie d'investissement.</p>
+            <a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a>
+        </div>
+    </div>
+</section>
+
+<section class="performance" id="performance">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Performances</span>
+            <h2>Des résultats concrets grâce à l'IA <span class="gradient-text">Rentabilité Optimisée</span></h2>
+            <p>Suivez l'évolution de vos investissements avec des rapports transparents et des indicateurs de performance clairs.</p>
+        </div>
+        <div class="performance-grid">
+            <div class="perf-card"><div class="perf-value">+127%</div><div class="perf-label">2025</div></div>
+            <div class="perf-card"><div class="perf-value">97.3%</div><div class="perf-label">Précision des signaux</div></div>
+            <div class="perf-card"><div class="perf-value">24/7</div><div class="perf-label">Disponibilité continue</div></div>
+            <div class="perf-card"><div class="perf-value">8 247</div><div class="perf-label">Utilisateurs actifs</div></div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Avis Clients</span>
+            <h2>Ce que nos utilisateurs disent <span class="gradient-text">Leurs Succès</span></h2>
+            <p>Découvrez comment TradePilot AI transforme leur expérience de trading.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card"><p>« Depuis que j'utilise TradePilot AI, mes investissements sont enfin gérés avec une efficacité redoutable. L'IA anticipe les mouvements du marché bien mieux que je ne le pouvais. »</p><div class="testimonial-author"><div class="author-name">Alexandre D.</div><div class="author-role">Investisseur Actif</div></div></div>
+            <div class="testimonial-card"><p>« Je suis bluffé par la simplicité d'utilisation et les performances. Mon portefeuille d'ETF n'a jamais été aussi performant. Je recommande vivement TradePilot AI. »</p><div class="testimonial-author"><div class="author-name">Sophie L.</div><div class="author-role">Trader Débutant</div></div></div>
+            <div class="testimonial-card"><p>« La surveillance 24/7 est un énorme avantage. Savoir que mon agent IA gère mes positions indices en continu me procure une vraie tranquillité d'esprit. »</p><div class="testimonial-author"><div class="author-name">Marc R.</div><div class="author-role">Investisseur Stratégique</div></div></div>
+        </div>
+    </div>
+</section>
+
+<section class="pricing" id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Tarifs</span>
+            <h2>Choisissez le plan adapté à vos ambitions <span class="gradient-text">Flexibilité & Potentiel</span></h2>
+            <p>Des options conçues pour tous les niveaux, de l'investisseur débutant au trader expérimenté.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card"><h3>Essentiel</h3><div class="pricing-price"><span class="pricing-amount">250</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Idéal pour découvrir le trading IA.</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
+            <div class="pricing-card popular"><div class="pricing-badge">Populaire</div><h3>Performance</h3><div class="pricing-price"><span class="pricing-amount">1 000</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Optimisez vos rendements avec nos fonctionnalités avancées.</div><a href="#signup" class="btn btn-primary btn-full">Commencer maintenant</a></div>
+            <div class="pricing-card"><h3>Premium</h3><div class="pricing-price"><span class="pricing-amount">10 000</span><span class="pricing-currency">€</span></div><div class="pricing-desc">Accès complet à notre technologie IA pour une gestion de portefeuille ultime.</div><a href="#signup" class="btn btn-outline btn-full">Commencer</a></div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-banner cta-banner-large">
+    <div class="container">
+        <div class="cta-banner-inner">
+            <h2>Prêt à Accélérer Vos Rendements ?</h2>
+            <p>Activez votre agent IA dès maintenant et commencez à trader intelligemment.</p>
+            <a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a>
+        </div>
+    </div>
+</section>
+
+<section class="signup-section" id="signup">
+    <div class="container">
+        <div class="signup-wrapper">
+            <div class="signup-info">
+                <h2>Prêt à laisser l'IA trader pour Vous ? <span class="gradient-text">Vos Gains</span></h2>
+                <p>Investissez à partir de 250€ et laissez notre technologie optimiser votre potentiel de gain sur les marchés.</p>
+                <ul class="signup-benefits">
+                    <li><span class="check">✓</span> Inscription rapide, sans engagement</li>
+                    <li><span class="check">✓</span> Support 24/7</li>
+                    <li><span class="check">✓</span> Retirez vos fonds à tout moment</li>
+                    <li><span class="check">✓</span> Garantie satisfait ou remboursé 30 jours</li>
+                </ul>
+            </div>
+            <div class="signup-form-wrapper">
+                <form class="signup-form" id="signupForm">
+                    <h3>Activez Votre Agent IA</h3>
+                    <p class="form-subtitle">Uniquement 3 étapes pour démarrer.</p>
+                    <div class="form-min-invest">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                        <span>Investissement minimum : <strong>250 €</strong></span>
+                    </div>
+                    <div class="form-group"><label for="firstName">Prénom</label><input type="text" id="firstName" name="firstName" placeholder="Votre prénom" required></div>
+                    <div class="form-group"><label for="lastName">Nom</label><input type="text" id="lastName" name="lastName" placeholder="Votre nom" required></div>
+                    <div class="form-group"><label for="email">Adresse Email</label><input type="email" id="email" name="email" placeholder="vous@exemple.com" required></div>
+                    <div class="form-group"><label for="phone">Numéro de Téléphone</label><input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00" required></div>
+                    <div class="form-group"><label for="experience">Expérience</label><select id="experience" name="experience" required><option value="" disabled selected>Sélectionnez votre niveau</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé</option><option value="expert">Expert</option></select></div>
+                    <div class="form-checkbox"><input type="checkbox" id="terms" name="terms" required><label for="terms">J'accepte les <a href="terms.html" target="_blank">Conditions d'Utilisation</a> et la <a href="privacy.html" target="_blank">Politique de Confidentialité</a></label></div>
+                    <button type="submit" class="btn btn-primary btn-full">Activer l'agent IA</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header"><span class="section-tag">FAQ</span><h2>Questions Fréquentes</h2></div>
+        <div class="faq-list">
+            <div class="faq-item"><button class="faq-question"><span>Quels types d'actifs TradePilot AI peut-il trader ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>TradePilot AI est spécialisé dans le trading d'actions cotées en bourse, d'Exchange Traded Funds (ETF) et d'indices boursiers majeurs. Notre IA est conçue pour analyser et négocier ces instruments financiers avec une grande précision.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Quel est le montant minimum d'investissement requis ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Vous pouvez commencer à utiliser TradePilot AI avec un investissement minimum de 250€. Ce montant vous permet d'activer votre agent IA et de débuter votre parcours de trading automatisé.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Comment l'IA prend-elle ses décisions de trading ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Notre IA utilise des algorithmes sophistiqués, l'apprentissage automatique et l'analyse de données massives pour identifier les tendances, évaluer les risques et exécuter les trades au moment le plus opportun, 24h/24.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Est-ce que TradePilot AI convient aux débutants ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Absolument. TradePilot AI est conçu pour être accessible aux traders de tous niveaux. L'interface est intuitive et la configuration de l'agent IA est guidée, rendant le trading automatisé simple et efficace, même pour les novices.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Comment mes fonds et mes données sont-ils sécurisés ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>La sécurité est notre priorité absolue. Nous utilisons des protocoles de cryptage avancés et des mesures de sécurité robustes pour protéger vos informations personnelles et financières, ainsi que vos actifs investis.</p></div></div>
+            <div class="faq-item"><button class="faq-question"><span>Puis-je retirer mes fonds à tout moment ?</span><svg class="faq-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="faq-answer"><p>Oui, vous conservez le contrôle total de vos fonds. Les procédures de dépôt et de retrait sont conçues pour être simples et rapides, vous permettant d'accéder à votre capital selon vos besoins.</p></div></div>
+        </div>
+        <div class="faq-cta" style="text-align:center;margin-top:40px;"><a href="#signup" class="btn btn-primary btn-lg">Activer l'agent IA</a></div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="#" class="logo"><span class="logo-icon">◆</span> TradePilot<span class="logo-accent">AI</span></a>
+                <p>TradePilot AI : Votre partenaire IA pour le trading d'actions, ETF et indices. Investissez plus intelligemment, 24h/24.</p>
+                <a href="#signup" class="btn btn-outline footer-cta">Activer l'agent IA →</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TradePilot AI. Tous droits réservés.</p>
+            <p class="risk-warning">Le trading sur les marchés financiers comporte des risques de perte en capital. Les performances passées ne préjugent pas des performances futures. Investissez avec prudence et uniquement des fonds que vous pouvez vous permettre de perdre.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

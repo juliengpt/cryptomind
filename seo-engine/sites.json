@@ -194,11 +194,64 @@
       "marches-financiers"
     ],
     "rssFeeds": [
+      {
+        "url": "https://www.investing.com/rss/news_1.rss",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.bloomberg.com/markets/news.rss",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/",
+        "category": "investissement",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.kitco.com/rss/",
+        "category": "or",
+        "lang": "en"
+      },
+      {
+        "url": "https://www.mining.com/feed/",
+        "category": "metaux",
+        "lang": "en"
+      }
+    ],
+    "active": true
+  },
+  {
+    "slug": "trade-pilot",
+    "domain": "trade-pilot-ai.com",
+    "siteName": "TradePilot AI",
+    "niche": "trading actions ETF et indices boursiers par IA",
+    "lang": "fr",
+    "articlesPerDay": 5,
+    "productPitch": "Votre copilote IA qui trade les actions, ETF et indices pour vous 24h/24",
+    "minInvest": 250,
+    "currency": "€",
+    "ctaPrimary": "Activer l'agent IA",
+    "leadWebhook": "",
+    "telegramChatId": "",
+    "telegramBotToken": "",
+    "themes": [
+      "actions",
+      "ETF",
+      "indices-boursiers",
+      "trading-algorithmique",
+      "investissement",
+      "S&P500",
+      "CAC40"
+    ],
+    "rssFeeds": [
+      { "url": "https://feeds.bloomberg.com/markets/news.rss", "category": "actions", "lang": "en" },
+      { "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/", "category": "actions", "lang": "en" },
       { "url": "https://www.investing.com/rss/news_1.rss", "category": "investissement", "lang": "en" },
-      { "url": "https://feeds.bloomberg.com/markets/news.rss", "category": "investissement", "lang": "en" },
-      { "url": "https://feeds.marketwatch.com/marketwatch/marketpulse/", "category": "investissement", "lang": "en" },
-      { "url": "https://www.kitco.com/rss/", "category": "or", "lang": "en" },
-      { "url": "https://www.mining.com/feed/", "category": "metaux", "lang": "en" }
+      { "url": "https://seekingalpha.com/market_currents.xml", "category": "actions", "lang": "en" },
+      { "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "ia", "lang": "en" },
+      { "url": "https://feeds.bloomberg.com/technology/news.rss", "category": "ia", "lang": "en" }
     ],
     "active": true
   }

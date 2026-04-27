@@ -1,0 +1,147 @@
+{
+  "theme": {
+    "primary": "#10b981",
+    "accent": "#f43f5e",
+    "gradientStart": "#10b981",
+    "gradientEnd": "#f7a0a0",
+    "glowRgb": "16,185,129"
+  },
+  "meta": {
+    "title": "TradePilot AI : Trading IA Actions, ETF & Indices",
+    "description": "Optimisez vos investissements avec TradePilot AI, votre copilote IA pour le trading d'actions, ETF et indices boursiers. Tradez 24/7."
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "howItWorks": "Comment ça marche",
+    "performance": "Performances",
+    "testimonials": "Témoignages",
+    "pricing": "Tarifs",
+    "cta": "Démarrer"
+  },
+  "hero": {
+    "badge": "Trading Intelligent 24/7",
+    "titleMain": "Votre Copilote IA",
+    "titleAccent": "Pour Vos Investissements",
+    "subtitle": "TradePilot AI analyse et exécute vos trades sur actions, ETF et indices, maximisant vos profits en continu.",
+    "ctaPrimary": "Activer l'agent IA",
+    "ctaSecondary": "Découvrir les performances",
+    "trust": "Rejoignez <strong>5 000+</strong> investisseurs avant-gardistes",
+    "stat1Label": "Précision des signaux",
+    "stat2Label": "Disponibilité continue",
+    "stat3Label": "Rendement potentiel moyen"
+  },
+  "features": {
+    "tag": "Fonctionnalités",
+    "title": "Découvrez les atouts de TradePilot AI",
+    "titleAccent": "Performance & Sérénité",
+    "desc": "Notre IA spécialisée excelle dans l'anticipation des mouvements du marché pour optimiser vos placements sur actions, ETF et indices.",
+    "items": [
+      {
+        "title": "Trading Autonome 24/7",
+        "desc": "Laissez notre IA travailler pour vous, jour et nuit, sans interruption."
+      },
+      {
+        "title": "Analyse Prédictive Avancée",
+        "desc": "Exploitez des algorithmes de pointe pour anticiper les tendances du marché."
+      },
+      {
+        "title": "Gestion du Risque Intelligente",
+        "desc": "Paramétrez vos seuils de sécurité pour une protection optimale de votre capital."
+      },
+      {
+        "title": "Diversification Facile",
+        "desc": "Investissez dans un large éventail d'actions, ETF et indices avec une seule plateforme."
+      },
+      {
+        "title": "Interface Intuitive",
+        "desc": "Suivez vos performances et gérez vos investissements simplement."
+      },
+      {
+        "title": "Sécurité Renforcée",
+        "desc": "Vos données et vos fonds sont protégés par les plus hauts standards de sécurité."
+      }
+    ]
+  },
+  "steps": {
+    "tag": "Comment ça marche",
+    "title": "Lancez votre trading IA en 3 étapes",
+    "titleAccent": "Simple & Rapide",
+    "desc": "Commencez à générer des revenus passifs grâce à notre technologie IA avancée en quelques minutes.",
+    "s1Title": "Créez Votre Compte",
+    "s1Desc": "Inscription rapide et sécurisée pour accéder à notre plateforme de trading IA.",
+    "s2Title": "Configurez Votre Agent",
+    "s2Desc": "Définissez vos objectifs et votre tolérance au risque pour personnaliser votre stratégie IA.",
+    "s3Title": "Activez & Investissez",
+    "s3Desc": "Lancez votre agent IA et laissez-le trader pour vous sur les marchés financiers."
+  },
+  "performance": {
+    "tag": "Performances",
+    "title": "Des résultats concrets grâce à l'IA",
+    "titleAccent": "Rentabilité Optimisée",
+    "desc": "Suivez l'évolution de vos investissements avec des rapports transparents et des indicateurs de performance clairs."
+  },
+  "comparison": {
+    "tag": "Pourquoi nous choisir",
+    "title": "IA vs Trading Manuel : Le Choix Gagnant",
+    "titleAccent": "Avantage Décisif",
+    "desc": "Éliminez les biais émotionnels et le manque de temps. Notre IA assure une exécution parfaite et une analyse continue."
+  },
+  "testimonials": {
+    "tag": "Avis Clients",
+    "title": "Ce que nos utilisateurs disent",
+    "titleAccent": "Leurs Succès",
+    "desc": "Découvrez comment TradePilot AI transforme leur expérience de trading.",
+    "t1Text": "« Depuis que j'utilise TradePilot AI, mes investissements sont enfin gérés avec une efficacité redoutable. L'IA anticipe les mouvements du marché bien mieux que je ne le pouvais. »",
+    "t1Author": "Alexandre D.",
+    "t1Role": "Investisseur Actif",
+    "t2Text": "« Je suis bluffé par la simplicité d'utilisation et les performances. Mon portefeuille d'ETF n'a jamais été aussi performant. Je recommande vivement TradePilot AI. »",
+    "t2Author": "Sophie L.",
+    "t2Role": "Trader Débutant",
+    "t3Text": "« La surveillance 24/7 est un énorme avantage. Savoir que mon agent IA gère mes positions indices en continu me procure une vraie tranquillité d'esprit. »",
+    "t3Author": "Marc R.",
+    "t3Role": "Investisseur Stratégique"
+  },
+  "pricing": {
+    "tag": "Tarifs",
+    "title": "Choisissez le plan adapté à vos ambitions",
+    "titleAccent": "Flexibilité & Potentiel",
+    "desc": "Des options conçues pour tous les niveaux, de l'investisseur débutant au trader expérimenté.",
+    "starterName": "Essentiel",
+    "starterDesc": "Idéal pour découvrir le trading IA.",
+    "proName": "Performance",
+    "proDesc": "Optimisez vos rendements avec nos fonctionnalités avancées.",
+    "eliteName": "Premium",
+    "eliteDesc": "Accès complet à notre technologie IA pour une gestion de portefeuille ultime."
+  },
+  "signup": {
+    "title": "Prêt à laisser l'IA trader pour Vous ?",
+    "titleAccent": "Vos Gains",
+    "desc": "Investissez à partir de 250€ et laissez notre technologie optimiser votre potentiel de gain sur les marchés.",
+    "formTitle": "Activez Votre Agent IA",
+    "formSub": "Uniquement 3 étapes pour démarrer."
+  },
+  "faq": {
+    "tag": "FAQ",
+    "title": "Questions Fréquentes",
+    "q1": "Quels types d'actifs TradePilot AI peut-il trader ?",
+    "a1": "TradePilot AI est spécialisé dans le trading d'actions cotées en bourse, d'Exchange Traded Funds (ETF) et d'indices boursiers majeurs. Notre IA est conçue pour analyser et négocier ces instruments financiers avec une grande précision.",
+    "q2": "Quel est le montant minimum d'investissement requis ?",
+    "a2": "Vous pouvez commencer à utiliser TradePilot AI avec un investissement minimum de 250€. Ce montant vous permet d'activer votre agent IA et de débuter votre parcours de trading automatisé.",
+    "q3": "Comment l'IA prend-elle ses décisions de trading ?",
+    "a3": "Notre IA utilise des algorithmes sophistiqués, l'apprentissage automatique et l'analyse de données massives pour identifier les tendances, évaluer les risques et exécuter les trades au moment le plus opportun, 24h/24.",
+    "q4": "Est-ce que TradePilot AI convient aux débutants ?",
+    "a4": "Absolument. TradePilot AI est conçu pour être accessible aux traders de tous niveaux. L'interface est intuitive et la configuration de l'agent IA est guidée, rendant le trading automatisé simple et efficace, même pour les novices.",
+    "q5": "Comment mes fonds et mes données sont-ils sécurisés ?",
+    "a5": "La sécurité est notre priorité absolue. Nous utilisons des protocoles de cryptage avancés et des mesures de sécurité robustes pour protéger vos informations personnelles et financières, ainsi que vos actifs investis.",
+    "q6": "Puis-je retirer mes fonds à tout moment ?",
+    "a6": "Oui, vous conservez le contrôle total de vos fonds. Les procédures de dépôt et de retrait sont conçues pour être simples et rapides, vous permettant d'accéder à votre capital selon vos besoins."
+  },
+  "cta1Title": "Ne Manquez Plus Aucune Opportunité",
+  "cta1Subtitle": "Laissez la puissance de l'IA transformer votre stratégie d'investissement.",
+  "cta2Title": "Prêt à Accélérer Vos Rendements ?",
+  "cta2Subtitle": "Activez votre agent IA dès maintenant et commencez à trader intelligemment.",
+  "footer": {
+    "desc": "TradePilot AI : Votre partenaire IA pour le trading d'actions, ETF et indices. Investissez plus intelligemment, 24h/24.",
+    "warning": "Le trading sur les marchés financiers comporte des risques de perte en capital. Les performances passées ne préjugent pas des performances futures. Investissez avec prudence et uniquement des fonds que vous pouvez vous permettre de perdre."
+  }
+}
